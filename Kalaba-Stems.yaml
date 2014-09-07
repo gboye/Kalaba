@@ -1,0 +1,53 @@
+N: 
+    M:
+        bet: garçon
+        rup: pompier
+        dil: Adil
+        donis: Adonis
+    F:
+        sot: fille
+        rum: infirmière
+        zabel: Isabelle
+        nes: Inès
+    A:
+        bal: autruche
+        rat: chat
+        kat: souris
+    I:
+        kab: table
+        non: oeuf
+        suk: coussin
+        ban: chambre
+        pok: lit
+        kol: thé
+        bol: café
+ADJ:
+    nul: grand
+    big: petit
+    nor: blanc
+    lab: noir
+    gil: gros
+V:
+    VT:
+        bogot: manger
+        milit: boire
+        lamab: acheter
+        disak: supporter
+    VI:
+        topaz: dormir
+        fatig: tomber
+        balad: arriver
+
+DET:
+    DEF:
+        k: DEF
+    IND:
+        l: IND
+    DEM:
+        b: DEM
+PREP:
+    sur: dans
+    pik: sur
+    dem: avec
+    man: de
+    zon: sous
