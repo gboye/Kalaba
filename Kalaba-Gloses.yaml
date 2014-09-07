@@ -6,10 +6,10 @@ V:
     Type:   [VI, VT]
     Genre-Abs:  [H, Nh]
     Nombre-Abs: [Sg, Du, Pl]
-Det:
+DET:
     Type:   [DEF, IND, DEM]
     Nombre: [Sg, Du, Pl]
-Adj:
-    Type:   [ADJ]
+ADJ:
     Genre:  [M, F, A, I]
     Nombre: [Sg, Du, Pl]
+PREP:

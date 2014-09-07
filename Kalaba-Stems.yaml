@@ -1,4 +1,4 @@
-N: 
+N:
     M:
         bet: garçon
         rup: pompier
@@ -9,7 +9,7 @@ N:
         rum: infirmière
         zabel: Isabelle
         nes: Inès
-    A:
+    A:  
         bal: autruche
         rat: chat
         kat: souris
@@ -27,7 +27,7 @@ ADJ:
     nor: blanc
     lab: noir
     gil: gros
-V:
+V: 
     VT:
         bogot: manger
         milit: boire
@@ -45,6 +45,7 @@ DET:
         l: IND
     DEM:
         b: DEM
+
 PREP:
     sur: dans
     pik: sur
