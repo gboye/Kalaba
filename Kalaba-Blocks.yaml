@@ -1,22 +1,23 @@
-N - 1 accord du genre:
+N:
+ - #1 accord du genre:
     Cas=Erg, Genre=M :  X+o
     Cas=Abs, Genre=M :  X+e
     Genre=F :           X+a
     Cas=Abs, Genre=A :  X+i
-#
-N - 2 accord du nombre:
+ - #2 accord du nombre:
     Cas=Erg :                       X+s
     Cas=Abs, Nombre=Du :            X+d
     Cas=Erg, Nombre=Pl :            X+t
     Cas=Erg, Nombre=Sg :            X+x
     Cas=Abs, Genre=F, Nombre=Du :   X+b
 #
-V - 1 accord:
+V:
+ - #1 accord:
     Type=VI, Genre-Abs=H :  X+h
     Type=VI, Genre-Abs=Nh : X+n
     Type=VT :               X+o
 #
-V - 2 accord:
+ - #2 accord:
     Type=VT, Nombre-Abs=Sg :    X+s
     Type=VT, Nombre-Abs=Du :    X+d
     Type=VT, Nombre-Abs=Pl :    X+p
