@@ -131,6 +131,9 @@ V:
             - arrivaient
             - arrivera
             - arriveront
+#    VD:
+#        test:
+#            - tester
 DET:
     DEF:
         k: 
