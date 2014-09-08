@@ -1,10 +1,10 @@
 N:
- - #1 accord du genre:
+ 1: #accord du genre:
     Cas=Erg, Genre=M :  X+o
     Cas=Abs, Genre=M :  X+e
     Genre=F :           X+a
     Cas=Abs, Genre=A :  X+i
- - #2 accord du nombre:
+ 2: #accord du nombre:
     Cas=Erg :                       X+s
     Cas=Abs, Nombre=Du :            X+d
     Cas=Erg, Nombre=Pl :            X+t
@@ -12,13 +12,21 @@ N:
     Cas=Abs, Genre=F, Nombre=Du :   X+b
 #
 V:
- - #1 accord:
+ 1: #accord en genre
     Type=VI, Genre-Abs=H :  X+h
     Type=VI, Genre-Abs=Nh : X+n
     Type=VT :               X+o
-#
- - #2 accord:
+
+ 2: #accord en nombre
     Type=VT, Nombre-Abs=Sg :    X+s
     Type=VT, Nombre-Abs=Du :    X+d
     Type=VT, Nombre-Abs=Pl :    X+p
 #
+ADJ:
+ 1:
+    Nombre=Sg : a+X
+    Nombre=Pl : e+X
+    Nombre=Du : i+X
+    Genre=M, Nombre=Sg : X+o
+    Genre=F, Nombre=Pl : X+a
+    Genre=A, Nombre=Du : X+e
