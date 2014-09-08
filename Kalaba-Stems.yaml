@@ -1,51 +1,156 @@
 N:
     M:
-        bet: garçon
-        rup: pompier
+        bet: 
+            - garçon
+            - garçons
+        rup: 
+            - pompier
+            - pompiers
         dil: Adil
         donis: Adonis
     F:
-        sot: fille
-        rum: infirmière
+        sot: 
+            - fille
+            - filles
+        rum: 
+            - infirmière
+            - infirmières
         zabel: Isabelle
         nes: Inès
     A:  
-        bal: autruche
-        rat: chat
+        bal: 
+            - autruche
+            - autruches
+        rat: 
+            - chat
+            - chats
         kat: souris
     I:
-        kab: table
-        non: oeuf
-        suk: coussin
-        ban: chambre
-        pok: lit
-        kol: thé
-        bol: café
+        kab: 
+            - table
+            - tables
+        non: 
+            - oeuf
+            - oeufs
+        suk: 
+            - coussin
+            - coussins
+        ban: 
+            - chambre
+            - chambres
+        pok: 
+            - lit
+            - lits
+        kol: 
+            - thé
+            - thés
+        bol: 
+            - café
+            - cafés
 ADJ:
-    nul: grand
-    big: petit
-    nor: blanc
-    lab: noir
-    gil: gros
+    nul: 
+        - grand
+        - grands
+        - grande
+        - grandes
+    big: 
+        - petit
+        - petits
+        - petite
+        - petites
+    nor: 
+        - blanc
+        - blancs
+        - blanche
+        - blanches
+    lab: 
+        - noir
+        - noirs
+        - noire
+        - noires
+    gil: 
+        - gros
+        - grosse
+        - grosses
 V: 
     VT:
-        bogot: manger
-        milit: boire
-        lamab: acheter
-        disak: supporter
+        bogot: 
+            - manger
+            - mange
+            - mangent
+            - mangeait
+            - mangeaient
+            - mangera
+            - mangeront
+        milit: 
+            - boire
+            - boit
+            - boivent
+            - buvait
+            - buvaient
+            - boira
+            - boiront
+        lamab: 
+            - acheter
+            - achète
+            - achètent
+            - achetait
+            - achetaient
+            - achètera
+            - achèteront
+        disak: 
+            - supporter
+            - supporte
+            - supportent
+            - supportait
+            - supportaient
+            - supportera
+            - supporteront
     VI:
-        topaz: dormir
-        fatig: tomber
-        balad: arriver
-
+        topaz: 
+            - dormir
+            - dort
+            - dorment
+            - dormait
+            - dormaient
+            - dormira
+            - dormiront
+        fatig: 
+            - tomber
+            - tombe
+            - tombent
+            - tombait
+            - tombaient
+            - tombera
+            - tomberont
+        balad: 
+            - arriver
+            - arrive
+            - arrivent
+            - arrivait
+            - arrivaient
+            - arrivera
+            - arriveront
 DET:
     DEF:
-        k: DEF
+        k: 
+        - DEF
+        - le
+        - la
+        - les
     IND:
-        l: IND
+        l: 
+            - IND
+            - un
+            - une
+            - des
     DEM:
-        b: DEM
-
+        b: 
+            - DEM
+            - ce
+            - cet
+            - cette
+            - ces
 PREP:
     sur: dans
     pik: sur
