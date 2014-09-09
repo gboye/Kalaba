@@ -1,289 +1,229 @@
-# -*- coding: utf-8 -*-
-# <nbformat>3.0</nbformat>
-
-# <headingcell level=1>
-
-# Partie 0. Préparation
-
-# <codecell>
-
+# coding: utf-8
+#import itertools
 import re
-import sys
-import codecs
 
-# <headingcell level=2>
+gloses={}
 
-# fichiers
-
-# <codecell>
-
-# ouvre le fichier de règles (Kalaba-Gloses.txt)
-try:
-    regles=codecs.open(sys.argv[1],"r", "utf-8")
-except IOError:
-    print ('le fichier "'+ sys.argv[1]+ '" ne peut pas être ouvert')
-    sys.exit()
-
-# ouvre le fichier du lexique (Kalaba-Stems.txt)
-try:
-    lexique=codecs.open(sys.argv[2],"r", "utf-8")
-except IOError:
-    print ('le fichier "'+ sys.argv[2]+ '" ne peut pas être ouvert')
-    sys.exit()
-    
-# ouvre le fichier des blocs (blocks.txt)
-try:
-    blocks_file=codecs.open(sys.argv[3],"r", "utf-8")
-except IOError:
-    print ('le fichier "'+ sys.argv[3]+ '" ne peut pas être ouvert')
-    sys.exit()
-
-# <codecell>
-
-#regles = !cat Kalaba-Gloses.txt
-
-# <codecell>
-
-#lexique = !cat ./Kalaba-Stems.txt
-
-# <codecell>
-
-#blocks_file = !cat ./blocks.txt
-
-# <headingcell level=2>
-
-# fonctions
-
-# <codecell>
-
-def merge_2_lists(liste1, liste2):
-    """
-    Fusionne deux listes. 
-    prend en argument deux listes
-    """
-    for l in range(1):
-        temp = []
-        for i in liste1:
-            for j in liste2:
-                temp.append(i+j)
-        return temp
-
-# <codecell>
-
-def merge_lists(liste):
-    """
-    Fusionne autant de listes qu'il y a de cas de figure prévus
-    prend en argument une liste de listes
-    utilise merge_2_lists()
-    Pour étendre la fonction, observer les deux premières boucles.
-    """
-    if len(liste) == 2:
-        listea = merge_2_lists(liste[0], liste[1])
-        return listea
-    elif len(liste) == 3:
-        listea = merge_2_lists(liste[0], liste[1])
-        listeb = merge_2_lists(listea, liste[2])
-        return listeb
-    elif len(liste) == 4:
-        listea = merge_2_lists(liste[0], liste[1])
-        listeb = merge_2_lists(listea, liste[2])
-        listec = merge_2_lists(listeb, liste[3])
-        return listec
-    elif len(liste) == 5:
-        listea = merge_2_lists(liste[0], liste[1])
-        listeb = merge_2_lists(listea, liste[2])
-        listec = merge_2_lists(listeb, liste[3])
-        listed = merge_2_lists(listec, liste[4])
-        return listed
+def depthDict(element):
+    max=0
+    if type(element)==type({}):
+        for k in element:
+            depth=depthDict(element[k])
+            if depth>max:
+                max=depth
+        return max+1
     else:
-        print("il y a trop de listes à fusionner.\nveuillez étendre la fonction merge_lists()")
+        return 0
 
-# <codecell>
+def modifierForme(forme,transformation):
+    m=re.match("^([^+]*)\+([^+]*)$",transformation)
+    if m:
+        if m.group(1)=="X":
+            suffixe=m.group(2)
+            prefixe=""
+        elif m.group(2)=="X":
+            prefixe=m.group(1)
+            suffixe=""
+    else:
+        m=re.match("^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
+        if m:
+            if m.group(2)=="X":
+                prefixe=m.group(1)
+                suffixe=m.group(3)
+    return prefixe+forme+suffixe
 
-def order(liste):
-    """
-    compte le nombre de traits (ajoute le tuple (nombre_de_traits, ligne) à ordered_tuples[] )
-    ordonne la liste en ordre descendant
-    renvoie la liste des lignes en ordre descendant
-    """
-    ordered_tuples = []
-    ordered = []
-    for l in liste:
-        splitted = len(l.split(", "))
-        ordered_tuples.append((splitted, l))
-    ordered_tuples.sort(reverse=True)
+class Paradigmes:
+    '''
+    information sur les cases flexionnelles par catégorie
+    '''
+    def __init__(self):
+        self.cases={}
+        self.categories=[]
+        
+    def addForme(self,cat,proprietes):
+        sigma=", ".join(proprietes)
+        cle={sigma:proprietes}
+        if not cat in self.categories:
+            self.categories.append(cat)
+        if not cat in self.cases:
+            self.cases[cat]=[]
+        if not cle in self.cases[cat]:
+            self.cases[cat].append(cle)
     
-    for o in ordered_tuples:
-        ordered.append(o[1])
-    return ordered
-
-# <headingcell level=1>
-
-# Partie 1 : générer les "commandes"
-
-# <headingcell level=2>
-
-# générer le paradigme vide
-
-# <rawcell>
-
-# pour chaque ligne dans paradigme:
-#     si la ligne n'est pas vide,:
-#         # gestion de la première ligne : catégorie grammaticale
-#         si il y a ":" dans la ligne, on met la catégorie dans une liste qu'on ajoute à lists[]
-#         # gestion des lignes du genre de "Nombre"
-#         si il y a ";" dans la ligne:
-#             on découpe la ligne sur les \t, puis sur les ;
-#             pour chaque côté du ; on découpe sur les . puis les , et on génère tous les cas de figure.
-#             on ajoute tout ça dans lists[]
-# 
-#             
-
-# <codecell>
-
-paradigme = []
-lists = []
-for r in regles:
-    r=r.strip()
-    # gestion de la première ligne : catégorie grammaticale
-    if r != "=":
-        if ":" in r:
-            temp_list = []
-            r = re.sub(":", "", r)
-            temp_list.append(r.strip())
-            lists.append(temp_list)
-        elif "\t" in r:
-            temp_list = []
-            split1 = r.split("\t")
-            split2 = split1[1].split(",")
-            for s in split2:
-                temp_list.append(", "+split1[0]+"="+s.strip())
-            lists.append(temp_list)
-    elif "=" in r:
-        paradigme.extend(merge_lists(lists)) 
-        lists = []  
-
-# <codecell>
-
-#for o in paradigme:
-#    print(o)
-
-# <headingcell level=2>
-
-# Générer le paradigme de chaque lexème
-
-# <markdowncell>
-
-# structure d'une commande : 
-# forme;cat-gram;attr;valeur
-
-# <codecell>
-
-lex = []
-cat_lex = ""
-temp_list = []
-traduction = {} # dictionnaire pour retrouver la traduction lors de la génération des formes fléchies
-for l in lexique:
-    l=l.strip()
-    # extraction de la catégorie grammaticale du des lexèmes
-    if l.startswith("# "):
-        cat_lex = re.sub("# ", "", l)
-        if len(temp_list) != 0:
-            lex.extend(temp_list)
-        temp_list = []
-    elif "," in l:
-        champs = l.split(",")
-        traduction[champs[1]]=champs[2]
-        for p in paradigme:
-            catgram = p.split(", ")
-            # si la categorie dans lexique[] correspond à celle dans paradigme[]
-            if catgram[0] == cat_lex:
-                for c in catgram:
-                    if "=" in c:
-                        trait = c.split("=")
-                        # si la valeur du trait que le lexème choisi (ex M,F,A,I pour un N)
-                        # est la valeur d'un des traits de la ligne, on ajoute phono+ligne dans lex[]
-                        if trait[1] == champs[0]:
-                            traits = " ".join(catgram)
-                            temp_list.append(champs[1]+", "+p)
-
-# <codecell>
-
-#for l in lex:
-#    print(l)
-
-# <headingcell level=1>
-
-# Partie 2 : Importer les blocks
-
-# <codecell>
-
-blocks = []
-lists = []
-cat_block = ""
-for b in blocks_file:
-    b=b.strip()
-    # gestion de la première ligne : catégorie grammaticale
-    if b != "=":
-        if ":" in b:
-            b = b.split("-")
-            b = b[0].strip()
-            cat_block = b
+    def getSigmas(self,classe):
+        sigmas=[]
+        if classe in hierarchieCF.categorie:
+            cat=hierarchieCF.categorie[classe]
+            filtre="%s=%s"%(hierarchieCF.getFeature(cat,classe),classe)
         else:
-            lists.append(b)
-    elif "=" in b: 
-        blocks.append((cat_block, order(lists)))
-        lists = []
+            cat=classe
+            filtre=""
+        if cat in self.cases:
+            for element in self.cases[cat]:
+                for cle in element:
+                    if filtre in cle:
+                        sigmas.append(cle)
+            return sigmas
+        else:
+            return [cat]
 
-# <codecell>
+paradigmes=Paradigmes()
 
-#for b in blocks:
-#    print(b)
+class HierarchieCF:
+    '''
+    hiérarchie des classes flexionnelles
+    '''
+    def __init__(self):
+        self.classes={}
+        self.categorie={}
+        self.trait={}
+        
+    def addCategory(self,category,classe):
+        if not category in self.classes:
+            self.classes[category]=[]
+        self.classes[category].append(classe)
+        self.categorie[classe]=category
+        for attribut in gloses[category]:
+            if set(gloses[category][attribut])==set(hierarchieCF.classes[category]):
+                for valeur in gloses[category][attribut]:
+                    hierarchieCF.addFeature(category,valeur,attribut)
+                    
+    def addFeature(self,category,classe,feature):
+        self.trait[category+"-"+classe]=feature
+        
+    def getFeature(self,category,classe):
+        cle=category+"-"+classe
+        if cle in self.trait:
+            return self.trait[category+"-"+classe]
+        else:
+            return "Catégorie"
+        
+    def getCategory(self,classe):
+        '''
+        donne la catégorie correspondant à une classe ou à une catégorie
+        '''
+        if classe in self.categorie:
+            return self.categorie[classe]
+        elif classe in self.classes:
+            return classe
+        else:
+            return classe
 
-# <headingcell level=1>
+hierarchieCF=HierarchieCF()
 
-# Partie 3 : générer les formes fléchies
+class Forme:
+    '''
+    sigma et forme fléchie
+    '''
+    def __init__(self,sigma,forme):
+        self.sigma=sigma
+        self.forme=forme
+        
+    def __repr__(self):
+        return "%s:%s"%(self.sigma,self.forme)
+    
+class Tableau:
+    '''
+    liste de sigmas
+    '''
+    def __init__(self,classe,stem):
+        self.cases=[]
+        self.stem=stem
+        categorie=hierarchieCF.getCategory(classe)
+        for case in paradigmes.getSigmas(classe):
+            forme=stem
+            derivations=regles.getRules(categorie,case)
+            if derivations:
+                for derivation in derivations:
+                    forme=modifierForme(forme,derivation)
+            flexion=Forme(case,forme)
+            self.cases.append(flexion)
+            
+    def __repr__(self):
+        listCases=[]
+        for case in self.cases:
+            listCases.append(str(case))
+        return self.stem+" : "+", ".join(listCases)
 
-# <codecell>
+class Lexeme:
+    '''
+    Formes fléchies d'un lexème suivant sa classe flexionnelle
+    '''
+    def __init__(self,stem,classe,nom):
+        self.stem=stem
+        self.classe=classe
+        self.nom=nom
+        self.paradigme=Tableau(classe,stem)
+        self.formes=[]
 
-output = []
-for l in lex:
-    modified = l.split(", ")
-    traits_lexeme = l.split(", ")[2:]
-    for b in blocks:
-        if l.split(", ")[1] == b[0]:
-            a = False # False = règle du block pas encore appliquée
-            for c in b[1]:
-                splitted = c.split(" > ")
-                ajout = splitted[1]
-                traits_block = splitted[0].split(", ")
-                if a == False and len(list(set(traits_block+traits_lexeme))) <= len(traits_lexeme) or len(list(set(traits_block+traits_lexeme))) <= len(traits_block):
-                    a = True
-                    modified[0] += ajout
-    form = modified[0]                             # forme fléchie
-    francais = traduction[l.split(", ")[0]]   # traduction en français
-    categ = modified[1]                            # catégorie grammaticale
-    traits_str = ", ".join(modified[2:])           # liste des traits joints par ", "
-    ### insérer ci-dessous la mise en page 
-    commande1 = "<A>"+form+"\t\t\t"+categ+" , "+traits_str+"</A>"
-    commande2 = "<B>\t\t"+francais+"\t"+categ+" , "+traits_str+"</B>\n"
-    ###
-    output.append(commande1)
-    output.append(commande2)
+    def __repr__(self):
+        return "%s, %s, %s, %s"%(self.stem,self.classe,self.nom,self.paradigme)
+    
+    def addForme(self,*formes):
+        for forme in formes:
+            self.formes.append(forme)
+        
+class Lexique:
+    '''
+    Lexique de Lexèmes
+    '''
+    def __init__(self):
+        self.lexemes={}
+    
+    def addLexeme(self,classe,stem,*formes):
+        nom=classe+"-"+stem
+        self.lexemes[nom]=Lexeme(stem,classe,formes[0])
+        self.lexemes[nom].addForme(*formes)
 
-# <codecell>
+lexique=Lexique()
 
-#for o in output:
-#    print(o)
+class Regles:
+    '''
+    Blocs de règles par catégorie
+    '''
+    def __init__(self):
+        self.blocs={}
+        
+    def addBlocs(self,category,blocs):
+        if not category in self.blocs:
+            self.blocs[category]=blocs
+            
+    def getRules(self,category,case):
+        if category in self.blocs:
+            rules=[]
+            sortBlocs=sorted(self.blocs[category],key=int)
+            for num in sortBlocs:
+                sortSigmas=sorted(self.blocs[category][num],key=lambda x: len(x.split("=")),reverse=True)
+                for sigma in sortSigmas:
+                    traits=sigma.split(",")
+                    sigmaCase=True
+                    for trait in traits:
+                        sigmaCase=sigmaCase and trait in case
+                    if sigmaCase:
+                        rules.append(self.blocs[category][num][sigma])
+                        break
+            return rules
+        else:
+            return []
 
-# <codecell>
+regles=Regles()
 
-# écrit le paradigme fléchi dans un fichier
-with open("paradigme_fléchi.txt", "a") as f:
-    for o in output:
-        f.write(o)
-        f.write("\n")
-
-# <codecell>
-
-
+def analyserStems(niveau):
+    depthNiveau=depthDict(niveau)
+    if depthNiveau>1:
+        for element1 in niveau:
+            depthElement=depthDict(niveau[element1])
+            if depthElement>=2:
+                for element2 in niveau[element1]:
+                    hierarchieCF.addCategory(element1,element2)
+                analyserStems(niveau[element1])
+            else:
+                for forme in niveau[element1]:
+                    if isinstance(niveau[element1][forme],str):
+                        lexique.addLexeme(element1,forme,niveau[element1][forme])
+                    elif isinstance(niveau[element1][forme],unicode):
+                        lexique.addLexeme(element1,forme,niveau[element1][forme].encode('utf8'))
+                    elif isinstance(niveau[element1][forme],list):
+                        lexique.addLexeme(element1,forme,*niveau[element1][forme])
+                    else:
+                        print "PB",element1,forme,niveau[element1][forme]
