@@ -1,24 +1,28 @@
 N - 1 accord du genre:
-Cas=Erg, Genre=M > o
-Cas=Abs, Genre=M > e
+Genre=M > o
 Genre=F > a
-Cas=Abs, Genre=A > i
 =
 N - 2 accord du nombre:
-Cas=Erg > s
-Cas=Abs, Nombre=Du > d
-Cas=Erg, Nombre=Pl > t
-Cas=Erg, Nombre=Sg > x
-Cas=Abs, Genre=F, Nombre=Du > b
+Nombre=Pl > s
 =
 V - 1 accord:
-Type=VI, Genre-Abs=H > h
-Type=VI, Genre-Abs=Nh > n
-Type=VT > o
+Personne-Nombre=2SG > s
+Personne-Nombre=1PL > mos
+Personne-Nombre=2PL > js
+Personne-Nombre=3PL > n
 =
-V - 1 accord:
-Type=VT, Nombre-Abs=Sg > s
-Type=VT, Nombre-Abs=Du > d
-Type=VT, Nombre-Abs=Pl > p
+Adj - 1 accord du genre:
+Genre=M > o
+Genre=F > a
+=
+Adj - 2 accord du nombre:
+Nombre=Pl > s
+=
+Det - 1 accord du genre:
+Genre=M > o
+Genre=F > a
+=
+Det - 2 accord du nombre:
+Nombre=Pl > s
 =
 

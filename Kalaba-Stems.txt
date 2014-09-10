@@ -3,54 +3,31 @@
 # N
 #
 ##########
-M,bet,garçon
-M,rup,pompier
-M,dil,Adil
-M,donis,Adonis
-F,sot,fille
-F,rum,infirmière
-F,zabel,Isabelle
-F,nes,Inès
-A,bal,autruche
-A,rat,chat
-A,kat,souris
-I,kab,table
-I,non,oeuf
-I,suk,coussin
-I,ban,chambre
-I,pok,lit
-I,kol,thé
-I,bol,café
+M,tSik,garçon,garçons
+F,tSik,fille,filles
 ##########
 #
 # Adj
 #
 ##########
-ADJ,nul,grand
-ADJ,big,petit
-ADJ,nor,blanc
-ADJ,lab,noir
-ADJ,gil,gros
+ADJ,simpatik,sympa,sympas
+ADJ,brab,brave,braves
+ADJ,blank,blanc,blanche,blancs,blanches
 ##########
 #
 # V
 #
 ##########
-VT,bogot,manger
-VT,milit,boire
-VT,lamab,acheter
-VT,disak,supporter
-VI,topaz,dormir
-VI,fatig,tomber
-VI,balad,arriver
+V,kome,manger
+V,tSarla,parler
 ##########
 #
 # Det
 #
 ##########
-DEF,k,DEF
-IND,l,IND
-DEM,b,DEM
+DEF,l,DEF,le,la,les,l
+IND,un,IND,un,une,des
+DEM,est,DEM,ce,cet,cette,ces,cettes
 ##########
 #
 # Prep
