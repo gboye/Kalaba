@@ -1,0 +1,63 @@
+##########
+#
+# N
+#
+##########
+M,bet,garçon
+M,rup,pompier
+M,dil,Adil
+M,donis,Adonis
+F,sot,fille
+F,rum,infirmière
+F,zabel,Isabelle
+F,nes,Inès
+A,bal,autruche
+A,rat,chat
+A,kat,souris
+I,kab,table
+I,non,oeuf
+I,suk,coussin
+I,ban,chambre
+I,pok,lit
+I,kol,thé
+I,bol,café
+##########
+#
+# Adj
+#
+##########
+ADJ,nul,grand
+ADJ,big,petit
+ADJ,nor,blanc
+ADJ,lab,noir
+ADJ,gil,gros
+##########
+#
+# V
+#
+##########
+VT,bogot,manger
+VT,milit,boire
+VT,lamab,acheter
+VT,disak,supporter
+VI,topaz,dormir
+VI,fatig,tomber
+VI,balad,arriver
+##########
+#
+# Det
+#
+##########
+DEF,k,DEF
+IND,l,IND
+DEM,b,DEM
+##########
+#
+# Prep
+#
+##########
+PREP,sur,dans
+PREP,pik,sur
+PREP,dem,avec
+PREP,man,de
+PREP,zon,sous

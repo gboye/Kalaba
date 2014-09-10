@@ -1,19 +1,18 @@
 N:
-Genre	M, F, A, I
-Nombre	Sg, Du, Pl
-Cas	Erg, Abs, Nu
+Genre	M, F
+Nombre	Sg, Pl
 =
 V:
-Type	VI, VT
-Genre-Abs	H, Nh
-Nombre-Abs	Sg, Du, Pl
+Type	V
+Personne-Nombre	1SG, 2SG, 3SG, 1PL, 2PL, 3PL
 =
 Det:
 Type	DEF, IND, DEM
-Nombre	Sg, Du, Pl
+Genre	M, F
+Nombre	Sg, Pl
 =
 Adj:
 Type	ADJ
-Genre	M, F, A, I
-Nombre	Sg, Du, Pl
+Genre	M, F
+Nombre	Sg, Pl
 =

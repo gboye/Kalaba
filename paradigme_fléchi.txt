@@ -817,3 +817,822 @@
 <A>b			Det , Type=DEM, Nombre=Pl</A>
 <B>		DEM	Det , Type=DEM, Nombre=Pl</B>
 
+<A>betox			N , Genre=M, Nombre=Sg, Cas=Erg</A>
+<B>		garçon	N , Genre=M, Nombre=Sg, Cas=Erg</B>
+
+<A>bete			N , Genre=M, Nombre=Sg, Cas=Abs</A>
+<B>		garçon	N , Genre=M, Nombre=Sg, Cas=Abs</B>
+
+<A>bet			N , Genre=M, Nombre=Sg, Cas=Nu</A>
+<B>		garçon	N , Genre=M, Nombre=Sg, Cas=Nu</B>
+
+<A>betos			N , Genre=M, Nombre=Du, Cas=Erg</A>
+<B>		garçon	N , Genre=M, Nombre=Du, Cas=Erg</B>
+
+<A>beted			N , Genre=M, Nombre=Du, Cas=Abs</A>
+<B>		garçon	N , Genre=M, Nombre=Du, Cas=Abs</B>
+
+<A>bet			N , Genre=M, Nombre=Du, Cas=Nu</A>
+<B>		garçon	N , Genre=M, Nombre=Du, Cas=Nu</B>
+
+<A>betot			N , Genre=M, Nombre=Pl, Cas=Erg</A>
+<B>		garçon	N , Genre=M, Nombre=Pl, Cas=Erg</B>
+
+<A>bete			N , Genre=M, Nombre=Pl, Cas=Abs</A>
+<B>		garçon	N , Genre=M, Nombre=Pl, Cas=Abs</B>
+
+<A>bet			N , Genre=M, Nombre=Pl, Cas=Nu</A>
+<B>		garçon	N , Genre=M, Nombre=Pl, Cas=Nu</B>
+
+<A>rupox			N , Genre=M, Nombre=Sg, Cas=Erg</A>
+<B>		pompier	N , Genre=M, Nombre=Sg, Cas=Erg</B>
+
+<A>rupe			N , Genre=M, Nombre=Sg, Cas=Abs</A>
+<B>		pompier	N , Genre=M, Nombre=Sg, Cas=Abs</B>
+
+<A>rup			N , Genre=M, Nombre=Sg, Cas=Nu</A>
+<B>		pompier	N , Genre=M, Nombre=Sg, Cas=Nu</B>
+
+<A>rupos			N , Genre=M, Nombre=Du, Cas=Erg</A>
+<B>		pompier	N , Genre=M, Nombre=Du, Cas=Erg</B>
+
+<A>ruped			N , Genre=M, Nombre=Du, Cas=Abs</A>
+<B>		pompier	N , Genre=M, Nombre=Du, Cas=Abs</B>
+
+<A>rup			N , Genre=M, Nombre=Du, Cas=Nu</A>
+<B>		pompier	N , Genre=M, Nombre=Du, Cas=Nu</B>
+
+<A>rupot			N , Genre=M, Nombre=Pl, Cas=Erg</A>
+<B>		pompier	N , Genre=M, Nombre=Pl, Cas=Erg</B>
+
+<A>rupe			N , Genre=M, Nombre=Pl, Cas=Abs</A>
+<B>		pompier	N , Genre=M, Nombre=Pl, Cas=Abs</B>
+
+<A>rup			N , Genre=M, Nombre=Pl, Cas=Nu</A>
+<B>		pompier	N , Genre=M, Nombre=Pl, Cas=Nu</B>
+
+<A>dilox			N , Genre=M, Nombre=Sg, Cas=Erg</A>
+<B>		Adil	N , Genre=M, Nombre=Sg, Cas=Erg</B>
+
+<A>dile			N , Genre=M, Nombre=Sg, Cas=Abs</A>
+<B>		Adil	N , Genre=M, Nombre=Sg, Cas=Abs</B>
+
+<A>dil			N , Genre=M, Nombre=Sg, Cas=Nu</A>
+<B>		Adil	N , Genre=M, Nombre=Sg, Cas=Nu</B>
+
+<A>dilos			N , Genre=M, Nombre=Du, Cas=Erg</A>
+<B>		Adil	N , Genre=M, Nombre=Du, Cas=Erg</B>
+
+<A>diled			N , Genre=M, Nombre=Du, Cas=Abs</A>
+<B>		Adil	N , Genre=M, Nombre=Du, Cas=Abs</B>
+
+<A>dil			N , Genre=M, Nombre=Du, Cas=Nu</A>
+<B>		Adil	N , Genre=M, Nombre=Du, Cas=Nu</B>
+
+<A>dilot			N , Genre=M, Nombre=Pl, Cas=Erg</A>
+<B>		Adil	N , Genre=M, Nombre=Pl, Cas=Erg</B>
+
+<A>dile			N , Genre=M, Nombre=Pl, Cas=Abs</A>
+<B>		Adil	N , Genre=M, Nombre=Pl, Cas=Abs</B>
+
+<A>dil			N , Genre=M, Nombre=Pl, Cas=Nu</A>
+<B>		Adil	N , Genre=M, Nombre=Pl, Cas=Nu</B>
+
+<A>donisox			N , Genre=M, Nombre=Sg, Cas=Erg</A>
+<B>		Adonis	N , Genre=M, Nombre=Sg, Cas=Erg</B>
+
+<A>donise			N , Genre=M, Nombre=Sg, Cas=Abs</A>
+<B>		Adonis	N , Genre=M, Nombre=Sg, Cas=Abs</B>
+
+<A>donis			N , Genre=M, Nombre=Sg, Cas=Nu</A>
+<B>		Adonis	N , Genre=M, Nombre=Sg, Cas=Nu</B>
+
+<A>donisos			N , Genre=M, Nombre=Du, Cas=Erg</A>
+<B>		Adonis	N , Genre=M, Nombre=Du, Cas=Erg</B>
+
+<A>donised			N , Genre=M, Nombre=Du, Cas=Abs</A>
+<B>		Adonis	N , Genre=M, Nombre=Du, Cas=Abs</B>
+
+<A>donis			N , Genre=M, Nombre=Du, Cas=Nu</A>
+<B>		Adonis	N , Genre=M, Nombre=Du, Cas=Nu</B>
+
+<A>donisot			N , Genre=M, Nombre=Pl, Cas=Erg</A>
+<B>		Adonis	N , Genre=M, Nombre=Pl, Cas=Erg</B>
+
+<A>donise			N , Genre=M, Nombre=Pl, Cas=Abs</A>
+<B>		Adonis	N , Genre=M, Nombre=Pl, Cas=Abs</B>
+
+<A>donis			N , Genre=M, Nombre=Pl, Cas=Nu</A>
+<B>		Adonis	N , Genre=M, Nombre=Pl, Cas=Nu</B>
+
+<A>sotax			N , Genre=F, Nombre=Sg, Cas=Erg</A>
+<B>		fille	N , Genre=F, Nombre=Sg, Cas=Erg</B>
+
+<A>sota			N , Genre=F, Nombre=Sg, Cas=Abs</A>
+<B>		fille	N , Genre=F, Nombre=Sg, Cas=Abs</B>
+
+<A>sota			N , Genre=F, Nombre=Sg, Cas=Nu</A>
+<B>		fille	N , Genre=F, Nombre=Sg, Cas=Nu</B>
+
+<A>sotas			N , Genre=F, Nombre=Du, Cas=Erg</A>
+<B>		fille	N , Genre=F, Nombre=Du, Cas=Erg</B>
+
+<A>sotab			N , Genre=F, Nombre=Du, Cas=Abs</A>
+<B>		fille	N , Genre=F, Nombre=Du, Cas=Abs</B>
+
+<A>sota			N , Genre=F, Nombre=Du, Cas=Nu</A>
+<B>		fille	N , Genre=F, Nombre=Du, Cas=Nu</B>
+
+<A>sotat			N , Genre=F, Nombre=Pl, Cas=Erg</A>
+<B>		fille	N , Genre=F, Nombre=Pl, Cas=Erg</B>
+
+<A>sota			N , Genre=F, Nombre=Pl, Cas=Abs</A>
+<B>		fille	N , Genre=F, Nombre=Pl, Cas=Abs</B>
+
+<A>sota			N , Genre=F, Nombre=Pl, Cas=Nu</A>
+<B>		fille	N , Genre=F, Nombre=Pl, Cas=Nu</B>
+
+<A>rumax			N , Genre=F, Nombre=Sg, Cas=Erg</A>
+<B>		infirmière	N , Genre=F, Nombre=Sg, Cas=Erg</B>
+
+<A>ruma			N , Genre=F, Nombre=Sg, Cas=Abs</A>
+<B>		infirmière	N , Genre=F, Nombre=Sg, Cas=Abs</B>
+
+<A>ruma			N , Genre=F, Nombre=Sg, Cas=Nu</A>
+<B>		infirmière	N , Genre=F, Nombre=Sg, Cas=Nu</B>
+
+<A>rumas			N , Genre=F, Nombre=Du, Cas=Erg</A>
+<B>		infirmière	N , Genre=F, Nombre=Du, Cas=Erg</B>
+
+<A>rumab			N , Genre=F, Nombre=Du, Cas=Abs</A>
+<B>		infirmière	N , Genre=F, Nombre=Du, Cas=Abs</B>
+
+<A>ruma			N , Genre=F, Nombre=Du, Cas=Nu</A>
+<B>		infirmière	N , Genre=F, Nombre=Du, Cas=Nu</B>
+
+<A>rumat			N , Genre=F, Nombre=Pl, Cas=Erg</A>
+<B>		infirmière	N , Genre=F, Nombre=Pl, Cas=Erg</B>
+
+<A>ruma			N , Genre=F, Nombre=Pl, Cas=Abs</A>
+<B>		infirmière	N , Genre=F, Nombre=Pl, Cas=Abs</B>
+
+<A>ruma			N , Genre=F, Nombre=Pl, Cas=Nu</A>
+<B>		infirmière	N , Genre=F, Nombre=Pl, Cas=Nu</B>
+
+<A>zabelax			N , Genre=F, Nombre=Sg, Cas=Erg</A>
+<B>		Isabelle	N , Genre=F, Nombre=Sg, Cas=Erg</B>
+
+<A>zabela			N , Genre=F, Nombre=Sg, Cas=Abs</A>
+<B>		Isabelle	N , Genre=F, Nombre=Sg, Cas=Abs</B>
+
+<A>zabela			N , Genre=F, Nombre=Sg, Cas=Nu</A>
+<B>		Isabelle	N , Genre=F, Nombre=Sg, Cas=Nu</B>
+
+<A>zabelas			N , Genre=F, Nombre=Du, Cas=Erg</A>
+<B>		Isabelle	N , Genre=F, Nombre=Du, Cas=Erg</B>
+
+<A>zabelab			N , Genre=F, Nombre=Du, Cas=Abs</A>
+<B>		Isabelle	N , Genre=F, Nombre=Du, Cas=Abs</B>
+
+<A>zabela			N , Genre=F, Nombre=Du, Cas=Nu</A>
+<B>		Isabelle	N , Genre=F, Nombre=Du, Cas=Nu</B>
+
+<A>zabelat			N , Genre=F, Nombre=Pl, Cas=Erg</A>
+<B>		Isabelle	N , Genre=F, Nombre=Pl, Cas=Erg</B>
+
+<A>zabela			N , Genre=F, Nombre=Pl, Cas=Abs</A>
+<B>		Isabelle	N , Genre=F, Nombre=Pl, Cas=Abs</B>
+
+<A>zabela			N , Genre=F, Nombre=Pl, Cas=Nu</A>
+<B>		Isabelle	N , Genre=F, Nombre=Pl, Cas=Nu</B>
+
+<A>nesax			N , Genre=F, Nombre=Sg, Cas=Erg</A>
+<B>		Inès	N , Genre=F, Nombre=Sg, Cas=Erg</B>
+
+<A>nesa			N , Genre=F, Nombre=Sg, Cas=Abs</A>
+<B>		Inès	N , Genre=F, Nombre=Sg, Cas=Abs</B>
+
+<A>nesa			N , Genre=F, Nombre=Sg, Cas=Nu</A>
+<B>		Inès	N , Genre=F, Nombre=Sg, Cas=Nu</B>
+
+<A>nesas			N , Genre=F, Nombre=Du, Cas=Erg</A>
+<B>		Inès	N , Genre=F, Nombre=Du, Cas=Erg</B>
+
+<A>nesab			N , Genre=F, Nombre=Du, Cas=Abs</A>
+<B>		Inès	N , Genre=F, Nombre=Du, Cas=Abs</B>
+
+<A>nesa			N , Genre=F, Nombre=Du, Cas=Nu</A>
+<B>		Inès	N , Genre=F, Nombre=Du, Cas=Nu</B>
+
+<A>nesat			N , Genre=F, Nombre=Pl, Cas=Erg</A>
+<B>		Inès	N , Genre=F, Nombre=Pl, Cas=Erg</B>
+
+<A>nesa			N , Genre=F, Nombre=Pl, Cas=Abs</A>
+<B>		Inès	N , Genre=F, Nombre=Pl, Cas=Abs</B>
+
+<A>nesa			N , Genre=F, Nombre=Pl, Cas=Nu</A>
+<B>		Inès	N , Genre=F, Nombre=Pl, Cas=Nu</B>
+
+<A>balx			N , Genre=A, Nombre=Sg, Cas=Erg</A>
+<B>		autruche	N , Genre=A, Nombre=Sg, Cas=Erg</B>
+
+<A>bali			N , Genre=A, Nombre=Sg, Cas=Abs</A>
+<B>		autruche	N , Genre=A, Nombre=Sg, Cas=Abs</B>
+
+<A>bal			N , Genre=A, Nombre=Sg, Cas=Nu</A>
+<B>		autruche	N , Genre=A, Nombre=Sg, Cas=Nu</B>
+
+<A>bals			N , Genre=A, Nombre=Du, Cas=Erg</A>
+<B>		autruche	N , Genre=A, Nombre=Du, Cas=Erg</B>
+
+<A>balid			N , Genre=A, Nombre=Du, Cas=Abs</A>
+<B>		autruche	N , Genre=A, Nombre=Du, Cas=Abs</B>
+
+<A>bal			N , Genre=A, Nombre=Du, Cas=Nu</A>
+<B>		autruche	N , Genre=A, Nombre=Du, Cas=Nu</B>
+
+<A>balt			N , Genre=A, Nombre=Pl, Cas=Erg</A>
+<B>		autruche	N , Genre=A, Nombre=Pl, Cas=Erg</B>
+
+<A>bali			N , Genre=A, Nombre=Pl, Cas=Abs</A>
+<B>		autruche	N , Genre=A, Nombre=Pl, Cas=Abs</B>
+
+<A>bal			N , Genre=A, Nombre=Pl, Cas=Nu</A>
+<B>		autruche	N , Genre=A, Nombre=Pl, Cas=Nu</B>
+
+<A>ratx			N , Genre=A, Nombre=Sg, Cas=Erg</A>
+<B>		chat	N , Genre=A, Nombre=Sg, Cas=Erg</B>
+
+<A>rati			N , Genre=A, Nombre=Sg, Cas=Abs</A>
+<B>		chat	N , Genre=A, Nombre=Sg, Cas=Abs</B>
+
+<A>rat			N , Genre=A, Nombre=Sg, Cas=Nu</A>
+<B>		chat	N , Genre=A, Nombre=Sg, Cas=Nu</B>
+
+<A>rats			N , Genre=A, Nombre=Du, Cas=Erg</A>
+<B>		chat	N , Genre=A, Nombre=Du, Cas=Erg</B>
+
+<A>ratid			N , Genre=A, Nombre=Du, Cas=Abs</A>
+<B>		chat	N , Genre=A, Nombre=Du, Cas=Abs</B>
+
+<A>rat			N , Genre=A, Nombre=Du, Cas=Nu</A>
+<B>		chat	N , Genre=A, Nombre=Du, Cas=Nu</B>
+
+<A>ratt			N , Genre=A, Nombre=Pl, Cas=Erg</A>
+<B>		chat	N , Genre=A, Nombre=Pl, Cas=Erg</B>
+
+<A>rati			N , Genre=A, Nombre=Pl, Cas=Abs</A>
+<B>		chat	N , Genre=A, Nombre=Pl, Cas=Abs</B>
+
+<A>rat			N , Genre=A, Nombre=Pl, Cas=Nu</A>
+<B>		chat	N , Genre=A, Nombre=Pl, Cas=Nu</B>
+
+<A>katx			N , Genre=A, Nombre=Sg, Cas=Erg</A>
+<B>		souris	N , Genre=A, Nombre=Sg, Cas=Erg</B>
+
+<A>kati			N , Genre=A, Nombre=Sg, Cas=Abs</A>
+<B>		souris	N , Genre=A, Nombre=Sg, Cas=Abs</B>
+
+<A>kat			N , Genre=A, Nombre=Sg, Cas=Nu</A>
+<B>		souris	N , Genre=A, Nombre=Sg, Cas=Nu</B>
+
+<A>kats			N , Genre=A, Nombre=Du, Cas=Erg</A>
+<B>		souris	N , Genre=A, Nombre=Du, Cas=Erg</B>
+
+<A>katid			N , Genre=A, Nombre=Du, Cas=Abs</A>
+<B>		souris	N , Genre=A, Nombre=Du, Cas=Abs</B>
+
+<A>kat			N , Genre=A, Nombre=Du, Cas=Nu</A>
+<B>		souris	N , Genre=A, Nombre=Du, Cas=Nu</B>
+
+<A>katt			N , Genre=A, Nombre=Pl, Cas=Erg</A>
+<B>		souris	N , Genre=A, Nombre=Pl, Cas=Erg</B>
+
+<A>kati			N , Genre=A, Nombre=Pl, Cas=Abs</A>
+<B>		souris	N , Genre=A, Nombre=Pl, Cas=Abs</B>
+
+<A>kat			N , Genre=A, Nombre=Pl, Cas=Nu</A>
+<B>		souris	N , Genre=A, Nombre=Pl, Cas=Nu</B>
+
+<A>kabx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		table	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>kab			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		table	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>kab			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		table	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>kabs			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		table	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>kabd			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		table	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>kab			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		table	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>kabt			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		table	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>kab			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		table	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>kab			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		table	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>nonx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		oeuf	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>non			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		oeuf	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>non			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		oeuf	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>nons			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		oeuf	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>nond			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		oeuf	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>non			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		oeuf	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>nont			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		oeuf	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>non			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		oeuf	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>non			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		oeuf	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>sukx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		coussin	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>suk			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		coussin	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>suk			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		coussin	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>suks			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		coussin	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>sukd			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		coussin	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>suk			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		coussin	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>sukt			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		coussin	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>suk			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		coussin	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>suk			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		coussin	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>banx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		chambre	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>ban			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		chambre	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>ban			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		chambre	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>bans			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		chambre	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>band			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		chambre	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>ban			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		chambre	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>bant			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		chambre	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>ban			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		chambre	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>ban			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		chambre	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>pokx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		lit	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>pok			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		lit	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>pok			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		lit	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>poks			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		lit	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>pokd			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		lit	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>pok			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		lit	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>pokt			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		lit	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>pok			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		lit	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>pok			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		lit	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>kolx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		thé	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>kol			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		thé	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>kol			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		thé	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>kols			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		thé	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>kold			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		thé	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>kol			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		thé	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>kolt			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		thé	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>kol			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		thé	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>kol			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		thé	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>bolx			N , Genre=I, Nombre=Sg, Cas=Erg</A>
+<B>		café	N , Genre=I, Nombre=Sg, Cas=Erg</B>
+
+<A>bol			N , Genre=I, Nombre=Sg, Cas=Abs</A>
+<B>		café	N , Genre=I, Nombre=Sg, Cas=Abs</B>
+
+<A>bol			N , Genre=I, Nombre=Sg, Cas=Nu</A>
+<B>		café	N , Genre=I, Nombre=Sg, Cas=Nu</B>
+
+<A>bols			N , Genre=I, Nombre=Du, Cas=Erg</A>
+<B>		café	N , Genre=I, Nombre=Du, Cas=Erg</B>
+
+<A>bold			N , Genre=I, Nombre=Du, Cas=Abs</A>
+<B>		café	N , Genre=I, Nombre=Du, Cas=Abs</B>
+
+<A>bol			N , Genre=I, Nombre=Du, Cas=Nu</A>
+<B>		café	N , Genre=I, Nombre=Du, Cas=Nu</B>
+
+<A>bolt			N , Genre=I, Nombre=Pl, Cas=Erg</A>
+<B>		café	N , Genre=I, Nombre=Pl, Cas=Erg</B>
+
+<A>bol			N , Genre=I, Nombre=Pl, Cas=Abs</A>
+<B>		café	N , Genre=I, Nombre=Pl, Cas=Abs</B>
+
+<A>bol			N , Genre=I, Nombre=Pl, Cas=Nu</A>
+<B>		café	N , Genre=I, Nombre=Pl, Cas=Nu</B>
+
+<A>nul			Adj , Type=ADJ, Genre=M, Nombre=Sg</A>
+<B>		grand	Adj , Type=ADJ, Genre=M, Nombre=Sg</B>
+
+<A>nul			Adj , Type=ADJ, Genre=M, Nombre=Du</A>
+<B>		grand	Adj , Type=ADJ, Genre=M, Nombre=Du</B>
+
+<A>nul			Adj , Type=ADJ, Genre=M, Nombre=Pl</A>
+<B>		grand	Adj , Type=ADJ, Genre=M, Nombre=Pl</B>
+
+<A>nul			Adj , Type=ADJ, Genre=F, Nombre=Sg</A>
+<B>		grand	Adj , Type=ADJ, Genre=F, Nombre=Sg</B>
+
+<A>nul			Adj , Type=ADJ, Genre=F, Nombre=Du</A>
+<B>		grand	Adj , Type=ADJ, Genre=F, Nombre=Du</B>
+
+<A>nul			Adj , Type=ADJ, Genre=F, Nombre=Pl</A>
+<B>		grand	Adj , Type=ADJ, Genre=F, Nombre=Pl</B>
+
+<A>nul			Adj , Type=ADJ, Genre=A, Nombre=Sg</A>
+<B>		grand	Adj , Type=ADJ, Genre=A, Nombre=Sg</B>
+
+<A>nul			Adj , Type=ADJ, Genre=A, Nombre=Du</A>
+<B>		grand	Adj , Type=ADJ, Genre=A, Nombre=Du</B>
+
+<A>nul			Adj , Type=ADJ, Genre=A, Nombre=Pl</A>
+<B>		grand	Adj , Type=ADJ, Genre=A, Nombre=Pl</B>
+
+<A>nul			Adj , Type=ADJ, Genre=I, Nombre=Sg</A>
+<B>		grand	Adj , Type=ADJ, Genre=I, Nombre=Sg</B>
+
+<A>nul			Adj , Type=ADJ, Genre=I, Nombre=Du</A>
+<B>		grand	Adj , Type=ADJ, Genre=I, Nombre=Du</B>
+
+<A>nul			Adj , Type=ADJ, Genre=I, Nombre=Pl</A>
+<B>		grand	Adj , Type=ADJ, Genre=I, Nombre=Pl</B>
+
+<A>big			Adj , Type=ADJ, Genre=M, Nombre=Sg</A>
+<B>		petit	Adj , Type=ADJ, Genre=M, Nombre=Sg</B>
+
+<A>big			Adj , Type=ADJ, Genre=M, Nombre=Du</A>
+<B>		petit	Adj , Type=ADJ, Genre=M, Nombre=Du</B>
+
+<A>big			Adj , Type=ADJ, Genre=M, Nombre=Pl</A>
+<B>		petit	Adj , Type=ADJ, Genre=M, Nombre=Pl</B>
+
+<A>big			Adj , Type=ADJ, Genre=F, Nombre=Sg</A>
+<B>		petit	Adj , Type=ADJ, Genre=F, Nombre=Sg</B>
+
+<A>big			Adj , Type=ADJ, Genre=F, Nombre=Du</A>
+<B>		petit	Adj , Type=ADJ, Genre=F, Nombre=Du</B>
+
+<A>big			Adj , Type=ADJ, Genre=F, Nombre=Pl</A>
+<B>		petit	Adj , Type=ADJ, Genre=F, Nombre=Pl</B>
+
+<A>big			Adj , Type=ADJ, Genre=A, Nombre=Sg</A>
+<B>		petit	Adj , Type=ADJ, Genre=A, Nombre=Sg</B>
+
+<A>big			Adj , Type=ADJ, Genre=A, Nombre=Du</A>
+<B>		petit	Adj , Type=ADJ, Genre=A, Nombre=Du</B>
+
+<A>big			Adj , Type=ADJ, Genre=A, Nombre=Pl</A>
+<B>		petit	Adj , Type=ADJ, Genre=A, Nombre=Pl</B>
+
+<A>big			Adj , Type=ADJ, Genre=I, Nombre=Sg</A>
+<B>		petit	Adj , Type=ADJ, Genre=I, Nombre=Sg</B>
+
+<A>big			Adj , Type=ADJ, Genre=I, Nombre=Du</A>
+<B>		petit	Adj , Type=ADJ, Genre=I, Nombre=Du</B>
+
+<A>big			Adj , Type=ADJ, Genre=I, Nombre=Pl</A>
+<B>		petit	Adj , Type=ADJ, Genre=I, Nombre=Pl</B>
+
+<A>nor			Adj , Type=ADJ, Genre=M, Nombre=Sg</A>
+<B>		blanc	Adj , Type=ADJ, Genre=M, Nombre=Sg</B>
+
+<A>nor			Adj , Type=ADJ, Genre=M, Nombre=Du</A>
+<B>		blanc	Adj , Type=ADJ, Genre=M, Nombre=Du</B>
+
+<A>nor			Adj , Type=ADJ, Genre=M, Nombre=Pl</A>
+<B>		blanc	Adj , Type=ADJ, Genre=M, Nombre=Pl</B>
+
+<A>nor			Adj , Type=ADJ, Genre=F, Nombre=Sg</A>
+<B>		blanc	Adj , Type=ADJ, Genre=F, Nombre=Sg</B>
+
+<A>nor			Adj , Type=ADJ, Genre=F, Nombre=Du</A>
+<B>		blanc	Adj , Type=ADJ, Genre=F, Nombre=Du</B>
+
+<A>nor			Adj , Type=ADJ, Genre=F, Nombre=Pl</A>
+<B>		blanc	Adj , Type=ADJ, Genre=F, Nombre=Pl</B>
+
+<A>nor			Adj , Type=ADJ, Genre=A, Nombre=Sg</A>
+<B>		blanc	Adj , Type=ADJ, Genre=A, Nombre=Sg</B>
+
+<A>nor			Adj , Type=ADJ, Genre=A, Nombre=Du</A>
+<B>		blanc	Adj , Type=ADJ, Genre=A, Nombre=Du</B>
+
+<A>nor			Adj , Type=ADJ, Genre=A, Nombre=Pl</A>
+<B>		blanc	Adj , Type=ADJ, Genre=A, Nombre=Pl</B>
+
+<A>nor			Adj , Type=ADJ, Genre=I, Nombre=Sg</A>
+<B>		blanc	Adj , Type=ADJ, Genre=I, Nombre=Sg</B>
+
+<A>nor			Adj , Type=ADJ, Genre=I, Nombre=Du</A>
+<B>		blanc	Adj , Type=ADJ, Genre=I, Nombre=Du</B>
+
+<A>nor			Adj , Type=ADJ, Genre=I, Nombre=Pl</A>
+<B>		blanc	Adj , Type=ADJ, Genre=I, Nombre=Pl</B>
+
+<A>lab			Adj , Type=ADJ, Genre=M, Nombre=Sg</A>
+<B>		noir	Adj , Type=ADJ, Genre=M, Nombre=Sg</B>
+
+<A>lab			Adj , Type=ADJ, Genre=M, Nombre=Du</A>
+<B>		noir	Adj , Type=ADJ, Genre=M, Nombre=Du</B>
+
+<A>lab			Adj , Type=ADJ, Genre=M, Nombre=Pl</A>
+<B>		noir	Adj , Type=ADJ, Genre=M, Nombre=Pl</B>
+
+<A>lab			Adj , Type=ADJ, Genre=F, Nombre=Sg</A>
+<B>		noir	Adj , Type=ADJ, Genre=F, Nombre=Sg</B>
+
+<A>lab			Adj , Type=ADJ, Genre=F, Nombre=Du</A>
+<B>		noir	Adj , Type=ADJ, Genre=F, Nombre=Du</B>
+
+<A>lab			Adj , Type=ADJ, Genre=F, Nombre=Pl</A>
+<B>		noir	Adj , Type=ADJ, Genre=F, Nombre=Pl</B>
+
+<A>lab			Adj , Type=ADJ, Genre=A, Nombre=Sg</A>
+<B>		noir	Adj , Type=ADJ, Genre=A, Nombre=Sg</B>
+
+<A>lab			Adj , Type=ADJ, Genre=A, Nombre=Du</A>
+<B>		noir	Adj , Type=ADJ, Genre=A, Nombre=Du</B>
+
+<A>lab			Adj , Type=ADJ, Genre=A, Nombre=Pl</A>
+<B>		noir	Adj , Type=ADJ, Genre=A, Nombre=Pl</B>
+
+<A>lab			Adj , Type=ADJ, Genre=I, Nombre=Sg</A>
+<B>		noir	Adj , Type=ADJ, Genre=I, Nombre=Sg</B>
+
+<A>lab			Adj , Type=ADJ, Genre=I, Nombre=Du</A>
+<B>		noir	Adj , Type=ADJ, Genre=I, Nombre=Du</B>
+
+<A>lab			Adj , Type=ADJ, Genre=I, Nombre=Pl</A>
+<B>		noir	Adj , Type=ADJ, Genre=I, Nombre=Pl</B>
+
+<A>gil			Adj , Type=ADJ, Genre=M, Nombre=Sg</A>
+<B>		gros	Adj , Type=ADJ, Genre=M, Nombre=Sg</B>
+
+<A>gil			Adj , Type=ADJ, Genre=M, Nombre=Du</A>
+<B>		gros	Adj , Type=ADJ, Genre=M, Nombre=Du</B>
+
+<A>gil			Adj , Type=ADJ, Genre=M, Nombre=Pl</A>
+<B>		gros	Adj , Type=ADJ, Genre=M, Nombre=Pl</B>
+
+<A>gil			Adj , Type=ADJ, Genre=F, Nombre=Sg</A>
+<B>		gros	Adj , Type=ADJ, Genre=F, Nombre=Sg</B>
+
+<A>gil			Adj , Type=ADJ, Genre=F, Nombre=Du</A>
+<B>		gros	Adj , Type=ADJ, Genre=F, Nombre=Du</B>
+
+<A>gil			Adj , Type=ADJ, Genre=F, Nombre=Pl</A>
+<B>		gros	Adj , Type=ADJ, Genre=F, Nombre=Pl</B>
+
+<A>gil			Adj , Type=ADJ, Genre=A, Nombre=Sg</A>
+<B>		gros	Adj , Type=ADJ, Genre=A, Nombre=Sg</B>
+
+<A>gil			Adj , Type=ADJ, Genre=A, Nombre=Du</A>
+<B>		gros	Adj , Type=ADJ, Genre=A, Nombre=Du</B>
+
+<A>gil			Adj , Type=ADJ, Genre=A, Nombre=Pl</A>
+<B>		gros	Adj , Type=ADJ, Genre=A, Nombre=Pl</B>
+
+<A>gil			Adj , Type=ADJ, Genre=I, Nombre=Sg</A>
+<B>		gros	Adj , Type=ADJ, Genre=I, Nombre=Sg</B>
+
+<A>gil			Adj , Type=ADJ, Genre=I, Nombre=Du</A>
+<B>		gros	Adj , Type=ADJ, Genre=I, Nombre=Du</B>
+
+<A>gil			Adj , Type=ADJ, Genre=I, Nombre=Pl</A>
+<B>		gros	Adj , Type=ADJ, Genre=I, Nombre=Pl</B>
+
+<A>bogotos			V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		manger	V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>bogotod			V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		manger	V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>bogotop			V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		manger	V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>bogotos			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		manger	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>bogotod			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		manger	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>bogotop			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		manger	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>militos			V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		boire	V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>militod			V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		boire	V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>militop			V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		boire	V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>militos			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		boire	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>militod			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		boire	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>militop			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		boire	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>lamabos			V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		acheter	V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>lamabod			V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		acheter	V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>lamabop			V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		acheter	V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>lamabos			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		acheter	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>lamabod			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		acheter	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>lamabop			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		acheter	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>disakos			V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		supporter	V , Type=VT, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>disakod			V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		supporter	V , Type=VT, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>disakop			V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		supporter	V , Type=VT, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>disakos			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		supporter	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>disakod			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		supporter	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>disakop			V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		supporter	V , Type=VT, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>topazh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		dormir	V , Type=VI, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>topazh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		dormir	V , Type=VI, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>topazh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		dormir	V , Type=VI, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>topazn			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		dormir	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>topazn			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		dormir	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>topazn			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		dormir	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>fatigh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		tomber	V , Type=VI, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>fatigh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		tomber	V , Type=VI, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>fatigh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		tomber	V , Type=VI, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>fatign			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		tomber	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>fatign			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		tomber	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>fatign			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		tomber	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>baladh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Sg</A>
+<B>		arriver	V , Type=VI, Genre-Abs=H, Nombre-Abs=Sg</B>
+
+<A>baladh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Du</A>
+<B>		arriver	V , Type=VI, Genre-Abs=H, Nombre-Abs=Du</B>
+
+<A>baladh			V , Type=VI, Genre-Abs=H, Nombre-Abs=Pl</A>
+<B>		arriver	V , Type=VI, Genre-Abs=H, Nombre-Abs=Pl</B>
+
+<A>baladn			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Sg</A>
+<B>		arriver	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Sg</B>
+
+<A>baladn			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Du</A>
+<B>		arriver	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Du</B>
+
+<A>baladn			V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Pl</A>
+<B>		arriver	V , Type=VI, Genre-Abs=Nh, Nombre-Abs=Pl</B>
+
+<A>k			Det , Type=DEF, Nombre=Sg</A>
+<B>		DEF	Det , Type=DEF, Nombre=Sg</B>
+
+<A>k			Det , Type=DEF, Nombre=Du</A>
+<B>		DEF	Det , Type=DEF, Nombre=Du</B>
+
+<A>k			Det , Type=DEF, Nombre=Pl</A>
+<B>		DEF	Det , Type=DEF, Nombre=Pl</B>
+
+<A>l			Det , Type=IND, Nombre=Sg</A>
+<B>		IND	Det , Type=IND, Nombre=Sg</B>
+
+<A>l			Det , Type=IND, Nombre=Du</A>
+<B>		IND	Det , Type=IND, Nombre=Du</B>
+
+<A>l			Det , Type=IND, Nombre=Pl</A>
+<B>		IND	Det , Type=IND, Nombre=Pl</B>
+
+<A>b			Det , Type=DEM, Nombre=Sg</A>
+<B>		DEM	Det , Type=DEM, Nombre=Sg</B>
+
+<A>b			Det , Type=DEM, Nombre=Du</A>
+<B>		DEM	Det , Type=DEM, Nombre=Du</B>
+
+<A>b			Det , Type=DEM, Nombre=Pl</A>
+<B>		DEM	Det , Type=DEM, Nombre=Pl</B>
+

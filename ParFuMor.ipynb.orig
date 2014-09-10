@@ -1,0 +1,968 @@
+{
+ "metadata": {
+  "name": "",
+<<<<<<< HEAD
+  "signature": "sha256:3500322a3871efff0ee48ffe2d4824a63b772238da30b25d9dec603fd4ef082a"
+=======
+<<<<<<< HEAD
+  "signature": "sha256:5f0fe1c64c43525faad1fdc50cf1986d06699bf593e6d44c3f53392027852be3"
+=======
+  "signature": "sha256:6cd4ba99fe495a932c86e435d0c5fbb8f41fa536fe271d43f75ecadf65e64b39"
+>>>>>>> Latex
+>>>>>>> FETCH_HEAD
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "#ParFuMor (version YAML & Objets)"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "import yaml\n",
+      "import itertools\n",
+      "#import re\n",
+      "import ParFuMor\n",
+      "from ParFuMor import *\n",
+      "import pickle"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 1
+=======
+<<<<<<< HEAD
+     "prompt_number": 21
+=======
+     "prompt_number": 116
+>>>>>>> Latex
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "def depthDict(element):\n",
+      "    max=0\n",
+      "    if type(element)==type({}):\n",
+      "        for k in element:\n",
+      "            depth=depthDict(element[k])\n",
+      "            if depth>max:\n",
+      "                max=depth\n",
+      "        return max+1\n",
+      "    else:\n",
+      "        return 0"
+     ]
+    },
+    {
+<<<<<<< HEAD
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "def modifierForme(forme,transformation):\n",
+      "    m=re.match(\"^([^+]*)\\+([^+]*)$\",transformation)\n",
+      "    if m:\n",
+      "        if m.group(1)==\"X\":\n",
+      "            suffixe=m.group(2)\n",
+      "            prefixe=\"\"\n",
+      "        elif m.group(2)==\"X\":\n",
+      "            prefixe=m.group(1)\n",
+      "            suffixe=\"\"\n",
+      "    else:\n",
+      "        m=re.match(\"^([^+]*)\\+([^+]*)\\+([^+]*)$\",transformation)\n",
+      "        if m:\n",
+      "            if m.group(2)==\"X\":\n",
+      "                prefixe=m.group(1)\n",
+      "                suffixe=m.group(3)\n",
+      "    return prefixe+forme+suffixe\n",
+      "            "
+     ]
+=======
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "# ouvre le fichier de r\u00e8gles (Kalaba-Gloses.txt)\n",
+      "try:\n",
+      "    regles=codecs.open(sys.argv[1],\"r\", \"utf-8\")\n",
+      "except IOError:\n",
+      "    print ('le fichier \"'+ sys.argv[1]+ '\" ne peut pas \u00eatre ouvert')\n",
+      "    sys.exit()\n",
+      "\n",
+      "# ouvre le fichier du lexique (Kalaba-Stems.txt)\n",
+      "try:\n",
+      "    lexique=codecs.open(sys.argv[2],\"r\", \"utf-8\")\n",
+      "except IOError:\n",
+      "    print ('le fichier \"'+ sys.argv[2]+ '\" ne peut pas \u00eatre ouvert')\n",
+      "    sys.exit()\n",
+      "    \n",
+      "# ouvre le fichier des blocs (blocks.txt)\n",
+      "try:\n",
+      "    blocks_file=codecs.open(sys.argv[3],\"r\", \"utf-8\")\n",
+      "except IOError:\n",
+      "    print ('le fichier \"'+ sys.argv[3]+ '\" ne peut pas \u00eatre ouvert')\n",
+      "    sys.exit()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "le fichier \"-f\" ne peut pas \u00eatre ouvert\n"
+       ]
+      },
+      {
+       "ename": "SystemExit",
+       "evalue": "",
+       "output_type": "pyerr",
+       "traceback": [
+        "An exception has occurred, use %tb to see the full traceback.\n",
+        "\u001b[0;31mSystemExit\u001b[0m\n"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stderr",
+       "text": [
+        "To exit: use 'exit', 'quit', or Ctrl-D.\n"
+       ]
+      }
+     ],
+     "prompt_number": 117
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "regles = !cat Kalaba-Gloses.txt"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 118
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "lexique = !cat ./Kalaba-Stems.txt"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 119
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "blocks_file = !cat ./blocks.txt"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 120
+    },
+    {
+     "cell_type": "heading",
+     "level": 2,
+     "metadata": {},
+     "source": [
+      "fonctions"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "def merge_2_lists(liste1, liste2):\n",
+      "    \"\"\"\n",
+      "    Fusionne deux listes. \n",
+      "    prend en argument deux listes\n",
+      "    \"\"\"\n",
+      "    for l in range(1):\n",
+      "        temp = []\n",
+      "        for i in liste1:\n",
+      "            for j in liste2:\n",
+      "                temp.append(i+j)\n",
+      "        return temp"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 121
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "def merge_lists(liste):\n",
+      "    \"\"\"\n",
+      "    Fusionne autant de listes qu'il y a de cas de figure pr\u00e9vus\n",
+      "    prend en argument une liste de listes\n",
+      "    utilise merge_2_lists()\n",
+      "    Pour \u00e9tendre la fonction, observer les deux premi\u00e8res boucles.\n",
+      "    \"\"\"\n",
+      "    if len(liste) == 2:\n",
+      "        listea = merge_2_lists(liste[0], liste[1])\n",
+      "        return listea\n",
+      "    elif len(liste) == 3:\n",
+      "        listea = merge_2_lists(liste[0], liste[1])\n",
+      "        listeb = merge_2_lists(listea, liste[2])\n",
+      "        return listeb\n",
+      "    elif len(liste) == 4:\n",
+      "        listea = merge_2_lists(liste[0], liste[1])\n",
+      "        listeb = merge_2_lists(listea, liste[2])\n",
+      "        listec = merge_2_lists(listeb, liste[3])\n",
+      "        return listec\n",
+      "    elif len(liste) == 5:\n",
+      "        listea = merge_2_lists(liste[0], liste[1])\n",
+      "        listeb = merge_2_lists(listea, liste[2])\n",
+      "        listec = merge_2_lists(listeb, liste[3])\n",
+      "        listed = merge_2_lists(listec, liste[4])\n",
+      "        return listed\n",
+      "    else:\n",
+      "        print(\"il y a trop de listes \u00e0 fusionner.\\nveuillez \u00e9tendre la fonction merge_lists()\")"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 122
+>>>>>>> Latex
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "with open(\"Kalaba-Gloses.yaml\", 'r') as stream:\n",
+      "    gloses=yaml.load(stream)\n",
+      "    ParFuMor.gloses=gloses\n",
+      "with open(\"Kalaba-Stems.yaml\", 'r') as stream:\n",
+      "    stems=yaml.load(stream)\n",
+      "    ParFuMor.stems=stems\n",
+      "with open(\"Kalaba-Blocks.yaml\", 'r') as stream:\n",
+      "    blocks=yaml.load(stream)\n",
+      "    ParFuMor.blocks=blocks"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 2
+=======
+<<<<<<< HEAD
+     "prompt_number": 23
+=======
+     "prompt_number": 123
+>>>>>>> Latex
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "class Paradigmes:\n",
+      "    '''\n",
+      "    information sur les cases flexionnelles par cat\u00e9gorie\n",
+      "    '''\n",
+      "    def __init__(self):\n",
+      "        self.cases={}\n",
+      "        self.categories=[]\n",
+      "        \n",
+      "    def addForme(self,cat,proprietes):\n",
+      "        sigma=\", \".join(proprietes)\n",
+      "        cle={sigma:proprietes}\n",
+      "        if not cat in self.categories:\n",
+      "            self.categories.append(cat)\n",
+      "        if not cat in self.cases:\n",
+      "            self.cases[cat]=[]\n",
+      "        if not cle in self.cases[cat]:\n",
+      "            self.cases[cat].append(cle)\n",
+      "    \n",
+      "    def getSigmas(self,classe):\n",
+      "        sigmas=[]\n",
+      "        if classe in hierarchieCF.categorie:\n",
+      "            cat=hierarchieCF.categorie[classe]\n",
+      "            filtre=\"%s=%s\"%(hierarchieCF.getFeature(cat,classe),classe)\n",
+      "        else:\n",
+      "            cat=classe\n",
+      "            filtre=\"\"\n",
+      "        if cat in self.cases:\n",
+      "            for element in self.cases[cat]:\n",
+      "                for cle in element:\n",
+      "                    if filtre in cle:\n",
+      "                        sigmas.append(cle)\n",
+      "            return sigmas\n",
+      "        else:\n",
+      "            return [cat]"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "class HierarchieCF:\n",
+      "    '''\n",
+      "    hi\u00e9rarchie des classes flexionnelles\n",
+      "    '''\n",
+      "    def __init__(self):\n",
+      "        self.classes={}\n",
+      "        self.categorie={}\n",
+      "        self.trait={}\n",
+      "        \n",
+      "    def addCategory(self,category,classe):\n",
+      "        if not category in self.classes:\n",
+      "            self.classes[category]=[]\n",
+      "        self.classes[category].append(classe)\n",
+      "        self.categorie[classe]=category\n",
+      "        for attribut in gloses[category]:\n",
+      "            if set(gloses[category][attribut])==set(hierarchieCF.classes[category]):\n",
+      "                for valeur in gloses[category][attribut]:\n",
+      "                    hierarchieCF.addFeature(category,valeur,attribut)\n",
+      "                    \n",
+      "    def addFeature(self,category,classe,feature):\n",
+      "        self.trait[category+\"-\"+classe]=feature\n",
+      "        \n",
+      "    def getFeature(self,category,classe):\n",
+      "        cle=category+\"-\"+classe\n",
+      "        if cle in self.trait:\n",
+      "            return self.trait[category+\"-\"+classe]\n",
+      "        else:\n",
+      "            return \"Cat\u00e9gorie\"\n",
+      "        \n",
+      "    def getCategory(self,classe):\n",
+      "        '''\n",
+      "        donne la cat\u00e9gorie correspondant \u00e0 une classe ou \u00e0 une cat\u00e9gorie\n",
+      "        '''\n",
+      "        if classe in self.categorie:\n",
+      "            return self.categorie[classe]\n",
+      "        elif classe in self.classes:\n",
+      "            return classe\n",
+      "        else:\n",
+      "#            print \"Cat\u00e9gorie non-r\u00e9pertori\u00e9e\",classe\n",
+      "            return classe"
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "class Forme:\n",
+      "    '''\n",
+      "    sigma et forme fl\u00e9chie\n",
+      "    '''\n",
+      "    def __init__(self,sigma,forme):\n",
+      "        self.sigma=sigma\n",
+      "        self.forme=forme\n",
+      "        \n",
+      "    def __repr__(self):\n",
+      "        return \"%s:%s\"%(self.sigma,self.forme)\n",
+      "    \n",
+      "class Tableau:\n",
+      "    '''\n",
+      "    liste de sigmas\n",
+      "    '''\n",
+      "    def __init__(self,classe,stem):\n",
+      "        self.cases=[]\n",
+      "        self.stem=stem\n",
+      "        categorie=hierarchieCF.getCategory(classe)\n",
+      "        for case in paradigmes.getSigmas(classe):\n",
+      "            forme=stem\n",
+      "            derivations=regles.getRules(categorie,case)\n",
+      "            if derivations:\n",
+      "                for derivation in derivations:\n",
+      "                    forme=modifierForme(forme,derivation)\n",
+      "            flexion=Forme(case,forme)\n",
+      "            self.cases.append(flexion)\n",
+      "            \n",
+      "    def __repr__(self):\n",
+      "        listCases=[]\n",
+      "        for case in self.cases:\n",
+      "            listCases.append(str(case))\n",
+      "        return self.stem+\" : \"+\", \".join(listCases)\n",
+      "    "
+     ]
+    },
+    {
+<<<<<<< HEAD
+     "cell_type": "markdown",
+=======
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "paradigme = []\n",
+      "lists = []\n",
+      "for r in regles:\n",
+      "    r=r.strip()\n",
+      "    # gestion de la premi\u00e8re ligne : cat\u00e9gorie grammaticale\n",
+      "    if r != \"=\":\n",
+      "        if \":\" in r:\n",
+      "            temp_list = []\n",
+      "            r = re.sub(\":\", \"\", r)\n",
+      "            temp_list.append(r.strip())\n",
+      "            lists.append(temp_list)\n",
+      "        elif \"\\t\" in r:\n",
+      "            temp_list = []\n",
+      "            split1 = r.split(\"\\t\")\n",
+      "            split2 = split1[1].split(\",\")\n",
+      "            for s in split2:\n",
+      "                temp_list.append(\", \"+split1[0]+\"=\"+s.strip())\n",
+      "            lists.append(temp_list)\n",
+      "    elif \"=\" in r:\n",
+      "        paradigme.extend(merge_lists(lists)) \n",
+      "        lists = []  "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 124
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "for o in paradigme:\n",
+      "    print(o)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "N, Genre=M, Nombre=Sg\n",
+        "N, Genre=M, Nombre=Pl\n",
+        "N, Genre=F, Nombre=Sg\n",
+        "N, Genre=F, Nombre=Pl\n",
+        "V, Type=V, Personne-Nombre=1SG\n",
+        "V, Type=V, Personne-Nombre=2SG\n",
+        "V, Type=V, Personne-Nombre=3SG\n",
+        "V, Type=V, Personne-Nombre=1PL\n",
+        "V, Type=V, Personne-Nombre=2PL\n",
+        "V, Type=V, Personne-Nombre=3PL\n",
+        "Det, Type=DEF, Genre=M, Nombre=Sg\n",
+        "Det, Type=DEF, Genre=M, Nombre=Pl\n",
+        "Det, Type=DEF, Genre=F, Nombre=Sg\n",
+        "Det, Type=DEF, Genre=F, Nombre=Pl\n",
+        "Det, Type=IND, Genre=M, Nombre=Sg\n",
+        "Det, Type=IND, Genre=M, Nombre=Pl\n",
+        "Det, Type=IND, Genre=F, Nombre=Sg\n",
+        "Det, Type=IND, Genre=F, Nombre=Pl\n",
+        "Det, Type=DEM, Genre=M, Nombre=Sg\n",
+        "Det, Type=DEM, Genre=M, Nombre=Pl\n",
+        "Det, Type=DEM, Genre=F, Nombre=Sg\n",
+        "Det, Type=DEM, Genre=F, Nombre=Pl\n",
+        "Adj, Type=ADJ, Genre=M, Nombre=Sg\n",
+        "Adj, Type=ADJ, Genre=M, Nombre=Pl\n",
+        "Adj, Type=ADJ, Genre=F, Nombre=Sg\n",
+        "Adj, Type=ADJ, Genre=F, Nombre=Pl\n"
+       ]
+      }
+     ],
+     "prompt_number": 125
+    },
+    {
+     "cell_type": "heading",
+     "level": 2,
+>>>>>>> Latex
+     "metadata": {},
+     "source": [
+      "class Lexeme:\n",
+      "    '''\n",
+      "    Formes fl\u00e9chies d'un lex\u00e8me suivant sa classe flexionnelle\n",
+      "    '''\n",
+      "    def __init__(self,stem,classe,nom):\n",
+      "        self.stem=stem\n",
+      "        self.classe=classe\n",
+      "        self.nom=nom\n",
+      "        self.paradigme=Tableau(classe,stem)\n",
+      "        self.formes=[]\n",
+      "\n",
+      "    def __repr__(self):\n",
+      "        return \"%s, %s, %s, %s\"%(self.stem,self.classe,self.nom,self.paradigme)\n",
+      "    \n",
+      "    def addForme(self,*formes):\n",
+      "        for forme in formes:\n",
+      "            self.formes.append(forme)\n",
+      "        \n",
+      "class Lexique:\n",
+      "    '''\n",
+      "    Lexique de Lex\u00e8mes\n",
+      "    '''\n",
+      "    def __init__(self):\n",
+      "        self.lexemes={}\n",
+      "    \n",
+      "    def addLexeme(self,classe,stem,*formes):\n",
+      "        nom=classe+\"-\"+stem\n",
+      "        self.lexemes[nom]=Lexeme(stem,classe,formes[0])\n",
+      "        self.lexemes[nom].addForme(*formes)\n",
+      "    "
+     ]
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "class Regles:\n",
+      "    '''\n",
+      "    Blocs de r\u00e8gles par cat\u00e9gorie\n",
+      "    '''\n",
+      "    def __init__(self):\n",
+      "        self.blocs={}\n",
+      "        \n",
+      "    def addBlocs(self,category,blocs):\n",
+      "        if not category in self.blocs:\n",
+      "            self.blocs[category]=blocs\n",
+      "            \n",
+      "    def getRules(self,category,case):\n",
+      "#        print \"getRules\",category, case\n",
+      "        if category in self.blocs:\n",
+      "#            print category\n",
+      "            rules=[]\n",
+      "            sortBlocs=sorted(self.blocs[category],key=int)\n",
+      "            for num in sortBlocs:\n",
+      "                sortSigmas=sorted(self.blocs[category][num],key=lambda x: len(x.split(\"=\")),reverse=True)\n",
+      "#                print num,sortSigmas\n",
+      "                for sigma in sortSigmas:\n",
+      "#                    print \"sigma\",sigma\n",
+      "                    traits=sigma.split(\",\")\n",
+      "#                    print \"traits\",traits\n",
+      "                    sigmaCase=True\n",
+      "                    for trait in traits:\n",
+      "                        sigmaCase=sigmaCase and trait in case\n",
+      "                    if sigmaCase:\n",
+      "                        rules.append(self.blocs[category][num][sigma])\n",
+      "                        break\n",
+      "            return rules\n",
+      "        else:\n",
+      "            return []\n",
+      "        \n"
+     ]
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "regles=Regles()\n",
+      "for categorie in blocks:\n",
+      "    regles.addBlocs(categorie,blocks[categorie])\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 3
+=======
+<<<<<<< HEAD
+     "prompt_number": 24
+=======
+     "prompt_number": 126
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "for l in lex:\n",
+      "    print(l)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "tSik, N, Genre=M, Nombre=Sg\n",
+        "tSik, N, Genre=M, Nombre=Pl\n",
+        "tSik, N, Genre=F, Nombre=Sg\n",
+        "tSik, N, Genre=F, Nombre=Pl\n",
+        "simpatik, Adj, Type=ADJ, Genre=M, Nombre=Sg\n",
+        "simpatik, Adj, Type=ADJ, Genre=M, Nombre=Pl\n",
+        "simpatik, Adj, Type=ADJ, Genre=F, Nombre=Sg\n",
+        "simpatik, Adj, Type=ADJ, Genre=F, Nombre=Pl\n",
+        "brab, Adj, Type=ADJ, Genre=M, Nombre=Sg\n",
+        "brab, Adj, Type=ADJ, Genre=M, Nombre=Pl\n",
+        "brab, Adj, Type=ADJ, Genre=F, Nombre=Sg\n",
+        "brab, Adj, Type=ADJ, Genre=F, Nombre=Pl\n",
+        "blank, Adj, Type=ADJ, Genre=M, Nombre=Sg\n",
+        "blank, Adj, Type=ADJ, Genre=M, Nombre=Pl\n",
+        "blank, Adj, Type=ADJ, Genre=F, Nombre=Sg\n",
+        "blank, Adj, Type=ADJ, Genre=F, Nombre=Pl\n",
+        "kome, V, Type=V, Personne-Nombre=1SG\n",
+        "kome, V, Type=V, Personne-Nombre=2SG\n",
+        "kome, V, Type=V, Personne-Nombre=3SG\n",
+        "kome, V, Type=V, Personne-Nombre=1PL\n",
+        "kome, V, Type=V, Personne-Nombre=2PL\n",
+        "kome, V, Type=V, Personne-Nombre=3PL\n",
+        "tSarla, V, Type=V, Personne-Nombre=1SG\n",
+        "tSarla, V, Type=V, Personne-Nombre=2SG\n",
+        "tSarla, V, Type=V, Personne-Nombre=3SG\n",
+        "tSarla, V, Type=V, Personne-Nombre=1PL\n",
+        "tSarla, V, Type=V, Personne-Nombre=2PL\n",
+        "tSarla, V, Type=V, Personne-Nombre=3PL\n",
+        "l, Det, Type=DEF, Genre=M, Nombre=Sg\n",
+        "l, Det, Type=DEF, Genre=M, Nombre=Pl\n",
+        "l, Det, Type=DEF, Genre=F, Nombre=Sg\n",
+        "l, Det, Type=DEF, Genre=F, Nombre=Pl\n",
+        "un, Det, Type=IND, Genre=M, Nombre=Sg\n",
+        "un, Det, Type=IND, Genre=M, Nombre=Pl\n",
+        "un, Det, Type=IND, Genre=F, Nombre=Sg\n",
+        "un, Det, Type=IND, Genre=F, Nombre=Pl\n",
+        "est, Det, Type=DEM, Genre=M, Nombre=Sg\n",
+        "est, Det, Type=DEM, Genre=M, Nombre=Pl\n",
+        "est, Det, Type=DEM, Genre=F, Nombre=Sg\n",
+        "est, Det, Type=DEM, Genre=F, Nombre=Pl\n"
+       ]
+      }
+     ],
+     "prompt_number": 127
+    },
+    {
+     "cell_type": "heading",
+     "level": 1,
+     "metadata": {},
+     "source": [
+      "Partie 2 : Importer les blocks"
+     ]
+>>>>>>> Latex
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "paradigmes=Paradigmes()\n",
+      "for cat in gloses:\n",
+      "    attributes=[]\n",
+      "    if gloses[cat]:\n",
+      "        for attribute in gloses[cat]:\n",
+      "            attributes.append(gloses[cat][attribute])\n",
+      "        nuplets=(itertools.product(*attributes))\n",
+      "        for nuplet in nuplets:\n",
+      "            proprietes=[cat]\n",
+      "            for element in range(len(nuplet)):\n",
+      "                proprietes.append(\"%s=%s\"%(gloses[cat].keys()[element],nuplet[element]))\n",
+      "            paradigmes.addForme(cat,proprietes)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 4
+=======
+<<<<<<< HEAD
+     "prompt_number": 25
+=======
+     "prompt_number": 128
+>>>>>>> Latex
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "hierarchieCF=HierarchieCF()\n",
+      "lexique=Lexique()"
+     ],
+     "language": "python",
+     "metadata": {},
+<<<<<<< HEAD
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 5
+=======
+     "prompt_number": 26
+=======
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "('N', ['Genre=M > o', 'Genre=F > a'])\n",
+        "('N', ['Nombre=Pl > s'])\n",
+        "('V', ['Personne-Nombre=3PL > n', 'Personne-Nombre=2SG > s', 'Personne-Nombre=2PL > js', 'Personne-Nombre=1PL > mos'])\n",
+        "('Adj', ['Genre=M > o', 'Genre=F > a'])\n",
+        "('Adj', ['Nombre=Pl > s'])\n",
+        "('Det', ['Genre=M > o', 'Genre=F > a'])\n",
+        "('Det', ['Nombre=Pl > s'])\n"
+       ]
+      }
+     ],
+     "prompt_number": 129
+>>>>>>> Latex
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "def analyserStems(niveau):\n",
+      "    depthNiveau=depthDict(niveau)\n",
+      "    if depthNiveau>1:\n",
+      "        for element1 in niveau:\n",
+      "            depthElement=depthDict(niveau[element1])\n",
+      "            if depthElement>=2:\n",
+      "                for element2 in niveau[element1]:\n",
+      "                    hierarchieCF.addCategory(element1,element2)\n",
+      "                analyserStems(niveau[element1])\n",
+      "            else:\n",
+      "                for forme in niveau[element1]:\n",
+      "                    if isinstance(niveau[element1][forme],str):\n",
+      "                        lexique.addLexeme(element1,forme,niveau[element1][forme])\n",
+      "                    elif isinstance(niveau[element1][forme],unicode):\n",
+      "                        lexique.addLexeme(element1,forme,niveau[element1][forme].encode('utf8'))\n",
+      "                    elif isinstance(niveau[element1][forme],list):\n",
+      "                        lexique.addLexeme(element1,forme,*niveau[element1][forme])\n",
+      "                    else:\n",
+      "                        print \"PB\",element1,forme,niveau[element1][forme]"
+     ]
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+<<<<<<< HEAD
+      "analyserStems(stems)"
+=======
+<<<<<<< HEAD
+      "ParFuMor.analyserStems(stems)"
+=======
+      "output = []\n",
+      "for l in lex:\n",
+      "    modified = l.split(\", \")\n",
+      "    traits_lexeme = l.split(\", \")[2:]\n",
+      "    for b in blocks:\n",
+      "        if l.split(\", \")[1] == b[0]:    # si la cat\u00e9gorie du lex\u00e8me correspond \u00e0 celle du bloc\n",
+      "            a = False                   # False = r\u00e8gle du bloc pas encore appliqu\u00e9e\n",
+      "            for c in b[1]:              # pour chaque r\u00e8gle du bloc\n",
+      "                splitted = c.split(\" > \")\n",
+      "                ajout = splitted[1]\n",
+      "                traits_block = splitted[0].split(\", \")\n",
+      "                if a == (False \n",
+      "                         and len(set(traits_block+traits_lexeme)) <= len(traits_lexeme) \n",
+      "                         or len(set(traits_block+traits_lexeme)) <= len(traits_block)):\n",
+      "                    a = True\n",
+      "                    modified[0] += ajout\n",
+      "    form = modified[0]                             # forme fl\u00e9chie\n",
+      "    francais = traduction[l.split(\", \")[0]]   # traduction en fran\u00e7ais\n",
+      "    categ = modified[1]                            # cat\u00e9gorie grammaticale\n",
+      "    traits_str = \", \".join(modified[2:])           # liste des traits joints par \", \"\n",
+      "    ### ins\u00e9rer ci-dessous la mise en page \n",
+      "    commande1 = \"\\\\newcommand{\\\\\"+francais+traits_str+\"}{\\\\strutgb{0pt}\\\\grapho{\"+form+\"}}\"\n",
+      "    commande2 = \"\\\\newcommand{\\\\\"+francais+traits_str+\"P}{\\\\textipa{\"+form+\"}}\"\n",
+      "    commande3 = \"\\\\newcommand{\\\\\"+francais+traits_str+\"G}{\\\\textipa{\"+francais+traits_str+\"}}\"\n",
+      "    ###\n",
+      "    output.append(commande1)\n",
+      "    output.append(commande2)\n",
+      "    output.append(commande3)"
+>>>>>>> Latex
+>>>>>>> FETCH_HEAD
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 6
+=======
+<<<<<<< HEAD
+     "prompt_number": 27
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "with open('Hierarchie.pkl', 'wb') as output:\n",
+      "   pickle.dump(hierarchieCF, output, pickle.HIGHEST_PROTOCOL)\n",
+      "with open('Lexique.pkl', 'wb') as output:\n",
+      "   pickle.dump(lexique, output, pickle.HIGHEST_PROTOCOL)\n",
+      "with open('Regles.pkl', 'wb') as output:\n",
+      "   pickle.dump(regles, output, pickle.HIGHEST_PROTOCOL)\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+<<<<<<< HEAD
+     "prompt_number": 7
+=======
+     "prompt_number": 29
+=======
+     "prompt_number": 133
+>>>>>>> FETCH_HEAD
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [
+      "for o in output:\n",
+      "    print(o)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\\newcommand{\\filleGenre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{tSikos}}\n",
+        "\\newcommand{\\filleGenre=M, Nombre=SgP}{\\textipa{tSikos}}\n",
+        "\\newcommand{\\filleGenre=M, Nombre=SgG}{\\textipa{filleGenre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\filleGenre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{tSikos}}\n",
+        "\\newcommand{\\filleGenre=M, Nombre=PlP}{\\textipa{tSikos}}\n",
+        "\\newcommand{\\filleGenre=M, Nombre=PlG}{\\textipa{filleGenre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\filleGenre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{tSikos}}\n",
+        "\\newcommand{\\filleGenre=F, Nombre=SgP}{\\textipa{tSikos}}\n",
+        "\\newcommand{\\filleGenre=F, Nombre=SgG}{\\textipa{filleGenre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\filleGenre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{tSikos}}\n",
+        "\\newcommand{\\filleGenre=F, Nombre=PlP}{\\textipa{tSikos}}\n",
+        "\\newcommand{\\filleGenre=F, Nombre=PlG}{\\textipa{filleGenre=F, Nombre=Pl}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=M, Nombre=SgP}{\\textipa{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=M, Nombre=SgG}{\\textipa{sympaType=ADJ, Genre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=M, Nombre=PlP}{\\textipa{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=M, Nombre=PlG}{\\textipa{sympaType=ADJ, Genre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=F, Nombre=SgP}{\\textipa{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=F, Nombre=SgG}{\\textipa{sympaType=ADJ, Genre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=F, Nombre=PlP}{\\textipa{simpatikos}}\n",
+        "\\newcommand{\\sympaType=ADJ, Genre=F, Nombre=PlG}{\\textipa{sympaType=ADJ, Genre=F, Nombre=Pl}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=M, Nombre=SgP}{\\textipa{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=M, Nombre=SgG}{\\textipa{braveType=ADJ, Genre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=M, Nombre=PlP}{\\textipa{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=M, Nombre=PlG}{\\textipa{braveType=ADJ, Genre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=F, Nombre=SgP}{\\textipa{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=F, Nombre=SgG}{\\textipa{braveType=ADJ, Genre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=F, Nombre=PlP}{\\textipa{brabos}}\n",
+        "\\newcommand{\\braveType=ADJ, Genre=F, Nombre=PlG}{\\textipa{braveType=ADJ, Genre=F, Nombre=Pl}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=M, Nombre=SgP}{\\textipa{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=M, Nombre=SgG}{\\textipa{blancType=ADJ, Genre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=M, Nombre=PlP}{\\textipa{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=M, Nombre=PlG}{\\textipa{blancType=ADJ, Genre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=F, Nombre=SgP}{\\textipa{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=F, Nombre=SgG}{\\textipa{blancType=ADJ, Genre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=F, Nombre=PlP}{\\textipa{blankos}}\n",
+        "\\newcommand{\\blancType=ADJ, Genre=F, Nombre=PlG}{\\textipa{blancType=ADJ, Genre=F, Nombre=Pl}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=1SG}{\\strutgb{0pt}\\grapho{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=1SGP}{\\textipa{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=1SGG}{\\textipa{mangerType=V, Personne-Nombre=1SG}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=2SG}{\\strutgb{0pt}\\grapho{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=2SGP}{\\textipa{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=2SGG}{\\textipa{mangerType=V, Personne-Nombre=2SG}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=3SG}{\\strutgb{0pt}\\grapho{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=3SGP}{\\textipa{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=3SGG}{\\textipa{mangerType=V, Personne-Nombre=3SG}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=1PL}{\\strutgb{0pt}\\grapho{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=1PLP}{\\textipa{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=1PLG}{\\textipa{mangerType=V, Personne-Nombre=1PL}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=2PL}{\\strutgb{0pt}\\grapho{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=2PLP}{\\textipa{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=2PLG}{\\textipa{mangerType=V, Personne-Nombre=2PL}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=3PL}{\\strutgb{0pt}\\grapho{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=3PLP}{\\textipa{komen}}\n",
+        "\\newcommand{\\mangerType=V, Personne-Nombre=3PLG}{\\textipa{mangerType=V, Personne-Nombre=3PL}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=1SG}{\\strutgb{0pt}\\grapho{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=1SGP}{\\textipa{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=1SGG}{\\textipa{parlerType=V, Personne-Nombre=1SG}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=2SG}{\\strutgb{0pt}\\grapho{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=2SGP}{\\textipa{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=2SGG}{\\textipa{parlerType=V, Personne-Nombre=2SG}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=3SG}{\\strutgb{0pt}\\grapho{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=3SGP}{\\textipa{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=3SGG}{\\textipa{parlerType=V, Personne-Nombre=3SG}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=1PL}{\\strutgb{0pt}\\grapho{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=1PLP}{\\textipa{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=1PLG}{\\textipa{parlerType=V, Personne-Nombre=1PL}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=2PL}{\\strutgb{0pt}\\grapho{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=2PLP}{\\textipa{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=2PLG}{\\textipa{parlerType=V, Personne-Nombre=2PL}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=3PL}{\\strutgb{0pt}\\grapho{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=3PLP}{\\textipa{tSarlan}}\n",
+        "\\newcommand{\\parlerType=V, Personne-Nombre=3PLG}{\\textipa{parlerType=V, Personne-Nombre=3PL}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=M, Nombre=SgP}{\\textipa{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=M, Nombre=SgG}{\\textipa{DEFType=DEF, Genre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=M, Nombre=PlP}{\\textipa{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=M, Nombre=PlG}{\\textipa{DEFType=DEF, Genre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=F, Nombre=SgP}{\\textipa{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=F, Nombre=SgG}{\\textipa{DEFType=DEF, Genre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=F, Nombre=PlP}{\\textipa{los}}\n",
+        "\\newcommand{\\DEFType=DEF, Genre=F, Nombre=PlG}{\\textipa{DEFType=DEF, Genre=F, Nombre=Pl}}\n",
+        "\\newcommand{\\INDType=IND, Genre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=M, Nombre=SgP}{\\textipa{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=M, Nombre=SgG}{\\textipa{INDType=IND, Genre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\INDType=IND, Genre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=M, Nombre=PlP}{\\textipa{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=M, Nombre=PlG}{\\textipa{INDType=IND, Genre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\INDType=IND, Genre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=F, Nombre=SgP}{\\textipa{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=F, Nombre=SgG}{\\textipa{INDType=IND, Genre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\INDType=IND, Genre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=F, Nombre=PlP}{\\textipa{unos}}\n",
+        "\\newcommand{\\INDType=IND, Genre=F, Nombre=PlG}{\\textipa{INDType=IND, Genre=F, Nombre=Pl}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=M, Nombre=Sg}{\\strutgb{0pt}\\grapho{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=M, Nombre=SgP}{\\textipa{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=M, Nombre=SgG}{\\textipa{DEMType=DEM, Genre=M, Nombre=Sg}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=M, Nombre=Pl}{\\strutgb{0pt}\\grapho{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=M, Nombre=PlP}{\\textipa{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=M, Nombre=PlG}{\\textipa{DEMType=DEM, Genre=M, Nombre=Pl}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=F, Nombre=Sg}{\\strutgb{0pt}\\grapho{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=F, Nombre=SgP}{\\textipa{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=F, Nombre=SgG}{\\textipa{DEMType=DEM, Genre=F, Nombre=Sg}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=F, Nombre=Pl}{\\strutgb{0pt}\\grapho{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=F, Nombre=PlP}{\\textipa{estos}}\n",
+        "\\newcommand{\\DEMType=DEM, Genre=F, Nombre=PlG}{\\textipa{DEMType=DEM, Genre=F, Nombre=Pl}}\n"
+       ]
+      }
+     ],
+     "prompt_number": 134
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "# \u00e9crit le paradigme fl\u00e9chi dans un fichier\n",
+      "with open(\"paradigme_fl\u00e9chi.txt\", \"a\") as f:\n",
+      "    for o in output:\n",
+      "        f.write(o)\n",
+      "        f.write(\"\\n\")"
+     ]
+>>>>>>> Latex
+    },
+    {
+     "cell_type": "code",
+     "collapsed": true,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
