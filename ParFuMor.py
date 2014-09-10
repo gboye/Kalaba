@@ -30,8 +30,22 @@ def modifierForme(forme,transformation):
             if m.group(2)=="X":
                 prefixe=m.group(1)
                 suffixe=m.group(3)
-    return prefixe+forme+suffixe
+    if prefixe!="" and suffixe!="":
+        affixe="circonfixe"
+    elif prefixe!="":
+        affixe="préfixe"
+    elif suffixe!="":
+        affixe="suffixe"
+    else:
+        affixe=""
+    return (prefixe+forme+suffixe,affixe)
 
+def modifierGlose(glose,sigma,affixe):
+    '''
+    à remplir
+    '''
+    return glose
+    
 class Paradigmes:
     '''
     information sur les cases flexionnelles par catégorie
@@ -132,10 +146,12 @@ class Tableau:
         categorie=hierarchieCF.getCategory(classe)
         for case in paradigmes.getSigmas(classe):
             forme=stem
+            glose=stem # il faudrait passer le lexeme
             derivations=regles.getRules(categorie,case)
             if derivations:
                 for derivation in derivations:
-                    forme=modifierForme(forme,derivation)
+                    (forme,affixe)=modifierForme(forme,derivation[0])
+                    glose=modifierGlose(glose,derivation[1],affixe)
             flexion=Forme(case,forme)
             self.cases.append(flexion)
             
@@ -171,9 +187,18 @@ class Lexique:
         self.lexemes={}
     
     def addLexeme(self,classe,stem,*formes):
-        nom=classe+"-"+stem
+        if classe!=hierarchieCF.getCategory(classe):
+            nom=formes[0]+"."+classe
+        else:
+            nom=formes[0]
         self.lexemes[nom]=Lexeme(stem,classe,formes[0])
         self.lexemes[nom].addForme(*formes)
+    
+    def getLexemes(self,nom):
+        if nom in self.lexemes:
+            return [self.lexemes[nom]]
+        else:
+            return [lexeme for (vedette, lexeme) in self.lexemes.iteritems() if nom in vedette]
 
 lexique=Lexique()
 
@@ -200,7 +225,7 @@ class Regles:
                     for trait in traits:
                         sigmaCase=sigmaCase and trait in case
                     if sigmaCase:
-                        rules.append(self.blocs[category][num][sigma])
+                        rules.append((self.blocs[category][num][sigma],sigma))
                         break
             return rules
         else:
