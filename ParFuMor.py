@@ -44,6 +44,18 @@ def modifierGlose(glose,sigma,affixe):
     '''
     à remplir
     '''
+    mods=[]
+    attributValeurs=sigma.split(",")
+    for attributValeur in attributValeurs:
+        (attribut,valeur)=attributValeur.split("=")
+        mods.append(valeur)
+    mod=".".join(mods)
+    if affixe=="suffixe":
+        glose=glose+"-"+mod
+    elif affixe=="préfixe":
+        glose=mod+"-"+glose
+    elif affixe=="circonfixe":
+        glose=mod+"+"+glose+"+"+mod
     return glose
     
 class Paradigmes:
@@ -89,6 +101,7 @@ class HierarchieCF:
     '''
     def __init__(self):
         self.classes={}
+        self.superieur={}
         self.categorie={}
         self.trait={}
         
@@ -96,7 +109,12 @@ class HierarchieCF:
         if not category in self.classes:
             self.classes[category]=[]
         self.classes[category].append(classe)
-        self.categorie[classe]=category
+        self.superieur[classe]=category
+        if category in gloses:
+            self.categorie[classe]=category
+        else:
+            self.categorie[classe]=self.categorie[category]
+            category=self.categorie[category]
         for attribut in gloses[category]:
             if set(gloses[category][attribut])==set(hierarchieCF.classes[category]):
                 for valeur in gloses[category][attribut]:
@@ -112,6 +130,12 @@ class HierarchieCF:
         else:
             return "Catégorie"
         
+    def categoryLookup(self,categorie):
+        if categorie in gloses:
+            return categorie
+        else:
+            return self.categoryLookup(self.categorie[categorie])
+    	    	   
     def getCategory(self,classe):
         '''
         donne la catégorie correspondant à une classe ou à une catégorie
@@ -129,37 +153,39 @@ class Forme:
     '''
     sigma et forme fléchie
     '''
-    def __init__(self,sigma,forme):
+    def __init__(self,sigma,forme,glose):
         self.sigma=sigma
         self.forme=forme
+        self.glose=glose
         
     def __repr__(self):
-        return "%s:%s"%(self.sigma,self.forme)
+        return "%s:\t%s %s"%(self.sigma,self.forme, self.glose)
     
 class Tableau:
     '''
     liste de sigmas
     '''
-    def __init__(self,classe,stem):
+    def __init__(self,classe,stem,nom):
         self.cases=[]
         self.stem=stem
+        self.nom=nom
         categorie=hierarchieCF.getCategory(classe)
         for case in paradigmes.getSigmas(classe):
-            forme=stem
-            glose=stem # il faudrait passer le lexeme
+            forme=self.stem
+            glose=self.nom 
             derivations=regles.getRules(categorie,case)
             if derivations:
                 for derivation in derivations:
                     (forme,affixe)=modifierForme(forme,derivation[0])
                     glose=modifierGlose(glose,derivation[1],affixe)
-            flexion=Forme(case,forme)
+            flexion=Forme(case,forme,glose)
             self.cases.append(flexion)
             
     def __repr__(self):
         listCases=[]
         for case in self.cases:
             listCases.append(str(case))
-        return self.stem+" : "+", ".join(listCases)
+        return self.stem+" :\n"+"\n\t".join(listCases)
 
 class Lexeme:
     '''
@@ -169,11 +195,11 @@ class Lexeme:
         self.stem=stem
         self.classe=classe
         self.nom=nom
-        self.paradigme=Tableau(classe,stem)
+        self.paradigme=Tableau(classe,stem,nom)
         self.formes=[]
 
     def __repr__(self):
-        return "%s, %s, %s, %s"%(self.stem,self.classe,self.nom,self.paradigme)
+        return "%s, %s, %s\n%s\n"%(self.stem,self.classe,self.nom,self.paradigme)
     
     def addForme(self,*formes):
         for forme in formes:
@@ -191,7 +217,7 @@ class Lexique:
             nom=formes[0]+"."+classe
         else:
             nom=formes[0]
-        self.lexemes[nom]=Lexeme(stem,classe,formes[0])
+        self.lexemes[nom]=Lexeme(stem,classe,nom)
         self.lexemes[nom].addForme(*formes)
     
     def getLexemes(self,nom):
