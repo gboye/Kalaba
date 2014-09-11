@@ -3,6 +3,8 @@
 import re
 
 gloses={}
+phonology={}
+verbose=False
 
 def depthDict(element):
     max=0
@@ -16,31 +18,77 @@ def depthDict(element):
         return 0
 
 def modifierForme(forme,transformation):
-    m=re.match("^([^+]*)\+([^+]*)$",transformation)
-    if m:
-        if m.group(1)=="X":
-            suffixe=m.group(2)
-            prefixe=""
-        elif m.group(2)=="X":
-            prefixe=m.group(1)
-            suffixe=""
-    else:
-        m=re.match("^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
-        if m:
-            if m.group(2)=="X":
-                prefixe=m.group(1)
-                suffixe=m.group(3)
-    if prefixe!="" and suffixe!="":
-        affixe="circonfixe"
-    elif prefixe!="":
-        affixe="préfixe"
-    elif suffixe!="":
-        affixe="suffixe"
-    else:
-        affixe=""
-    return (prefixe+forme+suffixe,affixe)
+    def extraireRacine(simple):
+        if verbose: print "simple : ", simple
+        c=1
+        result={'1':'','2':'','3':'','V':''}
+        for lettre in simple:
+            if verbose: print "lettre : ",lettre
+            if lettre in phonology["consonnes"]:
+                result[str(c)]=lettre
+                c=c+1
+            elif lettre in phonology["voyelles"]:
+                if result['V']=='':
+                    result['V']=lettre
+            else:
+                if verbose: print "erreur sur racine", simple
+        return result
+        
+    def appliquerGabarit(forme,racine):					
+        '''
+        met la racine dans le gabarit forme
+        '''
+        if verbose: print "gabarit : ", forme, racine
+        result=""
+        for signe in forme:
+            if signe in "123":				#place les consonnes en 1, 2, 3
+                result=result+racine[signe]
+            elif signe in "456":
+                result=result+phonology["nom_mut"][racine[str(int(signe)-3)]]
+            elif signe in "789":
+                result=result+phonology["nom_mut"][phonology["nom_mut"][racine[str(int(signe)-6)]]]
+            elif signe in "V":				#place la voyelle radicale V et la voyelle de classe C
+                result=result+racine[signe]
+            elif signe in "A":
+                result=result+phonology["nom_apo"][racine[phonology["derives"][signe]]]#place les apophones de V et C (resp. A et D)
+            elif signe in "U":
+                result=result+phonology["nom_apo"][phonology["nom_apo"][racine['V']]]	#place le bi-apophone de V
+            else:
+                result=result+signe
+            if verbose: print signe, result
+        if verbose: print result
+        return result    
+        result=forme
 
-def modifierGlose(glose,sigma,affixe):
+    typeTrans=""
+    gabarit=re.match("^(\D*)(\d)(\D*)(\d)(\D*)(\d)(.*)$",transformation)
+    if gabarit:
+        racine=extraireRacine(forme)
+        result=appliquerGabarit(transformation,racine)
+        typeTrans="gabarit"
+        if True: print "f,r,t",forme,racine,result
+    else:
+        affixe=re.match("^([^+]*)\+([^+]*)$",transformation)
+        if affixe:
+            if affixe.group(1)=="X":
+                suffixe=affixe.group(2)
+                result=forme+suffixe
+                typeTrans="suffixe"
+            elif affixe.group(2)=="X":
+                prefixe=affixe.group(1)
+                result=prefixe+forme
+                typeTrans="préfixe"
+        else:
+            circonfixe=re.match("^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
+            if circonfixe:
+                if circonfixe.group(2)=="X":
+                    prefixe=circonfixe.group(1)
+                    suffixe=circonfixe.group(3)
+                    result=prefixe+forme+suffixe
+                    typeTrans="circonfixe"
+    return (result,typeTrans)
+
+def modifierGlose(glose,sigma,typeTrans):
     '''
     à remplir
     '''
@@ -50,11 +98,13 @@ def modifierGlose(glose,sigma,affixe):
         (attribut,valeur)=attributValeur.split("=")
         mods.append(valeur)
     mod=".".join(mods)
-    if affixe=="suffixe":
+    if typeTrans=="gabarit":
+        glose=glose+"x"+mod
+    elif typeTrans=="suffixe":
         glose=glose+"-"+mod
-    elif affixe=="préfixe":
+    elif typeTrans=="préfixe":
         glose=mod+"-"+glose
-    elif affixe=="circonfixe":
+    elif typeTrans=="circonfixe":
         glose=mod+"+"+glose+"+"+mod
     return glose
     
@@ -104,22 +154,38 @@ class HierarchieCF:
         self.superieur={}
         self.categorie={}
         self.trait={}
+        self.sets={}
         
-    def addCategory(self,category,classe):
-        if not category in self.classes:
-            self.classes[category]=[]
-        self.classes[category].append(classe)
-        self.superieur[classe]=category
-        if category in gloses:
-            self.categorie[classe]=category
-        else:
-            self.categorie[classe]=self.categorie[category]
-            category=self.categorie[category]
-        for attribut in gloses[category]:
-            if set(gloses[category][attribut])==set(hierarchieCF.classes[category]):
-                for valeur in gloses[category][attribut]:
-                    hierarchieCF.addFeature(category,valeur,attribut)
-                    
+    def addCategory(self,superclasse,classe):
+        if not superclasse in self.classes:
+            self.classes[superclasse]=[]
+        self.classes[superclasse].append(classe)
+        self.superieur[classe]=superclasse
+        if superclasse in gloses:               #si superclasse est une catégorie
+            self.categorie[classe]=superclasse
+            category=superclasse
+#            for attribut in gloses[superclasse]:
+#                if set(gloses[superclasse][attribut])==set(hierarchieCF.classes[superclasse]):
+#                    for valeur in gloses[superclasse][attribut]:
+#                        hierarchieCF.addFeature(superclasse,valeur,attribut)
+        else:                                   #si superclasse est une classe flexionnelle
+            self.categorie[classe]=self.categorie[superclasse]
+            category=self.categorie[superclasse]
+#        for attribut in gloses[category]:
+#            if set(gloses[category][attribut])==set(hierarchieCF.classes[category]):
+#                for valeur in gloses[category][attribut]:
+#                    hierarchieCF.addFeature(category,valeur,attribut)
+        for element in self.sets[category]:
+            for featureSet in element:
+                for valeur in featureSet.split(","):
+                    if classe == valeur:
+                        hierarchieCF.addFeature(category,classe,element[featureSet])
+    
+    def addFeatureSet(self,category,attribute,values):
+        if not category in self.sets:
+            self.sets[category]=[]
+        self.sets[category].append({values:attribute})
+                
     def addFeature(self,category,classe,feature):
         self.trait[category+"-"+classe]=feature
         
@@ -159,7 +225,7 @@ class Forme:
         self.glose=glose
         
     def __repr__(self):
-        return "%s:\t%s %s"%(self.sigma,self.forme, self.glose)
+        return "%s:\t%s\t%s"%(self.sigma,self.forme, self.glose)
     
 class Tableau:
     '''
@@ -185,7 +251,7 @@ class Tableau:
         listCases=[]
         for case in self.cases:
             listCases.append(str(case))
-        return self.stem+" :\n"+"\n\t".join(listCases)
+        return self.stem+" :\n\t\t\t"+"\n\t\t\t".join(listCases)
 
 class Lexeme:
     '''
@@ -199,7 +265,7 @@ class Lexeme:
         self.formes=[]
 
     def __repr__(self):
-        return "%s, %s, %s\n%s\n"%(self.stem,self.classe,self.nom,self.paradigme)
+        return "%s, %s, %s\n\t\t%s\n"%(self.stem,self.classe,self.nom,self.paradigme)
     
     def addForme(self,*formes):
         for forme in formes:
@@ -211,9 +277,13 @@ class Lexique:
     '''
     def __init__(self):
         self.lexemes={}
+        
+    def __repr__(self):
+        return "\n".join(["%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
     
     def addLexeme(self,classe,stem,*formes):
         if classe!=hierarchieCF.getCategory(classe):
+#            print type(formes[0]),formes[0],type(classe),classe
             nom=formes[0]+"."+classe
         else:
             nom=formes[0]
@@ -259,22 +329,51 @@ class Regles:
 
 regles=Regles()
 
+#def analyserStems(niveau):
+#    depthNiveau=depthDict(niveau)
+#    if depthNiveau>1:
+#        for element1 in niveau:
+#            depthElement=depthDict(niveau[element1])
+#            if depthElement>=2:
+#                for element2 in niveau[element1]:
+#                    hierarchieCF.addCategory(element1,element2)
+#                analyserStems(niveau[element1])
+#            else:
+#                for forme in niveau[element1]:
+#                    if isinstance(niveau[element1][forme],str):
+#                        lexique.addLexeme(element1,forme,niveau[element1][forme])
+#                    elif isinstance(niveau[element1][forme],unicode):
+#                        lexique.addLexeme(element1,forme,niveau[element1][forme].encode('utf8'))
+#                    elif isinstance(niveau[element1][forme],list):
+#                        lexique.addLexeme(element1,forme,*niveau[element1][forme])
+#                    else:
+#                        print "PB",element1,forme,niveau[element1][forme]
+
+def analyserGloses(gloses):
+    for category in gloses:
+#        print category
+        if gloses[category]:
+            for feature in gloses[category]:
+#                print feature, gloses[category][feature]
+                hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
+
 def analyserStems(niveau):
-    depthNiveau=depthDict(niveau)
-    if depthNiveau>1:
-        for element1 in niveau:
-            depthElement=depthDict(niveau[element1])
-            if depthElement>=2:
-                for element2 in niveau[element1]:
-                    hierarchieCF.addCategory(element1,element2)
-                analyserStems(niveau[element1])
-            else:
-                for forme in niveau[element1]:
-                    if isinstance(niveau[element1][forme],str):
-                        lexique.addLexeme(element1,forme,niveau[element1][forme])
-                    elif isinstance(niveau[element1][forme],unicode):
-                        lexique.addLexeme(element1,forme,niveau[element1][forme].encode('utf8'))
-                    elif isinstance(niveau[element1][forme],list):
-                        lexique.addLexeme(element1,forme,*niveau[element1][forme])
-                    else:
-                        print "PB",element1,forme,niveau[element1][forme]
+    for element in niveau:
+        if depthDict(niveau[element])==1:
+            for forme in niveau[element]:
+                if isinstance(niveau[element][forme],str):
+                    lexique.addLexeme(element,forme,niveau[element][forme])
+                elif isinstance(niveau[element][forme],unicode):
+                    lexique.addLexeme(element,forme,niveau[element][forme].encode('utf8'))
+                elif isinstance(niveau[element][forme],list):
+                    liste=[]
+                    for f in niveau[element][forme]:
+                        liste.append(f.encode("utf8"))
+                    lexique.addLexeme(element,forme,*liste)
+                else:
+                    print "PB",element,forme,niveau[element][forme]
+        else:
+            for cle in niveau[element]:
+                hierarchieCF.addCategory(element,cle)
+            analyserStems(niveau[element])
+    return

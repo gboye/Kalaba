@@ -5,12 +5,12 @@ derives:
     A: V
     D: C
 nom_classe:
-    A:
+    A: Ø
     B: i
     C: a
     D: u
 nom_apo:
-    : i
+    Ø: i
     i: a
     a: u
     u: u
@@ -20,4 +20,19 @@ nom_mut:
     p: p
     t: p
     k: t
-    
+    b: p
+    d: b
+    g: d
+    m: m
+    n: m
+    N: n
+    f: f
+    s: f
+    S: s
+    v: f
+    z: v
+    Z: z
+    r: w
+    l: r
+    j: w
+    w: w

@@ -13,14 +13,14 @@ N:
 #
 V:
  1: #accord en genre
-    Type=VI, Genre-Abs=H :  X+h
+    Type=VI, Genre-Abs=H :  1a2V3A
     Type=VI, Genre-Abs=Nh : X+n
-    Type=VT :               X+o
+    Type=VT :               ja12A3u
 
  2: #accord en nombre
-    Type=VT, Nombre-Abs=Sg :    si+X
-    Type=VT, Nombre-Abs=Du :    du+X
-    Type=VT, Nombre-Abs=Pl :    plu+X
+    Type=VT, Nombre-Abs=Sg :    si+X+r
+    Type=VT, Nombre-Abs=Du :    X+du
+    Type=VT, Nombre-Abs=Pl :    lu+X
 #    Type=VD, Nombre-Abs=Pauc :    pau+X+kal
 #
 ADJ:

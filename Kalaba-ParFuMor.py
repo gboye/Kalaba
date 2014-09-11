@@ -60,10 +60,21 @@ ParFuMor.lexique=lexique
 
 # In[6]:
 
+analyserGloses(gloses)
 analyserStems(stems)
 
 
-# In[ ]:
+# In[7]:
+
+hierarchieCF.trait
+
+
+# In[8]:
+
+paradigmes.getSigmas("M")
+
+
+# In[9]:
 
 with open('Hierarchie.pkl', 'wb') as output:
    pickle.dump(hierarchieCF, output, pickle.HIGHEST_PROTOCOL)
@@ -73,17 +84,17 @@ with open('Regles.pkl', 'wb') as output:
    pickle.dump(regles, output, pickle.HIGHEST_PROTOCOL)
 
 
-# In[ ]:
+# In[10]:
 
-lexique.getLexemes("e")
+lexique.getLexemes("autruche")
 
 
 # In[11]:
 
-hierarchieCF.trait
+hierarchieCF.superieur
 
 
-# In[ ]:
+# In[11]:
 
 
 
