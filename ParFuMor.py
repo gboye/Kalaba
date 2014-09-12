@@ -16,6 +16,9 @@ def depthDict(element):
     else:
         return 0
 
+def blanc(chaine):
+    return "\\blanc{"+chaine+"}"
+
 def modifierForme(forme,transformation):
     def extraireRacine(simple):
         if verbose: print "simple : ", simple
@@ -101,22 +104,20 @@ def modifierGlose(glose,sigma,typeTrans):
                 if typeRef:
                     valeur=valeur.capitalize()
                 mods.append(valeur)
-            else:
-                mods=[]
     if typeRef:
         mod="".join(mods)
     else:
-        mod="\\blanc{%s}"%".".join(mods)
+        mod=".".join(mods)
     if typeTrans=="gabarit":
-        glose=glose+"x"+mod
+        glose=glose+blanc("x"+mod)
     elif typeTrans=="suffixe":
-        glose=glose+"-"+mod
+        glose=glose+blanc("-"+mod)
     elif typeTrans=="préfixe":
-        glose=mod+"-"+glose
+        glose=blanc(mod+"-")+glose
     elif typeTrans=="circonfixe":
-        glose=mod+"+"+glose+"+"+mod
-    elif typeTrans=="ref":
-        glose="".join(glose.split("."))+mod
+        glose=blanc(mod+"+")+glose+blanc("+"+mod)
+    elif typeRef:
+        glose="".join(glose.split(".")[0])+mod
     return glose
     
 class Paradigmes:
@@ -241,7 +242,11 @@ class Tableau:
         categorie=hierarchieCF.getCategory(classe)
         for case in paradigmes.getSigmas(classe):
             forme=self.stem
-            glose=self.nom 
+            cuts=self.nom.split(".")
+            if len(cuts)>1:
+                glose="%s\\blanc{.%s}"%(cuts[0],".".join(cuts[1:]))
+            else:
+                glose=self.nom
             derivations=regles.getRules(categorie,case)
             if derivations:
                 for derivation in derivations:
