@@ -1,4 +1,5 @@
 N:
+ H:
     M:
         bet: 
             - garçon
@@ -17,6 +18,7 @@ N:
             - infirmières
         zabel: Isabelle
         nes: Inès
+ Nh:
     A:  
         bal: 
             - autruche
