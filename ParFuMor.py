@@ -1,5 +1,4 @@
 # coding: utf-8
-#import itertools
 import re
 
 gloses={}
@@ -66,7 +65,7 @@ def modifierForme(forme,transformation):
         racine=extraireRacine(forme)
         result=appliquerGabarit(transformation,racine)
         typeTrans="gabarit"
-        if True: print "f,r,t",forme,racine,result
+        if verbose: print "f,r,t",forme,racine,result
     else:
         affixe=re.match("^([^+]*)\+([^+]*)$",transformation)
         if affixe:
@@ -164,17 +163,9 @@ class HierarchieCF:
         if superclasse in gloses:               #si superclasse est une catégorie
             self.categorie[classe]=superclasse
             category=superclasse
-#            for attribut in gloses[superclasse]:
-#                if set(gloses[superclasse][attribut])==set(hierarchieCF.classes[superclasse]):
-#                    for valeur in gloses[superclasse][attribut]:
-#                        hierarchieCF.addFeature(superclasse,valeur,attribut)
         else:                                   #si superclasse est une classe flexionnelle
             self.categorie[classe]=self.categorie[superclasse]
             category=self.categorie[superclasse]
-#        for attribut in gloses[category]:
-#            if set(gloses[category][attribut])==set(hierarchieCF.classes[category]):
-#                for valeur in gloses[category][attribut]:
-#                    hierarchieCF.addFeature(category,valeur,attribut)
         for element in self.sets[category]:
             for featureSet in element:
                 for valeur in featureSet.split(","):
@@ -283,7 +274,6 @@ class Lexique:
     
     def addLexeme(self,classe,stem,*formes):
         if classe!=hierarchieCF.getCategory(classe):
-#            print type(formes[0]),formes[0],type(classe),classe
             nom=formes[0]+"."+classe
         else:
             nom=formes[0]
@@ -329,32 +319,11 @@ class Regles:
 
 regles=Regles()
 
-#def analyserStems(niveau):
-#    depthNiveau=depthDict(niveau)
-#    if depthNiveau>1:
-#        for element1 in niveau:
-#            depthElement=depthDict(niveau[element1])
-#            if depthElement>=2:
-#                for element2 in niveau[element1]:
-#                    hierarchieCF.addCategory(element1,element2)
-#                analyserStems(niveau[element1])
-#            else:
-#                for forme in niveau[element1]:
-#                    if isinstance(niveau[element1][forme],str):
-#                        lexique.addLexeme(element1,forme,niveau[element1][forme])
-#                    elif isinstance(niveau[element1][forme],unicode):
-#                        lexique.addLexeme(element1,forme,niveau[element1][forme].encode('utf8'))
-#                    elif isinstance(niveau[element1][forme],list):
-#                        lexique.addLexeme(element1,forme,*niveau[element1][forme])
-#                    else:
-#                        print "PB",element1,forme,niveau[element1][forme]
 
 def analyserGloses(gloses):
     for category in gloses:
-#        print category
         if gloses[category]:
             for feature in gloses[category]:
-#                print feature, gloses[category][feature]
                 hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
 
 def analyserStems(niveau):
