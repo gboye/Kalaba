@@ -1,0 +1,16 @@
+N:
+    Genre:  [A,B,C,D]
+    Nombre: [Sg, Du, Pl]
+    Cas:    [Erg,Abs,Obl,Dat]
+V:
+    Type:   [VI, VT,VD]
+    Genre-Abs:  [A,B,C,D]
+    Nombre-Abs: [Sg, Du, Pl]
+    Temps: [PRS,PST]
+DET:
+    Nombre: [Sg, Du, Pl]
+    Cas:   [Erg,Abs,Obl,Dat]
+ADJ:
+    Genre:  [A,B,C,D]
+    Nombre: [Sg, Du, Pl]
+PREP:
