@@ -1,0 +1,83 @@
+N:
+    Nombre:
+        SG: 1a4A2V3e
+        DU: 1A8V2i6C
+        PL: 4U2A9u3D
+    Cas:
+        OBL: ko
+        ERG: re
+        ABS: bo
+        DAT: li
+V:
+    Type:
+        VI: i
+        VT: e
+        VD: a
+    Genre-Abs:
+        A: i
+        B: a
+        C: o
+        D: e
+    Nombre-Abs:
+        SG: p
+        DU: s
+        PL: d
+    Temps:
+        PRS: A1C2a5V3u
+        PST: C4A1o2D3V
+    FormesBase: [INF,PRS,PRS,PST,PST]
+DET:
+    Nombre:
+        SG: o
+        DU: a
+        PL: i
+    Cas:
+        OBL: g
+        ERG: m
+        ABS: k
+        DAT: t
+ADJ:
+    Genre:
+        A: v
+        B: f
+        C: d
+        D: k
+    Nombre:
+        SG: i
+        DU: a
+        PL: o
+    CF:
+        Nombre:
+            '1':
+                SG: i
+                DU: a
+                PL: o
+            '2':
+                SG: o
+                DU: a
+                PL: i
+        Genre:
+            '1':
+                A: v
+                B: f
+                C: d
+                D: k
+            '2':
+                A: m
+                B: v
+                C: t
+                D: g
+########################
+########################
+## SYNTAGMES
+########################
+Syntagmes:
+    Phrase: ['AJOUT','SUJ','COMP','IND','OBJ','V']
+    GN: [N,GP,GADJ,DET]
+    GP: [GN,PREP]
+    GADJ: [GP,ADV,ADJ]
+Contractions:
+    au: [à,le]
+    aux: [à,les]
+    du: [de,le]
+    des: [de, les]

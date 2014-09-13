@@ -16,6 +16,9 @@ def depthDict(element):
     else:
         return 0
 
+def cacherGloses(chaine):
+    return "\\cacherGloses{"+chaine+"}"
+
 def modifierForme(forme,transformation):
     def extraireRacine(simple):
         if verbose: print "simple : ", simple
@@ -43,15 +46,15 @@ def modifierForme(forme,transformation):
             if signe in "123":				#place les consonnes en 1, 2, 3
                 result=result+racine[signe]
             elif signe in "456":
-                result=result+phonology["nom_mut"][racine[str(int(signe)-3)]]
+                result=result+phonology["mutations"][racine[str(int(signe)-3)]]
             elif signe in "789":
-                result=result+phonology["nom_mut"][phonology["nom_mut"][racine[str(int(signe)-6)]]]
+                result=result+phonology["mutations"][phonology["mutations"][racine[str(int(signe)-6)]]]
             elif signe in "V":				#place la voyelle radicale V et la voyelle de classe C
                 result=result+racine[signe]
             elif signe in "A":
-                result=result+phonology["nom_apo"][racine[phonology["derives"][signe]]]#place les apophones de V et C (resp. A et D)
+                result=result+phonology["apophonies"][racine[phonology["derives"][signe]]]#place les apophones de V et C (resp. A et D)
             elif signe in "U":
-                result=result+phonology["nom_apo"][phonology["nom_apo"][racine['V']]]	#place le bi-apophone de V
+                result=result+phonology["apophonies"][phonology["apophonies"][racine['V']]]	#place le bi-apophone de V
             else:
                 result=result+signe
             if verbose: print signe, result
@@ -89,22 +92,32 @@ def modifierForme(forme,transformation):
 
 def modifierGlose(glose,sigma,typeTrans):
     '''
-    à remplir
+    Calcule la glose à partir de sigma
     '''
     mods=[]
+    typeRef=(typeTrans=="ref")        
     attributValeurs=sigma.split(",")
     for attributValeur in attributValeurs:
-        (attribut,valeur)=attributValeur.split("=")
-        mods.append(valeur)
-    mod=".".join(mods)
+            paire=attributValeur.split("=")
+            if len(paire)==2:
+                valeur=paire[1]
+                if typeRef:
+                    valeur=valeur.capitalize()
+                mods.append(valeur)
+    if typeRef:
+        mod="".join(mods)
+    else:
+        mod=".".join(mods)
     if typeTrans=="gabarit":
-        glose=glose+"x"+mod
+        glose=glose+cacherGloses("x"+mod)
     elif typeTrans=="suffixe":
-        glose=glose+"-"+mod
+        glose=glose+cacherGloses("-"+mod)
     elif typeTrans=="préfixe":
-        glose=mod+"-"+glose
+        glose=cacherGloses(mod+"-")+glose
     elif typeTrans=="circonfixe":
-        glose=mod+"+"+glose+"+"+mod
+        glose=cacherGloses(mod+"+")+glose+cacherGloses("+"+mod)
+    elif typeRef:
+        glose="".join(glose.split(".")[0])+mod
     return glose
     
 class Paradigmes:
@@ -229,7 +242,11 @@ class Tableau:
         categorie=hierarchieCF.getCategory(classe)
         for case in paradigmes.getSigmas(classe):
             forme=self.stem
-            glose=self.nom 
+            cuts=self.nom.split(".")
+            if len(cuts)>1:
+                glose="%s.%s"%(cuts[0],cacherGloses(".".join(cuts[1:])))
+            else:
+                glose=self.nom
             derivations=regles.getRules(categorie,case)
             if derivations:
                 for derivation in derivations:
@@ -268,17 +285,22 @@ class Lexique:
     '''
     def __init__(self):
         self.lexemes={}
+        self.catLexeme={}
         
     def __repr__(self):
         return "\n".join(["%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
     
     def addLexeme(self,classe,stem,*formes):
-        if classe!=hierarchieCF.getCategory(classe):
+        categorie=hierarchieCF.getCategory(classe)
+        if classe!=categorie:
             nom=formes[0]+"."+classe
         else:
             nom=formes[0]
         self.lexemes[nom]=Lexeme(stem,classe,nom)
         self.lexemes[nom].addForme(*formes)
+        if not categorie in self.catLexeme:
+            self.catLexeme[categorie]=[]
+        self.catLexeme[categorie].append(nom)
     
     def getLexemes(self,nom):
         if nom in self.lexemes:

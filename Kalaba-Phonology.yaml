@@ -1,5 +1,15 @@
 consonnes: ptkbdgmnNfsSvzZrljw
 voyelles: iueoa
+translations:
+    ipa:
+        in: SZN
+        out: ʃʒŋ
+    grapho:
+        in: ptkbdgmnNfsSvzZrljw
+        out: ptkpdkmnnqssqzzrrjw
+    deaccent:
+        in: àâçéèêîùô
+        out: aaceeeiuo
 gabarits: [SG, DU, PL, PRS, PST]
 derives:
     A: V
@@ -9,14 +19,14 @@ nom_classe:
     B: i
     C: a
     D: u
-nom_apo:
+apophonies:
     Ø: i
     i: a
     a: u
     u: u
     e: o
     o: o
-nom_mut:
+mutations:
     p: p
     t: p
     k: t
@@ -36,3 +46,59 @@ nom_mut:
     l: r
     j: w
     w: w
+syllabes:
+    da: d 
+    de: D 
+    di: f
+    do: g 
+    du: x
+    ja: j 
+    je: J 
+    jo: b 
+    ju: L
+    ka: k 
+    ke: K 
+    ki: c
+    ko: h 
+    ku: v
+    ma: m 
+    me: M 
+    mi: y
+    mo: A 
+    mu: B
+    na: n 
+    ne: N 
+    ni: C
+    no: E 
+    nu: F
+    pa: p 
+    pe: P 
+    pi: G
+    po: H 
+    pu: I
+    qa: q 
+    qe: Q 
+    qi: X
+    qo: '8' 
+    ra: r 
+    re: R 
+    ri: O
+    ro: U 
+    ru: V
+    sa: s 
+    se: S 
+    si: Y
+    so: '1' 
+    su: '2'
+    ta: t 
+    te: T 
+    ti: '3'
+    to: '4' 
+    tu: '5'
+    wa: w 
+    we: W 
+    wi: '6'
+    wo: '7' 
+    za: z 
+    ze: Z 
+    zo: '9' 

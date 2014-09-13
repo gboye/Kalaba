@@ -1,15 +1,16 @@
 N:
-    Genre:  [M,F,A,I]
+    Genre:  [A,B,C,D]
     Nombre: [Sg, Du, Pl]
-    Cas:    [Erg, Abs, Nu]
+    Cas:    [Erg,Abs,Obl,Dat]
 V:
-    Type:   [VI, VT]
-    Genre-Abs:  [H, Nh]
+    Type:   [VI, VT,VD]
+    Genre-Abs:  [A,B,C,D]
     Nombre-Abs: [Sg, Du, Pl]
+    Temps: [PRS,PST]
 DET:
-    Type:   [DEF, IND, DEM]
     Nombre: [Sg, Du, Pl]
+    Cas:   [Erg,Abs,Obl,Dat]
 ADJ:
-    Genre:  [M, F, A, I]
+    Genre:  [A,B,C,D]
     Nombre: [Sg, Du, Pl]
 PREP:
