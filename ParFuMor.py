@@ -286,6 +286,7 @@ class Lexique:
     def __init__(self):
         self.lexemes={}
         self.catLexeme={}
+        self.formeLexeme={}
         
     def __repr__(self):
         return "\n".join(["%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
@@ -298,6 +299,10 @@ class Lexique:
             nom=formes[0]
         self.lexemes[nom]=Lexeme(stem,classe,nom)
         self.lexemes[nom].addForme(*formes)
+        for forme in formes:
+            if not forme in self.formeLexeme:
+                self.formeLexeme[forme]=[]
+            self.formeLexeme[forme].append(nom)
         if not categorie in self.catLexeme:
             self.catLexeme[categorie]=[]
         self.catLexeme[categorie].append(nom)
@@ -307,6 +312,7 @@ class Lexique:
             return [self.lexemes[nom]]
         else:
             return [lexeme for (vedette, lexeme) in self.lexemes.iteritems() if nom in vedette]
+    
 
 lexique=Lexique()
 
