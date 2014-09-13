@@ -16,8 +16,8 @@ def depthDict(element):
     else:
         return 0
 
-def blanc(chaine):
-    return "\\blanc{"+chaine+"}"
+def cacherGloses(chaine):
+    return "\\cacherGloses{"+chaine+"}"
 
 def modifierForme(forme,transformation):
     def extraireRacine(simple):
@@ -109,13 +109,13 @@ def modifierGlose(glose,sigma,typeTrans):
     else:
         mod=".".join(mods)
     if typeTrans=="gabarit":
-        glose=glose+blanc("x"+mod)
+        glose=glose+cacherGloses("x"+mod)
     elif typeTrans=="suffixe":
-        glose=glose+blanc("-"+mod)
+        glose=glose+cacherGloses("-"+mod)
     elif typeTrans=="préfixe":
-        glose=blanc(mod+"-")+glose
+        glose=cacherGloses(mod+"-")+glose
     elif typeTrans=="circonfixe":
-        glose=blanc(mod+"+")+glose+blanc("+"+mod)
+        glose=cacherGloses(mod+"+")+glose+cacherGloses("+"+mod)
     elif typeRef:
         glose="".join(glose.split(".")[0])+mod
     return glose
@@ -244,7 +244,7 @@ class Tableau:
             forme=self.stem
             cuts=self.nom.split(".")
             if len(cuts)>1:
-                glose="%s\\blanc{.%s}"%(cuts[0],".".join(cuts[1:]))
+                glose="%s.%s"%(cuts[0],cacherGloses(".".join(cuts[1:])))
             else:
                 glose=self.nom
             derivations=regles.getRules(categorie,case)

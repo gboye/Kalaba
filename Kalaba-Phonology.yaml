@@ -1,5 +1,15 @@
 consonnes: ptkbdgmnNfsSvzZrljw
 voyelles: iueoa
+translations:
+    ipa:
+        in: SZN
+        out: ʃʒŋ
+    grapho:
+        in: ptkbdgmnNfsSvzZrljw
+        out: ptkpdkmnnqssqzzrrjw
+    deaccent:
+        in: àâçéèêîùô
+        out: aaceeeiuo
 gabarits: [SG, DU, PL, PRS, PST]
 derives:
     A: V

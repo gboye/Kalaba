@@ -1,43 +1,62 @@
 N:
- 1: #accord du genre:
-    Cas=Erg, Genre=M :  X+o
-    Cas=Abs, Genre=M :  X+e
-    Genre=F :           X+a
-    Cas=Abs, Genre=A :  X+i
- 2: #accord du nombre:
-    Cas=Erg :                       X+s
-    Cas=Abs, Nombre=Du :            X+d
-    Cas=Erg, Nombre=Pl :            X+t
-    Cas=Erg, Nombre=Sg :            X+x
-    Cas=Abs, Genre=F, Nombre=Du :   X+b
+ 1: #accord du nombre:
+    Nombre=Sg :  1a4A2V3e
+    Genre=A,Nombre=Du :  1A8V2i6
+    Genre=B,Nombre=Du :  1A8V2i6i
+    Genre=C,Nombre=Du :  1A8V2i6a
+    Genre=D,Nombre=Du :  1A8V2i6u
+    Genre=A,Nombre=Pl :  4U2A9u3i
+    Genre=B,Nombre=Pl :  4U2A9u3a
+    Genre=C,Nombre=Pl :  4U2A9u3u
+    Genre=D,Nombre=Pl :  4U2A9u3u
+ 2: #accord du cas:
+    Cas=Erg : re+X
+    Cas=Abs : bo+X
+    Cas=Obl : ko+X
+    Cas=Dat : li+X
 #
 V:
- 1: #accord en genre
-    Type=VI, Genre-Abs=H :  1a2V3A
-    Type=VI, Genre-Abs=Nh : X+n
-    Type=VT :               ja12A3u
-
- 2: #accord en nombre
-    Type=VT, Nombre-Abs=Sg :    si+X+r
-    Type=VT, Nombre-Abs=Du :    X+du
-    Type=VT, Nombre-Abs=Pl :    lu+X
-#    Type=VD, Nombre-Abs=Pauc :    pau+X+kal
+# 1: #type
+#    Type=VI: X+i
+#    Type=VT: X+e
+#    Type=VD: X+a
+ 2: #temps
+    Temps=PRS, Genre-Abs=A : A1i2a5V3u
+    Temps=PRS, Genre-Abs=B : A1a2a5V3u
+    Temps=PRS, Genre-Abs=C : A1o2a5V3u
+    Temps=PRS, Genre-Abs=D : A1e2a5V3u
+    Temps=PST, Genre-Abs=A : i4A1o2a3V
+    Temps=PST, Genre-Abs=B : a4A1o2u3V
+    Temps=PST, Genre-Abs=C : o4A1o2o3V
+    Temps=PST, Genre-Abs=D : e4A1o2o3V
+ 3: #accord en nombre
+    Nombre-Abs=Sg :    p+X
+    Nombre-Abs=Du :    s+X
+    Nombre-Abs=Pl :    d+X
 #
 ADJ:
  1:
-    Nombre=Sg : a+X
-    Nombre=Pl : e+X
-    Nombre=Du : i+X
-    Genre=M, Nombre=Sg : X+o
-    Genre=F, Nombre=Pl : X+a
-    Genre=A, Nombre=Du : X+e
+    Type=1,Nombre=Sg : X+i
+    Type=2,Nombre=Sg : X+o
+    Nombre=Du : X+a
+    Type=1,Nombre=Pl : X+o
+    Type=2,Nombre=Pl : X+i
+ 2:
+    Type=1,Genre=A : X+v
+    Type=1,Genre=B : X+f
+    Type=1,Genre=C : X+d
+    Type=1,Genre=D : X+k
+    Type=2,Genre=A : X+m
+    Type=2,Genre=B : X+v
+    Type=2,Genre=C : X+t
+    Type=2,Genre=D : X+g
 DET:
  1:
-    Nombre=Sg : i+X
-    Nombre=Du : u+X
-    Nombre=Pl : e+X
-    Nombre=Pl, Type=DEF : X+u
+    Nombre=Sg : X+o
+    Nombre=Du : X+a
+    Nombre=Pl : X+i
  2:
-    Type=DEM :  d+X
-    Type=IND :  X+i
-    Type=DEF, Nombre=Sg : a+X
+    Cas=Obl : X+g
+    Cas=Erg : X+m
+    Cas=Abs : X+k
+    Cas=Dat : X+t

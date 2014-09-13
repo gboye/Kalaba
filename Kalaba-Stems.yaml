@@ -1,164 +1,94 @@
 N:
- H:
-    M:
-        bet: 
-            - garçon
-            - garçons
-        rup: 
-            - pompier
-            - pompiers
-        dil: Adil
-        donis: Adonis
-    F:
-        sot: 
-            - fille
-            - filles
-        rum: 
-            - infirmière
-            - infirmières
-        zabel: Isabelle
-        nes: Inès
- Nh:
-    A:  
-        bal: 
-            - autruche
-            - autruches
-        rat: 
-            - chat
-            - chats
-        kat: souris
-    I:
-        kab: 
-            - table
-            - tables
-        non: 
-            - oeuf
-            - oeufs
-        suk: 
-            - coussin
-            - coussins
-        ban: 
-            - chambre
-            - chambres
-        pok: 
-            - lit
-            - lits
-        kol: 
-            - thé
-            - thés
-        bol: 
-            - café
-            - cafés
+    A:
+        katiSa: [Katisha,Katishas]
+        padaN: [viande,viandes]
+        toSik: [fruit,fruits]
+        modak: [infirmière,infirmières]
+        gatok: [balai,balais]
+        pebiz: [plaine,plaines]
+    B:
+        nikol: [Nicole,Nicoles]
+        minet: [autruche,autruches]
+        SeNon: [souriS,souris]
+        sapum: [coussin,coussins]
+        gitun: [chambre,chambres]
+        maren: [thé,thés]
+    C:
+        diNol: [chasseur,chasseurs]
+        minut: [fille,filles]
+        Zerom: [oeuf,oeufs]
+        felot: [café,cafés]
+        potaS: [coyote,coyotes]
+        kasab: [village,villages]
+    D:
+        nabil: [Nabil,Nabils]
+        mesaZ: [garçon,garçons]
+        pulop: [cuisine,cuisines]
+        Nazon: [table,tables]
+        rumak: [chat,chatte,chats,chattes]
+        gobid: [lit,lits]
+        kuroz: [maison,maisons]
+#####################
+##
+## ADJECTIFS
+##
+#####################
 ADJ:
-    nul: 
-        - grand
-        - grands
-        - grande
-        - grandes
-    big: 
-        - petit
-        - petits
-        - petite
-        - petites
-    nor: 
-        - blanc
-        - blancs
-        - blanche
-        - blanches
-    lab: 
-        - noir
-        - noirs
-        - noire
-        - noires
-    gil: 
-        - gros
-        - grosse
-        - grosses
-V: 
-    VT:
-        bogot: 
-            - manger
-            - mange
-            - mangent
-            - mangeait
-            - mangeaient
-            - mangera
-            - mangeront
-        milit: 
-            - boire
-            - boit
-            - boivent
-            - buvait
-            - buvaient
-            - boira
-            - boiront
-        lamab: 
-            - acheter
-            - achète
-            - achètent
-            - achetait
-            - achetaient
-            - achètera
-            - achèteront
-        disak: 
-            - supporter
-            - supporte
-            - supportent
-            - supportait
-            - supportaient
-            - supportera
-            - supporteront
+    '1':
+        meN: [grand,grande,grands,grandes]
+        rug: [petit,petite,petits,petites]
+        nor: [blanc,blanche,blancs,blanches]
+        dos: [noir,noire,noirs,noires]
+        lik: [bas,basse,basses]
+    '2':
+        lap: [gros,grosse,grosses]
+        Nul: [maigre,maigres]
+        kun: [jaune,jaunes]
+        gil: [rouge,rouges]
+        bat: [trois]
+        jig: [quatre]
+#####################
+##
+## VERBES
+##
+#####################
+V:
     VI:
-        topaz: 
-            - dormir
-            - dort
-            - dorment
-            - dormait
-            - dormaient
-            - dormira
-            - dormiront
-        fatig: 
-            - tomber
-            - tombe
-            - tombent
-            - tombait
-            - tombaient
-            - tombera
-            - tomberont
-        balad: 
-            - arriver
-            - arrive
-            - arrivent
-            - arrivait
-            - arrivaient
-            - arrivera
-            - arriveront
-#    VD:
-#        test:
-#            - tester
+        briN: [dormir,dort,dorment,dormait,dormaient]
+        rnif: [tomber,tombe,tombent,tombait,tombaient]
+        svit: [arriver,arrive,arrivent,arrivait,arrivaient]
+        btir: [entrer,entre,entrent,entrait,entraient]
+    VT:
+        pled: [manger,mange,mangent,mangeait,mangeaient]
+        Srev: [boire,boit,boivent,buvait,buvaient]
+        grej: [acheter,achète,achètent,achetait,achetaient]
+        nkem: [supporter,supporte,supportent,supportait,supportaient]
+        dNet: [chasser,chasse,chassent,chassait,chassaient]
+    VD:
+        psag: [donner,donne,donnent,donnait,donnaient]
+        rdan: [offrir,offre,offrent,offrait,offraient]
+        pral: [lancer,lance,lancent,lançait,lançaient]
+        pnab: [montrer,montre,montrent,montrait,montraient]
+#####################
+##
+## DETERMINANTS
+##
+#####################
 DET:
-    DEF:
-        k: 
-        - DEF
-        - le
-        - la
-        - les
-    IND:
-        l: 
-            - IND
-            - un
-            - une
-            - des
-    DEM:
-        b: 
-            - DEM
-            - ce
-            - cet
-            - cette
-            - ces
+    b: [DEF,le,la,les,l]
+    k: [IND,un,une,des]
+    l: [DEM,ce,cet,cette,ces]
+####################
+##
+## PREPOSITIONS
+##
+#####################
 PREP:
-    sur: dans
-    pik: sur
-    dem: avec
-    man: de
-    zon: sous
+    kal: [dans]
+    lab: [sur]
+    bak: [avec]
+    sil: [de,d]
+    jan: [sous]
+    sed: [à]
+    dul: [devant]
+    laN: [pour]
