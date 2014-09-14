@@ -69,7 +69,7 @@ syllabes:
     na: n 
     ne: N 
     ni: C
-    no: E 
+    'no': E 
     nu: F
     pa: p 
     pe: P 
