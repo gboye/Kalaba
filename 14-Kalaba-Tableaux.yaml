@@ -1,0 +1,355 @@
+{ADJ: [\noirASg & \noirASgP & \\, \noirADu & \noirADuP & \\, \noirAPl & \noirAPlP
+      & \\, \noirBSg & \noirBSgP & \\, \noirBDu & \noirBDuP & \\, \noirBPl & \noirBPlP
+      & \\, \noirCSg & \noirCSgP & \\, \noirCDu & \noirCDuP & \\, \noirCPl & \noirCPlP
+      & \\, \noirDSg & \noirDSgP & \\, \noirDDu & \noirDDuP & \\, \noirDPl & \noirDPlP
+      & \\, \grandASg & \grandASgP & \\, \grandADu & \grandADuP & \\, \grandAPl &
+      \grandAPlP & \\, \grandBSg & \grandBSgP & \\, \grandBDu & \grandBDuP & \\, \grandBPl
+      & \grandBPlP & \\, \grandCSg & \grandCSgP & \\, \grandCDu & \grandCDuP & \\,
+    \grandCPl & \grandCPlP & \\, \grandDSg & \grandDSgP & \\, \grandDDu & \grandDDuP
+      & \\, \grandDPl & \grandDPlP & \\, \petitASg & \petitASgP & \\, \petitADu &
+      \petitADuP & \\, \petitAPl & \petitAPlP & \\, \petitBSg & \petitBSgP & \\, \petitBDu
+      & \petitBDuP & \\, \petitBPl & \petitBPlP & \\, \petitCSg & \petitCSgP & \\,
+    \petitCDu & \petitCDuP & \\, \petitCPl & \petitCPlP & \\, \petitDSg & \petitDSgP
+      & \\, \petitDDu & \petitDDuP & \\, \petitDPl & \petitDPlP & \\, \blancASg &
+      \blancASgP & \\, \blancADu & \blancADuP & \\, \blancAPl & \blancAPlP & \\, \blancBSg
+      & \blancBSgP & \\, \blancBDu & \blancBDuP & \\, \blancBPl & \blancBPlP & \\,
+    \blancCSg & \blancCSgP & \\, \blancCDu & \blancCDuP & \\, \blancCPl & \blancCPlP
+      & \\, \blancDSg & \blancDSgP & \\, \blancDDu & \blancDDuP & \\, \blancDPl &
+      \blancDPlP & \\, \basASg & \basASgP & \\, \basADu & \basADuP & \\, \basAPl &
+      \basAPlP & \\, \basBSg & \basBSgP & \\, \basBDu & \basBDuP & \\, \basBPl & \basBPlP
+      & \\, \basCSg & \basCSgP & \\, \basCDu & \basCDuP & \\, \basCPl & \basCPlP &
+      \\, \basDSg & \basDSgP & \\, \basDDu & \basDDuP & \\, \basDPl & \basDPlP & \\,
+    \quatreASg & \quatreASgP & \\, \quatreADu & \quatreADuP & \\, \quatreAPl & \quatreAPlP
+      & \\, \quatreBSg & \quatreBSgP & \\, \quatreBDu & \quatreBDuP & \\, \quatreBPl
+      & \quatreBPlP & \\, \quatreCSg & \quatreCSgP & \\, \quatreCDu & \quatreCDuP
+      & \\, \quatreCPl & \quatreCPlP & \\, \quatreDSg & \quatreDSgP & \\, \quatreDDu
+      & \quatreDDuP & \\, \quatreDPl & \quatreDPlP & \\, \troisASg & \troisASgP &
+      \\, \troisADu & \troisADuP & \\, \troisAPl & \troisAPlP & \\, \troisBSg & \troisBSgP
+      & \\, \troisBDu & \troisBDuP & \\, \troisBPl & \troisBPlP & \\, \troisCSg &
+      \troisCSgP & \\, \troisCDu & \troisCDuP & \\, \troisCPl & \troisCPlP & \\, \troisDSg
+      & \troisDSgP & \\, \troisDDu & \troisDDuP & \\, \troisDPl & \troisDPlP & \\,
+    \jauneASg & \jauneASgP & \\, \jauneADu & \jauneADuP & \\, \jauneAPl & \jauneAPlP
+      & \\, \jauneBSg & \jauneBSgP & \\, \jauneBDu & \jauneBDuP & \\, \jauneBPl &
+      \jauneBPlP & \\, \jauneCSg & \jauneCSgP & \\, \jauneCDu & \jauneCDuP & \\, \jauneCPl
+      & \jauneCPlP & \\, \jauneDSg & \jauneDSgP & \\, \jauneDDu & \jauneDDuP & \\,
+    \jauneDPl & \jauneDPlP & \\, \rougeASg & \rougeASgP & \\, \rougeADu & \rougeADuP
+      & \\, \rougeAPl & \rougeAPlP & \\, \rougeBSg & \rougeBSgP & \\, \rougeBDu &
+      \rougeBDuP & \\, \rougeBPl & \rougeBPlP & \\, \rougeCSg & \rougeCSgP & \\, \rougeCDu
+      & \rougeCDuP & \\, \rougeCPl & \rougeCPlP & \\, \rougeDSg & \rougeDSgP & \\,
+    \rougeDDu & \rougeDDuP & \\, \rougeDPl & \rougeDPlP & \\, \grosASg & \grosASgP
+      & \\, \grosADu & \grosADuP & \\, \grosAPl & \grosAPlP & \\, \grosBSg & \grosBSgP
+      & \\, \grosBDu & \grosBDuP & \\, \grosBPl & \grosBPlP & \\, \grosCSg & \grosCSgP
+      & \\, \grosCDu & \grosCDuP & \\, \grosCPl & \grosCPlP & \\, \grosDSg & \grosDSgP
+      & \\, \grosDDu & \grosDDuP & \\, \grosDPl & \grosDPlP & \\, \maigreASg & \maigreASgP
+      & \\, \maigreADu & \maigreADuP & \\, \maigreAPl & \maigreAPlP & \\, \maigreBSg
+      & \maigreBSgP & \\, \maigreBDu & \maigreBDuP & \\, \maigreBPl & \maigreBPlP
+      & \\, \maigreCSg & \maigreCSgP & \\, \maigreCDu & \maigreCDuP & \\, \maigreCPl
+      & \maigreCPlP & \\, \maigreDSg & \maigreDSgP & \\, \maigreDDu & \maigreDDuP
+      & \\, \maigreDPl & \maigreDPlP & \\], DET: [\INDSgErg & \INDSgErgP & \\, \INDSgAbs
+      & \INDSgAbsP & \\, \INDSgObl & \INDSgOblP & \\, \INDSgDat & \INDSgDatP & \\,
+    \INDDuErg & \INDDuErgP & \\, \INDDuAbs & \INDDuAbsP & \\, \INDDuObl & \INDDuOblP
+      & \\, \INDDuDat & \INDDuDatP & \\, \INDPlErg & \INDPlErgP & \\, \INDPlAbs &
+      \INDPlAbsP & \\, \INDPlObl & \INDPlOblP & \\, \INDPlDat & \INDPlDatP & \\, \DEFSgErg
+      & \DEFSgErgP & \\, \DEFSgAbs & \DEFSgAbsP & \\, \DEFSgObl & \DEFSgOblP & \\,
+    \DEFSgDat & \DEFSgDatP & \\, \DEFDuErg & \DEFDuErgP & \\, \DEFDuAbs & \DEFDuAbsP
+      & \\, \DEFDuObl & \DEFDuOblP & \\, \DEFDuDat & \DEFDuDatP & \\, \DEFPlErg &
+      \DEFPlErgP & \\, \DEFPlAbs & \DEFPlAbsP & \\, \DEFPlObl & \DEFPlOblP & \\, \DEFPlDat
+      & \DEFPlDatP & \\, \DEMSgErg & \DEMSgErgP & \\, \DEMSgAbs & \DEMSgAbsP & \\,
+    \DEMSgObl & \DEMSgOblP & \\, \DEMSgDat & \DEMSgDatP & \\, \DEMDuErg & \DEMDuErgP
+      & \\, \DEMDuAbs & \DEMDuAbsP & \\, \DEMDuObl & \DEMDuOblP & \\, \DEMDuDat &
+      \DEMDuDatP & \\, \DEMPlErg & \DEMPlErgP & \\, \DEMPlAbs & \DEMPlAbsP & \\, \DEMPlObl
+      & \DEMPlOblP & \\, \DEMPlDat & \DEMPlDatP & \\], N: [\infirmiereASgErg & \infirmiereASgErgP
+      & \\, \infirmiereASgAbs & \infirmiereASgAbsP & \\, \infirmiereASgObl & \infirmiereASgOblP
+      & \\, \infirmiereASgDat & \infirmiereASgDatP & \\, \infirmiereADuErg & \infirmiereADuErgP
+      & \\, \infirmiereADuAbs & \infirmiereADuAbsP & \\, \infirmiereADuObl & \infirmiereADuOblP
+      & \\, \infirmiereADuDat & \infirmiereADuDatP & \\, \infirmiereAPlErg & \infirmiereAPlErgP
+      & \\, \infirmiereAPlAbs & \infirmiereAPlAbsP & \\, \infirmiereAPlObl & \infirmiereAPlOblP
+      & \\, \infirmiereAPlDat & \infirmiereAPlDatP & \\, \KatishaASgErg & \KatishaASgErgP
+      & \\, \KatishaASgAbs & \KatishaASgAbsP & \\, \KatishaASgObl & \KatishaASgOblP
+      & \\, \KatishaASgDat & \KatishaASgDatP & \\, \KatishaADuErg & \KatishaADuErgP
+      & \\, \KatishaADuAbs & \KatishaADuAbsP & \\, \KatishaADuObl & \KatishaADuOblP
+      & \\, \KatishaADuDat & \KatishaADuDatP & \\, \KatishaAPlErg & \KatishaAPlErgP
+      & \\, \KatishaAPlAbs & \KatishaAPlAbsP & \\, \KatishaAPlObl & \KatishaAPlOblP
+      & \\, \KatishaAPlDat & \KatishaAPlDatP & \\, \plaineASgErg & \plaineASgErgP
+      & \\, \plaineASgAbs & \plaineASgAbsP & \\, \plaineASgObl & \plaineASgOblP &
+      \\, \plaineASgDat & \plaineASgDatP & \\, \plaineADuErg & \plaineADuErgP & \\,
+    \plaineADuAbs & \plaineADuAbsP & \\, \plaineADuObl & \plaineADuOblP & \\, \plaineADuDat
+      & \plaineADuDatP & \\, \plaineAPlErg & \plaineAPlErgP & \\, \plaineAPlAbs &
+      \plaineAPlAbsP & \\, \plaineAPlObl & \plaineAPlOblP & \\, \plaineAPlDat & \plaineAPlDatP
+      & \\, \viandeASgErg & \viandeASgErgP & \\, \viandeASgAbs & \viandeASgAbsP &
+      \\, \viandeASgObl & \viandeASgOblP & \\, \viandeASgDat & \viandeASgDatP & \\,
+    \viandeADuErg & \viandeADuErgP & \\, \viandeADuAbs & \viandeADuAbsP & \\, \viandeADuObl
+      & \viandeADuOblP & \\, \viandeADuDat & \viandeADuDatP & \\, \viandeAPlErg &
+      \viandeAPlErgP & \\, \viandeAPlAbs & \viandeAPlAbsP & \\, \viandeAPlObl & \viandeAPlOblP
+      & \\, \viandeAPlDat & \viandeAPlDatP & \\, \balaiASgErg & \balaiASgErgP & \\,
+    \balaiASgAbs & \balaiASgAbsP & \\, \balaiASgObl & \balaiASgOblP & \\, \balaiASgDat
+      & \balaiASgDatP & \\, \balaiADuErg & \balaiADuErgP & \\, \balaiADuAbs & \balaiADuAbsP
+      & \\, \balaiADuObl & \balaiADuOblP & \\, \balaiADuDat & \balaiADuDatP & \\,
+    \balaiAPlErg & \balaiAPlErgP & \\, \balaiAPlAbs & \balaiAPlAbsP & \\, \balaiAPlObl
+      & \balaiAPlOblP & \\, \balaiAPlDat & \balaiAPlDatP & \\, \fruitASgErg & \fruitASgErgP
+      & \\, \fruitASgAbs & \fruitASgAbsP & \\, \fruitASgObl & \fruitASgOblP & \\,
+    \fruitASgDat & \fruitASgDatP & \\, \fruitADuErg & \fruitADuErgP & \\, \fruitADuAbs
+      & \fruitADuAbsP & \\, \fruitADuObl & \fruitADuOblP & \\, \fruitADuDat & \fruitADuDatP
+      & \\, \fruitAPlErg & \fruitAPlErgP & \\, \fruitAPlAbs & \fruitAPlAbsP & \\,
+    \fruitAPlObl & \fruitAPlOblP & \\, \fruitAPlDat & \fruitAPlDatP & \\, \filleCSgErg
+      & \filleCSgErgP & \\, \filleCSgAbs & \filleCSgAbsP & \\, \filleCSgObl & \filleCSgOblP
+      & \\, \filleCSgDat & \filleCSgDatP & \\, \filleCDuErg & \filleCDuErgP & \\,
+    \filleCDuAbs & \filleCDuAbsP & \\, \filleCDuObl & \filleCDuOblP & \\, \filleCDuDat
+      & \filleCDuDatP & \\, \filleCPlErg & \filleCPlErgP & \\, \filleCPlAbs & \filleCPlAbsP
+      & \\, \filleCPlObl & \filleCPlOblP & \\, \filleCPlDat & \filleCPlDatP & \\,
+    \coyoteCSgErg & \coyoteCSgErgP & \\, \coyoteCSgAbs & \coyoteCSgAbsP & \\, \coyoteCSgObl
+      & \coyoteCSgOblP & \\, \coyoteCSgDat & \coyoteCSgDatP & \\, \coyoteCDuErg &
+      \coyoteCDuErgP & \\, \coyoteCDuAbs & \coyoteCDuAbsP & \\, \coyoteCDuObl & \coyoteCDuOblP
+      & \\, \coyoteCDuDat & \coyoteCDuDatP & \\, \coyoteCPlErg & \coyoteCPlErgP &
+      \\, \coyoteCPlAbs & \coyoteCPlAbsP & \\, \coyoteCPlObl & \coyoteCPlOblP & \\,
+    \coyoteCPlDat & \coyoteCPlDatP & \\, \oeufCSgErg & \oeufCSgErgP & \\, \oeufCSgAbs
+      & \oeufCSgAbsP & \\, \oeufCSgObl & \oeufCSgOblP & \\, \oeufCSgDat & \oeufCSgDatP
+      & \\, \oeufCDuErg & \oeufCDuErgP & \\, \oeufCDuAbs & \oeufCDuAbsP & \\, \oeufCDuObl
+      & \oeufCDuOblP & \\, \oeufCDuDat & \oeufCDuDatP & \\, \oeufCPlErg & \oeufCPlErgP
+      & \\, \oeufCPlAbs & \oeufCPlAbsP & \\, \oeufCPlObl & \oeufCPlOblP & \\, \oeufCPlDat
+      & \oeufCPlDatP & \\, \villageCSgErg & \villageCSgErgP & \\, \villageCSgAbs &
+      \villageCSgAbsP & \\, \villageCSgObl & \villageCSgOblP & \\, \villageCSgDat
+      & \villageCSgDatP & \\, \villageCDuErg & \villageCDuErgP & \\, \villageCDuAbs
+      & \villageCDuAbsP & \\, \villageCDuObl & \villageCDuOblP & \\, \villageCDuDat
+      & \villageCDuDatP & \\, \villageCPlErg & \villageCPlErgP & \\, \villageCPlAbs
+      & \villageCPlAbsP & \\, \villageCPlObl & \villageCPlOblP & \\, \villageCPlDat
+      & \villageCPlDatP & \\, \cafeCSgErg & \cafeCSgErgP & \\, \cafeCSgAbs & \cafeCSgAbsP
+      & \\, \cafeCSgObl & \cafeCSgOblP & \\, \cafeCSgDat & \cafeCSgDatP & \\, \cafeCDuErg
+      & \cafeCDuErgP & \\, \cafeCDuAbs & \cafeCDuAbsP & \\, \cafeCDuObl & \cafeCDuOblP
+      & \\, \cafeCDuDat & \cafeCDuDatP & \\, \cafeCPlErg & \cafeCPlErgP & \\, \cafeCPlAbs
+      & \cafeCPlAbsP & \\, \cafeCPlObl & \cafeCPlOblP & \\, \cafeCPlDat & \cafeCPlDatP
+      & \\, \chasseurCSgErg & \chasseurCSgErgP & \\, \chasseurCSgAbs & \chasseurCSgAbsP
+      & \\, \chasseurCSgObl & \chasseurCSgOblP & \\, \chasseurCSgDat & \chasseurCSgDatP
+      & \\, \chasseurCDuErg & \chasseurCDuErgP & \\, \chasseurCDuAbs & \chasseurCDuAbsP
+      & \\, \chasseurCDuObl & \chasseurCDuOblP & \\, \chasseurCDuDat & \chasseurCDuDatP
+      & \\, \chasseurCPlErg & \chasseurCPlErgP & \\, \chasseurCPlAbs & \chasseurCPlAbsP
+      & \\, \chasseurCPlObl & \chasseurCPlOblP & \\, \chasseurCPlDat & \chasseurCPlDatP
+      & \\, \NicoleBSgErg & \NicoleBSgErgP & \\, \NicoleBSgAbs & \NicoleBSgAbsP &
+      \\, \NicoleBSgObl & \NicoleBSgOblP & \\, \NicoleBSgDat & \NicoleBSgDatP & \\,
+    \NicoleBDuErg & \NicoleBDuErgP & \\, \NicoleBDuAbs & \NicoleBDuAbsP & \\, \NicoleBDuObl
+      & \NicoleBDuOblP & \\, \NicoleBDuDat & \NicoleBDuDatP & \\, \NicoleBPlErg &
+      \NicoleBPlErgP & \\, \NicoleBPlAbs & \NicoleBPlAbsP & \\, \NicoleBPlObl & \NicoleBPlOblP
+      & \\, \NicoleBPlDat & \NicoleBPlDatP & \\, \theBSgErg & \theBSgErgP & \\, \theBSgAbs
+      & \theBSgAbsP & \\, \theBSgObl & \theBSgOblP & \\, \theBSgDat & \theBSgDatP
+      & \\, \theBDuErg & \theBDuErgP & \\, \theBDuAbs & \theBDuAbsP & \\, \theBDuObl
+      & \theBDuOblP & \\, \theBDuDat & \theBDuDatP & \\, \theBPlErg & \theBPlErgP
+      & \\, \theBPlAbs & \theBPlAbsP & \\, \theBPlObl & \theBPlOblP & \\, \theBPlDat
+      & \theBPlDatP & \\, \sourisBSgErg & \sourisBSgErgP & \\, \sourisBSgAbs & \sourisBSgAbsP
+      & \\, \sourisBSgObl & \sourisBSgOblP & \\, \sourisBSgDat & \sourisBSgDatP &
+      \\, \sourisBDuErg & \sourisBDuErgP & \\, \sourisBDuAbs & \sourisBDuAbsP & \\,
+    \sourisBDuObl & \sourisBDuOblP & \\, \sourisBDuDat & \sourisBDuDatP & \\, \sourisBPlErg
+      & \sourisBPlErgP & \\, \sourisBPlAbs & \sourisBPlAbsP & \\, \sourisBPlObl &
+      \sourisBPlOblP & \\, \sourisBPlDat & \sourisBPlDatP & \\, \chambreBSgErg & \chambreBSgErgP
+      & \\, \chambreBSgAbs & \chambreBSgAbsP & \\, \chambreBSgObl & \chambreBSgOblP
+      & \\, \chambreBSgDat & \chambreBSgDatP & \\, \chambreBDuErg & \chambreBDuErgP
+      & \\, \chambreBDuAbs & \chambreBDuAbsP & \\, \chambreBDuObl & \chambreBDuOblP
+      & \\, \chambreBDuDat & \chambreBDuDatP & \\, \chambreBPlErg & \chambreBPlErgP
+      & \\, \chambreBPlAbs & \chambreBPlAbsP & \\, \chambreBPlObl & \chambreBPlOblP
+      & \\, \chambreBPlDat & \chambreBPlDatP & \\, \autrucheBSgErg & \autrucheBSgErgP
+      & \\, \autrucheBSgAbs & \autrucheBSgAbsP & \\, \autrucheBSgObl & \autrucheBSgOblP
+      & \\, \autrucheBSgDat & \autrucheBSgDatP & \\, \autrucheBDuErg & \autrucheBDuErgP
+      & \\, \autrucheBDuAbs & \autrucheBDuAbsP & \\, \autrucheBDuObl & \autrucheBDuOblP
+      & \\, \autrucheBDuDat & \autrucheBDuDatP & \\, \autrucheBPlErg & \autrucheBPlErgP
+      & \\, \autrucheBPlAbs & \autrucheBPlAbsP & \\, \autrucheBPlObl & \autrucheBPlOblP
+      & \\, \autrucheBPlDat & \autrucheBPlDatP & \\, \coussinBSgErg & \coussinBSgErgP
+      & \\, \coussinBSgAbs & \coussinBSgAbsP & \\, \coussinBSgObl & \coussinBSgOblP
+      & \\, \coussinBSgDat & \coussinBSgDatP & \\, \coussinBDuErg & \coussinBDuErgP
+      & \\, \coussinBDuAbs & \coussinBDuAbsP & \\, \coussinBDuObl & \coussinBDuOblP
+      & \\, \coussinBDuDat & \coussinBDuDatP & \\, \coussinBPlErg & \coussinBPlErgP
+      & \\, \coussinBPlAbs & \coussinBPlAbsP & \\, \coussinBPlObl & \coussinBPlOblP
+      & \\, \coussinBPlDat & \coussinBPlDatP & \\, \maisonDSgErg & \maisonDSgErgP
+      & \\, \maisonDSgAbs & \maisonDSgAbsP & \\, \maisonDSgObl & \maisonDSgOblP &
+      \\, \maisonDSgDat & \maisonDSgDatP & \\, \maisonDDuErg & \maisonDDuErgP & \\,
+    \maisonDDuAbs & \maisonDDuAbsP & \\, \maisonDDuObl & \maisonDDuOblP & \\, \maisonDDuDat
+      & \maisonDDuDatP & \\, \maisonDPlErg & \maisonDPlErgP & \\, \maisonDPlAbs &
+      \maisonDPlAbsP & \\, \maisonDPlObl & \maisonDPlOblP & \\, \maisonDPlDat & \maisonDPlDatP
+      & \\, \tableDSgErg & \tableDSgErgP & \\, \tableDSgAbs & \tableDSgAbsP & \\,
+    \tableDSgObl & \tableDSgOblP & \\, \tableDSgDat & \tableDSgDatP & \\, \tableDDuErg
+      & \tableDDuErgP & \\, \tableDDuAbs & \tableDDuAbsP & \\, \tableDDuObl & \tableDDuOblP
+      & \\, \tableDDuDat & \tableDDuDatP & \\, \tableDPlErg & \tableDPlErgP & \\,
+    \tableDPlAbs & \tableDPlAbsP & \\, \tableDPlObl & \tableDPlOblP & \\, \tableDPlDat
+      & \tableDPlDatP & \\, \garconDSgErg & \garconDSgErgP & \\, \garconDSgAbs & \garconDSgAbsP
+      & \\, \garconDSgObl & \garconDSgOblP & \\, \garconDSgDat & \garconDSgDatP &
+      \\, \garconDDuErg & \garconDDuErgP & \\, \garconDDuAbs & \garconDDuAbsP & \\,
+    \garconDDuObl & \garconDDuOblP & \\, \garconDDuDat & \garconDDuDatP & \\, \garconDPlErg
+      & \garconDPlErgP & \\, \garconDPlAbs & \garconDPlAbsP & \\, \garconDPlObl &
+      \garconDPlOblP & \\, \garconDPlDat & \garconDPlDatP & \\, \litDSgErg & \litDSgErgP
+      & \\, \litDSgAbs & \litDSgAbsP & \\, \litDSgObl & \litDSgOblP & \\, \litDSgDat
+      & \litDSgDatP & \\, \litDDuErg & \litDDuErgP & \\, \litDDuAbs & \litDDuAbsP
+      & \\, \litDDuObl & \litDDuOblP & \\, \litDDuDat & \litDDuDatP & \\, \litDPlErg
+      & \litDPlErgP & \\, \litDPlAbs & \litDPlAbsP & \\, \litDPlObl & \litDPlOblP
+      & \\, \litDPlDat & \litDPlDatP & \\, \cuisineDSgErg & \cuisineDSgErgP & \\,
+    \cuisineDSgAbs & \cuisineDSgAbsP & \\, \cuisineDSgObl & \cuisineDSgOblP & \\,
+    \cuisineDSgDat & \cuisineDSgDatP & \\, \cuisineDDuErg & \cuisineDDuErgP & \\,
+    \cuisineDDuAbs & \cuisineDDuAbsP & \\, \cuisineDDuObl & \cuisineDDuOblP & \\,
+    \cuisineDDuDat & \cuisineDDuDatP & \\, \cuisineDPlErg & \cuisineDPlErgP & \\,
+    \cuisineDPlAbs & \cuisineDPlAbsP & \\, \cuisineDPlObl & \cuisineDPlOblP & \\,
+    \cuisineDPlDat & \cuisineDPlDatP & \\, \NabilDSgErg & \NabilDSgErgP & \\, \NabilDSgAbs
+      & \NabilDSgAbsP & \\, \NabilDSgObl & \NabilDSgOblP & \\, \NabilDSgDat & \NabilDSgDatP
+      & \\, \NabilDDuErg & \NabilDDuErgP & \\, \NabilDDuAbs & \NabilDDuAbsP & \\,
+    \NabilDDuObl & \NabilDDuOblP & \\, \NabilDDuDat & \NabilDDuDatP & \\, \NabilDPlErg
+      & \NabilDPlErgP & \\, \NabilDPlAbs & \NabilDPlAbsP & \\, \NabilDPlObl & \NabilDPlOblP
+      & \\, \NabilDPlDat & \NabilDPlDatP & \\, \chatDSgErg & \chatDSgErgP & \\, \chatDSgAbs
+      & \chatDSgAbsP & \\, \chatDSgObl & \chatDSgOblP & \\, \chatDSgDat & \chatDSgDatP
+      & \\, \chatDDuErg & \chatDDuErgP & \\, \chatDDuAbs & \chatDDuAbsP & \\, \chatDDuObl
+      & \chatDDuOblP & \\, \chatDDuDat & \chatDDuDatP & \\, \chatDPlErg & \chatDPlErgP
+      & \\, \chatDPlAbs & \chatDPlAbsP & \\, \chatDPlObl & \chatDPlOblP & \\, \chatDPlDat
+      & \chatDPlDatP & \\], PREP: [\POUR & \POURP & \\, \DEVANT & \DEVANTP & \\, \SUR
+      & \SURP & \\, \DANS & \DANSP & \\, \SOUS & \SOUSP & \\, \A & \AP & \\, \AVEC
+      & \AVECP & \\, \DE & \DEP & \\], V: [\tomberViPrsASg & \tomberViPrsASgP & \\,
+    \tomberViPrsADu & \tomberViPrsADuP & \\, \tomberViPrsAPl & \tomberViPrsAPlP &
+      \\, \tomberViPrsBSg & \tomberViPrsBSgP & \\, \tomberViPrsBDu & \tomberViPrsBDuP
+      & \\, \tomberViPrsBPl & \tomberViPrsBPlP & \\, \tomberViPrsCSg & \tomberViPrsCSgP
+      & \\, \tomberViPrsCDu & \tomberViPrsCDuP & \\, \tomberViPrsCPl & \tomberViPrsCPlP
+      & \\, \tomberViPrsDSg & \tomberViPrsDSgP & \\, \tomberViPrsDDu & \tomberViPrsDDuP
+      & \\, \tomberViPrsDPl & \tomberViPrsDPlP & \\, \tomberViPstASg & \tomberViPstASgP
+      & \\, \tomberViPstADu & \tomberViPstADuP & \\, \tomberViPstAPl & \tomberViPstAPlP
+      & \\, \tomberViPstBSg & \tomberViPstBSgP & \\, \tomberViPstBDu & \tomberViPstBDuP
+      & \\, \tomberViPstBPl & \tomberViPstBPlP & \\, \tomberViPstCSg & \tomberViPstCSgP
+      & \\, \tomberViPstCDu & \tomberViPstCDuP & \\, \tomberViPstCPl & \tomberViPstCPlP
+      & \\, \tomberViPstDSg & \tomberViPstDSgP & \\, \tomberViPstDDu & \tomberViPstDDuP
+      & \\, \tomberViPstDPl & \tomberViPstDPlP & \\, \entrerViPrsASg & \entrerViPrsASgP
+      & \\, \entrerViPrsADu & \entrerViPrsADuP & \\, \entrerViPrsAPl & \entrerViPrsAPlP
+      & \\, \entrerViPrsBSg & \entrerViPrsBSgP & \\, \entrerViPrsBDu & \entrerViPrsBDuP
+      & \\, \entrerViPrsBPl & \entrerViPrsBPlP & \\, \entrerViPrsCSg & \entrerViPrsCSgP
+      & \\, \entrerViPrsCDu & \entrerViPrsCDuP & \\, \entrerViPrsCPl & \entrerViPrsCPlP
+      & \\, \entrerViPrsDSg & \entrerViPrsDSgP & \\, \entrerViPrsDDu & \entrerViPrsDDuP
+      & \\, \entrerViPrsDPl & \entrerViPrsDPlP & \\, \entrerViPstASg & \entrerViPstASgP
+      & \\, \entrerViPstADu & \entrerViPstADuP & \\, \entrerViPstAPl & \entrerViPstAPlP
+      & \\, \entrerViPstBSg & \entrerViPstBSgP & \\, \entrerViPstBDu & \entrerViPstBDuP
+      & \\, \entrerViPstBPl & \entrerViPstBPlP & \\, \entrerViPstCSg & \entrerViPstCSgP
+      & \\, \entrerViPstCDu & \entrerViPstCDuP & \\, \entrerViPstCPl & \entrerViPstCPlP
+      & \\, \entrerViPstDSg & \entrerViPstDSgP & \\, \entrerViPstDDu & \entrerViPstDDuP
+      & \\, \entrerViPstDPl & \entrerViPstDPlP & \\, \arriverViPrsASg & \arriverViPrsASgP
+      & \\, \arriverViPrsADu & \arriverViPrsADuP & \\, \arriverViPrsAPl & \arriverViPrsAPlP
+      & \\, \arriverViPrsBSg & \arriverViPrsBSgP & \\, \arriverViPrsBDu & \arriverViPrsBDuP
+      & \\, \arriverViPrsBPl & \arriverViPrsBPlP & \\, \arriverViPrsCSg & \arriverViPrsCSgP
+      & \\, \arriverViPrsCDu & \arriverViPrsCDuP & \\, \arriverViPrsCPl & \arriverViPrsCPlP
+      & \\, \arriverViPrsDSg & \arriverViPrsDSgP & \\, \arriverViPrsDDu & \arriverViPrsDDuP
+      & \\, \arriverViPrsDPl & \arriverViPrsDPlP & \\, \arriverViPstASg & \arriverViPstASgP
+      & \\, \arriverViPstADu & \arriverViPstADuP & \\, \arriverViPstAPl & \arriverViPstAPlP
+      & \\, \arriverViPstBSg & \arriverViPstBSgP & \\, \arriverViPstBDu & \arriverViPstBDuP
+      & \\, \arriverViPstBPl & \arriverViPstBPlP & \\, \arriverViPstCSg & \arriverViPstCSgP
+      & \\, \arriverViPstCDu & \arriverViPstCDuP & \\, \arriverViPstCPl & \arriverViPstCPlP
+      & \\, \arriverViPstDSg & \arriverViPstDSgP & \\, \arriverViPstDDu & \arriverViPstDDuP
+      & \\, \arriverViPstDPl & \arriverViPstDPlP & \\, \dormirViPrsASg & \dormirViPrsASgP
+      & \\, \dormirViPrsADu & \dormirViPrsADuP & \\, \dormirViPrsAPl & \dormirViPrsAPlP
+      & \\, \dormirViPrsBSg & \dormirViPrsBSgP & \\, \dormirViPrsBDu & \dormirViPrsBDuP
+      & \\, \dormirViPrsBPl & \dormirViPrsBPlP & \\, \dormirViPrsCSg & \dormirViPrsCSgP
+      & \\, \dormirViPrsCDu & \dormirViPrsCDuP & \\, \dormirViPrsCPl & \dormirViPrsCPlP
+      & \\, \dormirViPrsDSg & \dormirViPrsDSgP & \\, \dormirViPrsDDu & \dormirViPrsDDuP
+      & \\, \dormirViPrsDPl & \dormirViPrsDPlP & \\, \dormirViPstASg & \dormirViPstASgP
+      & \\, \dormirViPstADu & \dormirViPstADuP & \\, \dormirViPstAPl & \dormirViPstAPlP
+      & \\, \dormirViPstBSg & \dormirViPstBSgP & \\, \dormirViPstBDu & \dormirViPstBDuP
+      & \\, \dormirViPstBPl & \dormirViPstBPlP & \\, \dormirViPstCSg & \dormirViPstCSgP
+      & \\, \dormirViPstCDu & \dormirViPstCDuP & \\, \dormirViPstCPl & \dormirViPstCPlP
+      & \\, \dormirViPstDSg & \dormirViPstDSgP & \\, \dormirViPstDDu & \dormirViPstDDuP
+      & \\, \dormirViPstDPl & \dormirViPstDPlP & \\, \boireVtPrsASg & \boireVtPrsASgP
+      & \\, \boireVtPrsADu & \boireVtPrsADuP & \\, \boireVtPrsAPl & \boireVtPrsAPlP
+      & \\, \boireVtPrsBSg & \boireVtPrsBSgP & \\, \boireVtPrsBDu & \boireVtPrsBDuP
+      & \\, \boireVtPrsBPl & \boireVtPrsBPlP & \\, \boireVtPrsCSg & \boireVtPrsCSgP
+      & \\, \boireVtPrsCDu & \boireVtPrsCDuP & \\, \boireVtPrsCPl & \boireVtPrsCPlP
+      & \\, \boireVtPrsDSg & \boireVtPrsDSgP & \\, \boireVtPrsDDu & \boireVtPrsDDuP
+      & \\, \boireVtPrsDPl & \boireVtPrsDPlP & \\, \boireVtPstASg & \boireVtPstASgP
+      & \\, \boireVtPstADu & \boireVtPstADuP & \\, \boireVtPstAPl & \boireVtPstAPlP
+      & \\, \boireVtPstBSg & \boireVtPstBSgP & \\, \boireVtPstBDu & \boireVtPstBDuP
+      & \\, \boireVtPstBPl & \boireVtPstBPlP & \\, \boireVtPstCSg & \boireVtPstCSgP
+      & \\, \boireVtPstCDu & \boireVtPstCDuP & \\, \boireVtPstCPl & \boireVtPstCPlP
+      & \\, \boireVtPstDSg & \boireVtPstDSgP & \\, \boireVtPstDDu & \boireVtPstDDuP
+      & \\, \boireVtPstDPl & \boireVtPstDPlP & \\, \supporterVtPrsASg & \supporterVtPrsASgP
+      & \\, \supporterVtPrsADu & \supporterVtPrsADuP & \\, \supporterVtPrsAPl & \supporterVtPrsAPlP
+      & \\, \supporterVtPrsBSg & \supporterVtPrsBSgP & \\, \supporterVtPrsBDu & \supporterVtPrsBDuP
+      & \\, \supporterVtPrsBPl & \supporterVtPrsBPlP & \\, \supporterVtPrsCSg & \supporterVtPrsCSgP
+      & \\, \supporterVtPrsCDu & \supporterVtPrsCDuP & \\, \supporterVtPrsCPl & \supporterVtPrsCPlP
+      & \\, \supporterVtPrsDSg & \supporterVtPrsDSgP & \\, \supporterVtPrsDDu & \supporterVtPrsDDuP
+      & \\, \supporterVtPrsDPl & \supporterVtPrsDPlP & \\, \supporterVtPstASg & \supporterVtPstASgP
+      & \\, \supporterVtPstADu & \supporterVtPstADuP & \\, \supporterVtPstAPl & \supporterVtPstAPlP
+      & \\, \supporterVtPstBSg & \supporterVtPstBSgP & \\, \supporterVtPstBDu & \supporterVtPstBDuP
+      & \\, \supporterVtPstBPl & \supporterVtPstBPlP & \\, \supporterVtPstCSg & \supporterVtPstCSgP
+      & \\, \supporterVtPstCDu & \supporterVtPstCDuP & \\, \supporterVtPstCPl & \supporterVtPstCPlP
+      & \\, \supporterVtPstDSg & \supporterVtPstDSgP & \\, \supporterVtPstDDu & \supporterVtPstDDuP
+      & \\, \supporterVtPstDPl & \supporterVtPstDPlP & \\, \acheterVtPrsASg & \acheterVtPrsASgP
+      & \\, \acheterVtPrsADu & \acheterVtPrsADuP & \\, \acheterVtPrsAPl & \acheterVtPrsAPlP
+      & \\, \acheterVtPrsBSg & \acheterVtPrsBSgP & \\, \acheterVtPrsBDu & \acheterVtPrsBDuP
+      & \\, \acheterVtPrsBPl & \acheterVtPrsBPlP & \\, \acheterVtPrsCSg & \acheterVtPrsCSgP
+      & \\, \acheterVtPrsCDu & \acheterVtPrsCDuP & \\, \acheterVtPrsCPl & \acheterVtPrsCPlP
+      & \\, \acheterVtPrsDSg & \acheterVtPrsDSgP & \\, \acheterVtPrsDDu & \acheterVtPrsDDuP
+      & \\, \acheterVtPrsDPl & \acheterVtPrsDPlP & \\, \acheterVtPstASg & \acheterVtPstASgP
+      & \\, \acheterVtPstADu & \acheterVtPstADuP & \\, \acheterVtPstAPl & \acheterVtPstAPlP
+      & \\, \acheterVtPstBSg & \acheterVtPstBSgP & \\, \acheterVtPstBDu & \acheterVtPstBDuP
+      & \\, \acheterVtPstBPl & \acheterVtPstBPlP & \\, \acheterVtPstCSg & \acheterVtPstCSgP
+      & \\, \acheterVtPstCDu & \acheterVtPstCDuP & \\, \acheterVtPstCPl & \acheterVtPstCPlP
+      & \\, \acheterVtPstDSg & \acheterVtPstDSgP & \\, \acheterVtPstDDu & \acheterVtPstDDuP
+      & \\, \acheterVtPstDPl & \acheterVtPstDPlP & \\, \mangerVtPrsASg & \mangerVtPrsASgP
+      & \\, \mangerVtPrsADu & \mangerVtPrsADuP & \\, \mangerVtPrsAPl & \mangerVtPrsAPlP
+      & \\, \mangerVtPrsBSg & \mangerVtPrsBSgP & \\, \mangerVtPrsBDu & \mangerVtPrsBDuP
+      & \\, \mangerVtPrsBPl & \mangerVtPrsBPlP & \\, \mangerVtPrsCSg & \mangerVtPrsCSgP
+      & \\, \mangerVtPrsCDu & \mangerVtPrsCDuP & \\, \mangerVtPrsCPl & \mangerVtPrsCPlP
+      & \\, \mangerVtPrsDSg & \mangerVtPrsDSgP & \\, \mangerVtPrsDDu & \mangerVtPrsDDuP
+      & \\, \mangerVtPrsDPl & \mangerVtPrsDPlP & \\, \mangerVtPstASg & \mangerVtPstASgP
+      & \\, \mangerVtPstADu & \mangerVtPstADuP & \\, \mangerVtPstAPl & \mangerVtPstAPlP
+      & \\, \mangerVtPstBSg & \mangerVtPstBSgP & \\, \mangerVtPstBDu & \mangerVtPstBDuP
+      & \\, \mangerVtPstBPl & \mangerVtPstBPlP & \\, \mangerVtPstCSg & \mangerVtPstCSgP
+      & \\, \mangerVtPstCDu & \mangerVtPstCDuP & \\, \mangerVtPstCPl & \mangerVtPstCPlP
+      & \\, \mangerVtPstDSg & \mangerVtPstDSgP & \\, \mangerVtPstDDu & \mangerVtPstDDuP
+      & \\, \mangerVtPstDPl & \mangerVtPstDPlP & \\, \chasserVtPrsASg & \chasserVtPrsASgP
+      & \\, \chasserVtPrsADu & \chasserVtPrsADuP & \\, \chasserVtPrsAPl & \chasserVtPrsAPlP
+      & \\, \chasserVtPrsBSg & \chasserVtPrsBSgP & \\, \chasserVtPrsBDu & \chasserVtPrsBDuP
+      & \\, \chasserVtPrsBPl & \chasserVtPrsBPlP & \\, \chasserVtPrsCSg & \chasserVtPrsCSgP
+      & \\, \chasserVtPrsCDu & \chasserVtPrsCDuP & \\, \chasserVtPrsCPl & \chasserVtPrsCPlP
+      & \\, \chasserVtPrsDSg & \chasserVtPrsDSgP & \\, \chasserVtPrsDDu & \chasserVtPrsDDuP
+      & \\, \chasserVtPrsDPl & \chasserVtPrsDPlP & \\, \chasserVtPstASg & \chasserVtPstASgP
+      & \\, \chasserVtPstADu & \chasserVtPstADuP & \\, \chasserVtPstAPl & \chasserVtPstAPlP
+      & \\, \chasserVtPstBSg & \chasserVtPstBSgP & \\, \chasserVtPstBDu & \chasserVtPstBDuP
+      & \\, \chasserVtPstBPl & \chasserVtPstBPlP & \\, \chasserVtPstCSg & \chasserVtPstCSgP
+      & \\, \chasserVtPstCDu & \chasserVtPstCDuP & \\, \chasserVtPstCPl & \chasserVtPstCPlP
+      & \\, \chasserVtPstDSg & \chasserVtPstDSgP & \\, \chasserVtPstDDu & \chasserVtPstDDuP
+      & \\, \chasserVtPstDPl & \chasserVtPstDPlP & \\, \donnerVdPrsASg & \donnerVdPrsASgP
+      & \\, \donnerVdPrsADu & \donnerVdPrsADuP & \\, \donnerVdPrsAPl & \donnerVdPrsAPlP
+      & \\, \donnerVdPrsBSg & \donnerVdPrsBSgP & \\, \donnerVdPrsBDu & \donnerVdPrsBDuP
+      & \\, \donnerVdPrsBPl & \donnerVdPrsBPlP & \\, \donnerVdPrsCSg & \donnerVdPrsCSgP
+      & \\, \donnerVdPrsCDu & \donnerVdPrsCDuP & \\, \donnerVdPrsCPl & \donnerVdPrsCPlP
+      & \\, \donnerVdPrsDSg & \donnerVdPrsDSgP & \\, \donnerVdPrsDDu & \donnerVdPrsDDuP
+      & \\, \donnerVdPrsDPl & \donnerVdPrsDPlP & \\, \donnerVdPstASg & \donnerVdPstASgP
+      & \\, \donnerVdPstADu & \donnerVdPstADuP & \\, \donnerVdPstAPl & \donnerVdPstAPlP
+      & \\, \donnerVdPstBSg & \donnerVdPstBSgP & \\, \donnerVdPstBDu & \donnerVdPstBDuP
+      & \\, \donnerVdPstBPl & \donnerVdPstBPlP & \\, \donnerVdPstCSg & \donnerVdPstCSgP
+      & \\, \donnerVdPstCDu & \donnerVdPstCDuP & \\, \donnerVdPstCPl & \donnerVdPstCPlP
+      & \\, \donnerVdPstDSg & \donnerVdPstDSgP & \\, \donnerVdPstDDu & \donnerVdPstDDuP
+      & \\, \donnerVdPstDPl & \donnerVdPstDPlP & \\, \lancerVdPrsASg & \lancerVdPrsASgP
+      & \\, \lancerVdPrsADu & \lancerVdPrsADuP & \\, \lancerVdPrsAPl & \lancerVdPrsAPlP
+      & \\, \lancerVdPrsBSg & \lancerVdPrsBSgP & \\, \lancerVdPrsBDu & \lancerVdPrsBDuP
+      & \\, \lancerVdPrsBPl & \lancerVdPrsBPlP & \\, \lancerVdPrsCSg & \lancerVdPrsCSgP
+      & \\, \lancerVdPrsCDu & \lancerVdPrsCDuP & \\, \lancerVdPrsCPl & \lancerVdPrsCPlP
+      & \\, \lancerVdPrsDSg & \lancerVdPrsDSgP & \\, \lancerVdPrsDDu & \lancerVdPrsDDuP
+      & \\, \lancerVdPrsDPl & \lancerVdPrsDPlP & \\, \lancerVdPstASg & \lancerVdPstASgP
+      & \\, \lancerVdPstADu & \lancerVdPstADuP & \\, \lancerVdPstAPl & \lancerVdPstAPlP
+      & \\, \lancerVdPstBSg & \lancerVdPstBSgP & \\, \lancerVdPstBDu & \lancerVdPstBDuP
+      & \\, \lancerVdPstBPl & \lancerVdPstBPlP & \\, \lancerVdPstCSg & \lancerVdPstCSgP
+      & \\, \lancerVdPstCDu & \lancerVdPstCDuP & \\, \lancerVdPstCPl & \lancerVdPstCPlP
+      & \\, \lancerVdPstDSg & \lancerVdPstDSgP & \\, \lancerVdPstDDu & \lancerVdPstDDuP
+      & \\, \lancerVdPstDPl & \lancerVdPstDPlP & \\, \offrirVdPrsASg & \offrirVdPrsASgP
+      & \\, \offrirVdPrsADu & \offrirVdPrsADuP & \\, \offrirVdPrsAPl & \offrirVdPrsAPlP
+      & \\, \offrirVdPrsBSg & \offrirVdPrsBSgP & \\, \offrirVdPrsBDu & \offrirVdPrsBDuP
+      & \\, \offrirVdPrsBPl & \offrirVdPrsBPlP & \\, \offrirVdPrsCSg & \offrirVdPrsCSgP
+      & \\, \offrirVdPrsCDu & \offrirVdPrsCDuP & \\, \offrirVdPrsCPl & \offrirVdPrsCPlP
+      & \\, \offrirVdPrsDSg & \offrirVdPrsDSgP & \\, \offrirVdPrsDDu & \offrirVdPrsDDuP
+      & \\, \offrirVdPrsDPl & \offrirVdPrsDPlP & \\, \offrirVdPstASg & \offrirVdPstASgP
+      & \\, \offrirVdPstADu & \offrirVdPstADuP & \\, \offrirVdPstAPl & \offrirVdPstAPlP
+      & \\, \offrirVdPstBSg & \offrirVdPstBSgP & \\, \offrirVdPstBDu & \offrirVdPstBDuP
+      & \\, \offrirVdPstBPl & \offrirVdPstBPlP & \\, \offrirVdPstCSg & \offrirVdPstCSgP
+      & \\, \offrirVdPstCDu & \offrirVdPstCDuP & \\, \offrirVdPstCPl & \offrirVdPstCPlP
+      & \\, \offrirVdPstDSg & \offrirVdPstDSgP & \\, \offrirVdPstDDu & \offrirVdPstDDuP
+      & \\, \offrirVdPstDPl & \offrirVdPstDPlP & \\, \montrerVdPrsASg & \montrerVdPrsASgP
+      & \\, \montrerVdPrsADu & \montrerVdPrsADuP & \\, \montrerVdPrsAPl & \montrerVdPrsAPlP
+      & \\, \montrerVdPrsBSg & \montrerVdPrsBSgP & \\, \montrerVdPrsBDu & \montrerVdPrsBDuP
+      & \\, \montrerVdPrsBPl & \montrerVdPrsBPlP & \\, \montrerVdPrsCSg & \montrerVdPrsCSgP
+      & \\, \montrerVdPrsCDu & \montrerVdPrsCDuP & \\, \montrerVdPrsCPl & \montrerVdPrsCPlP
+      & \\, \montrerVdPrsDSg & \montrerVdPrsDSgP & \\, \montrerVdPrsDDu & \montrerVdPrsDDuP
+      & \\, \montrerVdPrsDPl & \montrerVdPrsDPlP & \\, \montrerVdPstASg & \montrerVdPstASgP
+      & \\, \montrerVdPstADu & \montrerVdPstADuP & \\, \montrerVdPstAPl & \montrerVdPstAPlP
+      & \\, \montrerVdPstBSg & \montrerVdPstBSgP & \\, \montrerVdPstBDu & \montrerVdPstBDuP
+      & \\, \montrerVdPstBPl & \montrerVdPstBPlP & \\, \montrerVdPstCSg & \montrerVdPstCSgP
+      & \\, \montrerVdPstCDu & \montrerVdPstCDuP & \\, \montrerVdPstCPl & \montrerVdPstCPlP
+      & \\, \montrerVdPstDSg & \montrerVdPstDSgP & \\, \montrerVdPstDDu & \montrerVdPstDDuP
+      & \\, \montrerVdPstDPl & \montrerVdPstDPlP & \\]}
