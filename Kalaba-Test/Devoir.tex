@@ -1,7 +1,9 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{linearb}
-%\usepackage{coffee4}
+\usepackage[french]{babel}
+%\usepackage{linearb}
+\usepackage{hacm}
+\usepackage{coffee4}
 \usepackage{graphicx}
 \usepackage{fourier}
 \usepackage{tipa,booktabs,multicol,geometry,pifont,gb4e,natbib,relsize}
@@ -21,7 +23,8 @@
 \newcommand{\key}[1]{}
 \newcommand{\strutgb}[1]{\rule[-#1]{0pt}{#1}}
 \newcommand{\strutgh}[1]{\rule{0pt}{#1}}
-\newcommand{\grapho}[1]{\footnotesize\textlinb{#1}}
+%\newcommand{\grapho}[1]{\footnotesize\textlinb{#1}}
+\newcommand{\grapho}[1]{\textkardinal{#1}}
 %\renewcommand{\grapho}[1]{\tiny}
 
 \newcommand{\blot}[2]{\includegraphics[scale=#2]{#1}}
@@ -79,13 +82,13 @@ il a constitué un échantillon et a presque terminé de transcrire les données
 
 
 
-\input{./14-Kalaba-Declarations}
-\input{./14-Kalaba-Exemples}
+\input{./Declarations}
+\input{./Exemples}
 
 \begin{description}
 \item [Votre mission :] Votre collègue a identifié qu'il y a des variations de forme pour la plupart des catégories mais il n'a pas  noté les paramètres qui régissent ces variations. Complétez son travail~:
 \end{description}
-\input{./14-Kalaba-Vocabulaire}
+\input{./Vocabulaire}
 \begin{enumerate}
 \item Rétablissez l'écriture des formes  et les transcriptions manquantes.
 \item Décrivez les phénomènes d'accord rencontrés dans le corpus.

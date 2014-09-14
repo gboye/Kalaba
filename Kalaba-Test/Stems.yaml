@@ -1,0 +1,105 @@
+N:
+ N1:
+    A:
+        katiSa: [Katisha,Katishas]
+        padaN: [viande,viandes]
+    B:
+        toSik: [fruit,fruits]
+        modak: [infirmière,infirmières]
+    C:
+        gatok: [balai,balais]
+        pebiz: [plaine,plaines]
+    D:
+        nikol: [Nicole,Nicoles]
+        minet: [autruche,autruches]
+ N2:
+    A:
+        SeNon: [souris,souriS]
+        sapum: [coussin,coussins]
+    B:
+        gitun: [chambre,chambres]
+        maren: [thé,thés]
+    C:
+        diNol: [chasseur,chasseurs]
+        minut: [fille,filles]
+    D:
+        Zerom: [oeuf,oeufs]
+        felot: [café,cafés]
+ N3:
+    A:
+        potaS: [coyote,coyotes]
+        kasab: [village,villages]
+    B:
+        nabil: [Nabil,Nabils]
+        mesaZ: [garçon,garçons]
+    C:
+        pulop: [cuisine,cuisines]
+        Nazon: [table,tables]
+    D:
+        rumak: [chat,chatte,chats,chattes]
+        gobid: [lit,lits]
+        kuroz: [maison,maisons]
+#####################
+##
+## ADJECTIFS
+##
+#####################
+ADJ:
+    A1:
+        meN: [grand,grande,grands,grandes]
+        rug: [petit,petite,petits,petites]
+        nor: [blanc,blanche,blancs,blanches]
+        dos: [noir,noire,noirs,noires]
+        lik: [bas,basse,basses]
+    A2:
+        lap: [gros,grosse,grosses]
+        Nul: [maigre,maigres]
+        kun: [jaune,jaunes]
+        gil: [rouge,rouges]
+        bat: [trois]
+        jig: [quatre]
+#####################
+##
+## VERBES
+##
+#####################
+V:
+    VI:
+        briN: [dormir,dort,dorment,dormait,dormaient]
+        rnif: [tomber,tombe,tombent,tombait,tombaient]
+        svit: [arriver,arrive,arrivent,arrivait,arrivaient]
+        btir: [entrer,entre,entrent,entrait,entraient]
+    VT:
+        pled: [manger,mange,mangent,mangeait,mangeaient]
+        Srev: [boire,boit,boivent,buvait,buvaient]
+        grej: [acheter,achète,achètent,achetait,achetaient]
+        nkem: [supporter,supporte,supportent,supportait,supportaient]
+        dNet: [chasser,chasse,chassent,chassait,chassaient]
+    VD:
+        psag: [donner,donne,donnent,donnait,donnaient]
+        rdan: [offrir,offre,offrent,offrait,offraient]
+        pral: [lancer,lance,lancent,lançait,lançaient]
+        pnab: [montrer,montre,montrent,montrait,montraient]
+#####################
+##
+## DETERMINANTS
+##
+#####################
+DET:
+    b: [DEF,le,la,les,l]
+    k: [IND,un,une,des]
+    l: [DEM,ce,cet,cette,ces]
+####################
+##
+## PREPOSITIONS
+##
+#####################
+PREP:
+    kal: [dans]
+    lab: [sur]
+    bak: [avec]
+    sil: [de,d]
+    jan: [sous]
+    sed: [à]
+    dul: [devant]
+    laN: [pour]

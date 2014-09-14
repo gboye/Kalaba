@@ -1,0 +1,21 @@
+V:
+    FormesBase: [INF,PRS,PRS,PST,PST]
+Attributs:
+    N: [Genre,Nombre,Cas]
+    V: [Type,Temps,Genre-Abs,Nombre-Abs]
+    ADJ: [CF,Genre,Nombre]
+    DET: [Nombre,Cas]
+########################
+########################
+## SYNTAGMES
+########################
+Syntagmes:
+    Phrase: ['AJOUT','SUJ','COMP','IND','OBJ','V']
+    GN: [N,GP,GADJ,DET]
+    GP: [GN,PREP]
+    GADJ: [GP,ADV,ADJ]
+Contractions:
+    au: [à,le]
+    aux: [à,les]
+    du: [de,le]
+    des: [de, les]
