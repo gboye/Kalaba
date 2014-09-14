@@ -8,8 +8,8 @@ translations:
         in: ptkbdgmnNfsSvzZrljw
         out: ptkpdkmnnqssqzzrrjw
     deaccent:
-        in: àâçéèêîùô
-        out: aaceeeiuo
+        in: àâçéèêîùôÀÂÇÉÈÊÎÙÔ
+        out: aaceeeiuoAACEEEIUO
 gabarits: [SG, DU, PL, PRS, PST]
 derives:
     A: V
