@@ -3,6 +3,9 @@ import re
 
 gloses={}
 phonology={}
+morphosyntax={}
+categoriesMajeures=["V","N","ADJ"]
+categoriesMineures=["PREP"]
 verbose=False
 
 def depthDict(element):
@@ -98,12 +101,14 @@ def modifierGlose(glose,sigma,typeTrans):
     typeRef=(typeTrans=="ref")        
     attributValeurs=sigma.split(",")
     for attributValeur in attributValeurs:
-            paire=attributValeur.split("=")
+            paire=[x.strip() for x in attributValeur.split("=")]
             if len(paire)==2:
                 valeur=paire[1]
-                if typeRef:
+                if not typeRef:
+                    mods.append(valeur)
+                elif paire[0]!="CF":
                     valeur=valeur.capitalize()
-                mods.append(valeur)
+                    mods.append(valeur)
     if typeRef:
         mod="".join(mods)
     else:
@@ -142,7 +147,12 @@ class Paradigmes:
         sigmas=[]
         if classe in hierarchieCF.categorie:
             cat=hierarchieCF.categorie[classe]
-            filtre="%s=%s"%(hierarchieCF.getFeature(cat,classe),classe)
+            feature=hierarchieCF.getFeature(cat,classe)
+            filtre="%s=%s"%(feature,classe)
+#            if feature=="CF":
+#                filtre=""
+#            else:
+#                filtre="%s=%s"%(feature,classe)
         else:
             cat=classe
             filtre=""
@@ -198,7 +208,7 @@ class HierarchieCF:
         if cle in self.trait:
             return self.trait[category+"-"+classe]
         else:
-            return "Catégorie"
+            return "CF"
         
     def categoryLookup(self,categorie):
         if categorie in gloses:
@@ -244,7 +254,7 @@ class Tableau:
             forme=self.stem
             cuts=self.nom.split(".")
             if len(cuts)>1:
-                glose="%s.%s"%(cuts[0],cacherGloses(".".join(cuts[1:])))
+                glose=cuts[0]+cacherGloses("."+".".join(cuts[1:]))
             else:
                 glose=self.nom
             derivations=regles.getRules(categorie,case)
@@ -269,6 +279,8 @@ class Lexeme:
         self.stem=stem
         self.classe=classe
         self.nom=nom
+        if classe in categoriesMineures:
+            self.nom=self.nom.decode('utf8').upper().encode('utf8')
         self.paradigme=Tableau(classe,stem,nom)
         self.formes=[]
 
@@ -286,6 +298,7 @@ class Lexique:
     def __init__(self):
         self.lexemes={}
         self.catLexeme={}
+        self.formeLexeme={}
         
     def __repr__(self):
         return "\n".join(["%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
@@ -298,6 +311,10 @@ class Lexique:
             nom=formes[0]
         self.lexemes[nom]=Lexeme(stem,classe,nom)
         self.lexemes[nom].addForme(*formes)
+        for forme in formes:
+            if not forme in self.formeLexeme:
+                self.formeLexeme[forme]=[]
+            self.formeLexeme[forme].append(nom)
         if not categorie in self.catLexeme:
             self.catLexeme[categorie]=[]
         self.catLexeme[categorie].append(nom)
@@ -307,6 +324,7 @@ class Lexique:
             return [self.lexemes[nom]]
         else:
             return [lexeme for (vedette, lexeme) in self.lexemes.iteritems() if nom in vedette]
+    
 
 lexique=Lexique()
 
@@ -344,8 +362,11 @@ regles=Regles()
 
 def analyserGloses(gloses):
     for category in gloses:
+        print category
         if gloses[category]:
-            for feature in gloses[category]:
+            features=gloses[category].keys()
+            for feature in features:
+                print feature
                 hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
 
 def analyserStems(niveau):

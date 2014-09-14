@@ -36,20 +36,20 @@ V:
 #
 ADJ:
  1:
-    Type=1,Nombre=Sg : X+i
-    Type=2,Nombre=Sg : X+o
+    CF=1,Nombre=Sg : X+i
+    CF=2,Nombre=Sg : X+o
     Nombre=Du : X+a
-    Type=1,Nombre=Pl : X+o
-    Type=2,Nombre=Pl : X+i
+    CF=1,Nombre=Pl : X+o
+    CF=2,Nombre=Pl : X+i
  2:
-    Type=1,Genre=A : X+v
-    Type=1,Genre=B : X+f
-    Type=1,Genre=C : X+d
-    Type=1,Genre=D : X+k
-    Type=2,Genre=A : X+m
-    Type=2,Genre=B : X+v
-    Type=2,Genre=C : X+t
-    Type=2,Genre=D : X+g
+    CF=1,Genre=A : X+v
+    CF=1,Genre=B : X+f
+    CF=1,Genre=C : X+d
+    CF=1,Genre=D : X+k
+    CF=2,Genre=A : X+m
+    CF=2,Genre=B : X+v
+    CF=2,Genre=C : X+t
+    CF=2,Genre=D : X+g
 DET:
  1:
     Nombre=Sg : X+o
