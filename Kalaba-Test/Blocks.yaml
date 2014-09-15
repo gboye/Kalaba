@@ -1,49 +1,37 @@
 N:
  1: #accord du nombre:
-    CF=N1,Nombre=Sg :  X+a
-    CF=N3,Nombre=Sg :  ka+X
-    CF=N1,Nombre=Du :  1a2V3i
-    CF=N2,Nombre=Du :  1a22V3i
-    CF=N3,Nombre=Du :  4a2A3u
-    CF=N4,Nombre=Du :  1o55A6e
-    CF=N1,Nombre=Pl :  1at2V3i
-    CF=N2,Nombre=Pl :  1az2A3i
-    CF=N3,Nombre=Pl :  1a2tV6i
-    CF=N4,Nombre=Pl :  ta12V3i
+    Nombre=Sg :  X+a
+    Nombre=Du :  o+X
+    Nombre=Pl :  o+X+a
  2: #accord du cas:
     Cas=Erg : re+X
-    CF=N3,Cas=Erg : X+re
-    CF=N4,Cas=Erg : a+X+f
-    Cas=Abs : bo+X
-    Cas=Obl : ko+X
-    Cas=Dat : li+X
+    Genre=C,Cas=Erg : X+re
+    Genre=D,Cas=Erg : a+X+f
+    Cas=Abs : X+ab
+    Cas=Obl : X+ol
+    Cas=Dat : da+X
 #
 V:
-# 1: #type
-#    Type=VI: X+i
-#    Type=VT: X+e
-#    Type=VD: X+a
+ 1: #type
+    Temps=PRS: pi+X
+    Temps=PST: sta+X
  2: #temps
-    Temps=PRS, Genre-Abs=A : A1i2a5V3u
-    Temps=PRS, Genre-Abs=B : A1a2a5V3u
-    Temps=PRS, Genre-Abs=C : A1o2a5V3u
-    Temps=PRS, Genre-Abs=D : A1e2a5V3u
-    Temps=PST, Genre-Abs=A : i4A1o2a3V
-    Temps=PST, Genre-Abs=B : a4A1o2u3V
-    Temps=PST, Genre-Abs=C : o4A1o2o3V
-    Temps=PST, Genre-Abs=D : e4A1o2o3V
+    Genre-Abs=A : X+a
+    Genre-Abs=B : X+e
+    Genre-Abs=C : X+i
+    Genre-Abs=D : X+u
  3: #accord en nombre
-    Nombre-Abs=Sg :    p+X
-    Nombre-Abs=Du :    s+X
-    Nombre-Abs=Pl :    d+X
+    Nombre-Abs=Sg :    X+p
+    Nombre-Abs=Du :    X+s
+    Nombre-Abs=Pl :    X+d
 #
 ADJ:
  1:
-    CF=A1,Nombre=Sg : X+i
-    CF=A2,Nombre=Sg : X+o
+    CF=A1,Nombre=Sg : X+e
+    CF=A2,Nombre=Sg : X+u
     Nombre=Du : X+a
     CF=A1,Nombre=Pl : X+o
-    CF=A2,Nombre=Pl : X+i
+    CF=A2,Nombre=Pl : X+e
  2:
     CF=A1,Genre=A : X+v
     CF=A1,Genre=B : X+f
@@ -55,11 +43,11 @@ ADJ:
     CF=A2,Genre=D : X+g
 DET:
  1:
-    Nombre=Sg : X+o
-    Nombre=Du : X+a
-    Nombre=Pl : X+i
+    Nombre=Sg : X+as
+    Nombre=Du : X+id
+    Nombre=Pl : X+up
  2:
-    Cas=Obl : X+g
-    Cas=Erg : X+m
-    Cas=Abs : X+k
-    Cas=Dat : X+t
+    Cas=Obl : X+ki
+    Cas=Erg : X+ta
+    Cas=Abs : X+lu
+    Cas=Dat : X+fo

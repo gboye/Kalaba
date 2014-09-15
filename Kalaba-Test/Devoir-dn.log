@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.14)  15 SEP 2014 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.14)  15 SEP 2014 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Devoir.tex
-(./Devoir.tex
+**Devoir-dn.tex
+(./Devoir-dn.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
@@ -241,9 +241,6 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hacm/hacm.sty
-Package: hacm 2012/09/04 v0.1 Kazuaki Miyatani
-)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -708,8 +705,15 @@ LaTeX Info: Redefining \cite on input line 694.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-(./Devoir.aux)
-\openout1 = `Devoir.aux'.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/velthuis/devanagari.sty
+Package: devanagari 2009/02/09 v2.15 LaTeX macros for Velthuis Devanagari
+\dev@chnum=\count116
+\itdim=\dimen135
+\anudep=\dimen136
+\anuwid=\dimen137
+)
+(./Devoir-dn.aux)
+\openout1 = `Devoir-dn.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
@@ -721,7 +725,11 @@ LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    Checking defaults for U/dn/m/n on input line 65.
+LaTeX Font Info:    Try loading font information for U+dn on input line 65.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/velthuis/udn.fd
+File: Udn.fd 2004/08/03 v2.14
+)
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 65.
 LaTeX Font Info:    Try loading font information for FML+futm on input line 65.
@@ -733,7 +741,8 @@ LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 65.
 LaTeX Font Info:    Try loading font information for FMS+futm on input line 65.
 
- (/usr/local/texlive/2014/texmf-dist/tex/latex/fourier/fmsfutm.fd
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
 LaTeX Font Info:    ... okay on input line 65.
@@ -766,16 +775,16 @@ File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen135
+\scratchcounter=\count117
+\scratchdimen=\dimen138
 \scratchbox=\box59
-\nofMPsegments=\count117
-\nofMParguments=\count118
+\nofMPsegments=\count118
+\nofMParguments=\count119
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen136
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen139
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
 \everyMPtoPDFconversion=\toks19
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -880,21 +889,15 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 87.
-(./Declarations.tex) (./Exemples.tex
-LaTeX Font Info:    Try loading font information for OT1+hlan on input line 4.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hacm/ot1hlan.fd
-File: ot1hlan 2012/09/04 v1.0 Kazuaki Miyatani
-)
-LaTeX Font Info:    Try loading font information for T3+cmss on input line 4.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tipa/t3cmss.fd
+(./Exemples.tex
+LaTeX Font Info:    Try loading font information for T3+cmss on input line 5.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/tipa/t3cmss.fd
 File: t3cmss.fd 2001/12/31 TIPA font definitions
-) [1
+)
+[1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- [4] [5]
-[6] [7] [8]) (./Vocabulaire.tex
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]) (./Vocabulaire.tex
 LaTeX Font Info:    Try loading font information for TS1+futs on input line 2.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fourier/ts1futs.fd
@@ -904,6 +907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
+[13]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 4.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -921,7 +925,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--171
 
  []
 
-[9] [10]
+
+Overfull \vbox (15.22357pt too high) has occurred while \output is active []
+
+
+[14]
+Overfull \vbox (166.99855pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (166.99855pt too high) has occurred while \output is active []
+
+
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
@@ -942,17 +957,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--394
  []
 
 
-Overfull \vbox (447.53831pt too high) has occurred while \output is active []
+Overfull \vbox (232.95406pt too high) has occurred while \output is active []
 
 
-[11]
-Overfull \vbox (31.98949pt too high) has occurred while \output is active []
+[16]
+Overfull \vbox (36.63995pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (31.98949pt too high) has occurred while \output is active []
+Overfull \vbox (36.63995pt too high) has occurred while \output is active []
 
 
-[12]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 395--397
 
  []
@@ -973,36 +988,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 451--473
  []
 
 
-Overfull \vbox (17.48997pt too high) has occurred while \output is active []
+Overfull \vbox (17.57852pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (17.48997pt too high) has occurred while \output is active []
+Overfull \vbox (17.58301pt too high) has occurred while \output is active []
 
 
-[13]) [14] [15] (./Devoir.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[18]) [19] [20] (./Devoir-dn.aux) ) 
 Here is how much of TeX's memory you used:
- 7315 strings out of 493117
- 95648 string characters out of 6135433
- 215999 words of memory out of 5000000
- 10628 multiletter control sequences out of 15000+600000
- 77234 words of font info for 83 fonts, out of 8000000 for 9000
+ 7447 strings out of 493117
+ 96975 string characters out of 6135433
+ 222456 words of memory out of 5000000
+ 10761 multiletter control sequences out of 15000+600000
+ 81554 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,27p,311b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/hacm/lantia.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2014/texmf-dist/
-fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/tipa/tipass12.pfb>
-Output written on Devoir.pdf (15 pages, 104309 bytes).
+ 38i,7n,27p,321b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/en
+c/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/velt
+huis/dvng10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/fourier/
+fourier-ms.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/adobe/utopia/put
+b8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/tipa/tipass12.pfb>
+Output written on Devoir-dn.pdf (20 pages, 131365 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

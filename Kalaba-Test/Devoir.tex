@@ -1,16 +1,19 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
+%\usepackage[french]{babel}
 %\usepackage{linearb}
 \usepackage{hacm}
-\usepackage{coffee4}
+%\usepackage[parmaite]{tengwarscript}
+%\usepackage{pigpen}
+%\usepackage{coffee4}
 \usepackage{graphicx}
 \usepackage{fourier}
 \usepackage{tipa,booktabs,multicol,geometry,pifont,gb4e,natbib,relsize}
+%\usepackage{devanagari}
 
 %\usepackage[T1]{fontenc}
 %\usepackage{baskervald}
-
+%###\font\letteror=orhun
 
 \geometry{scale={0.91,0.86}} % scale={largeur,hauteur}
 
@@ -25,6 +28,9 @@
 \newcommand{\strutgh}[1]{\rule{0pt}{#1}}
 %\newcommand{\grapho}[1]{\footnotesize\textlinb{#1}}
 \newcommand{\grapho}[1]{\textkardinal{#1}}
+%\newcommand{\grapho}[1]{{\dn #1}}
+%\newcommand{\grapho}[1]{\pigpenfont \MakeUppercase{#1}}
+%\newcommand{\grapho}[1]{{#1}}
 %\renewcommand{\grapho}[1]{\tiny}
 
 \newcommand{\blot}[2]{\includegraphics[scale=#2]{#1}}
