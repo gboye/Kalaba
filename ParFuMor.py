@@ -143,24 +143,32 @@ class Paradigmes:
         if not cle in self.cases[cat]:
             self.cases[cat].append(cle)
     
-    def getSigmas(self,classe):
+    def getSigmas(self,classes):
+#        print "getSig", classe
         sigmas=[]
-        if classe in hierarchieCF.categorie:
-            cat=hierarchieCF.categorie[classe]
-            feature=hierarchieCF.getFeature(cat,classe)
-            filtre="%s=%s"%(feature,classe)
-#            if feature=="CF":
-#                filtre=""
-#            else:
-#                filtre="%s=%s"%(feature,classe)
-        else:
-            cat=classe
-            filtre=""
+        CF=""
+        filtre=""
+        for classe in classes:
+            if classe in hierarchieCF.categorie:
+                cat=hierarchieCF.categorie[classe]
+                feature=hierarchieCF.getFeature(cat,classe)
+    #            filtre="%s=%s"%(feature,classe)
+                if feature=="CF":
+                    CF=classe
+                else:
+                    filtre+="%s=%s"%(feature,classe)
+            else:
+                cat=classe
+    #        print "cat",cat,sigmas
         if cat in self.cases:
             for element in self.cases[cat]:
                 for cle in element:
                     if filtre in cle:
+                        if CF!="":
+                            morceaux=cle.split(",")
+                            cle=morceaux[0]+", CF="+CF+","+",".join(morceaux[1:])
                         sigmas.append(cle)
+#            print sigmas
             return sigmas
         else:
             return [cat]
@@ -177,6 +185,7 @@ class HierarchieCF:
         self.categorie={}
         self.trait={}
         self.sets={}
+        self.inherents={}
         
     def addCategory(self,superclasse,classe):
         if not superclasse in self.classes:
@@ -185,15 +194,25 @@ class HierarchieCF:
         self.superieur[classe]=superclasse
         if superclasse in gloses:               #si superclasse est une catégorie
             self.categorie[classe]=superclasse
+            if not superclasse in self.inherents:
+                self.inherents[superclasse]=[]
+            if not classe in self.inherents[superclasse]:
+                self.inherents[superclasse].append(classe)
             category=superclasse
         else:                                   #si superclasse est une classe flexionnelle
             self.categorie[classe]=self.categorie[superclasse]
+            if not classe in self.inherents[self.categorie[classe]]:
+                self.inherents[self.categorie[classe]].append(classe)
             category=self.categorie[superclasse]
+        noFeature=True
         for element in self.sets[category]:
             for featureSet in element:
                 for valeur in featureSet.split(","):
                     if classe == valeur:
                         hierarchieCF.addFeature(category,classe,element[featureSet])
+                        noFeature=False
+        if noFeature:
+            hierarchieCF.addFeature(category,classe,"CF")
     
     def addFeatureSet(self,category,attribute,values):
         if not category in self.sets:
@@ -201,14 +220,16 @@ class HierarchieCF:
         self.sets[category].append({values:attribute})
                 
     def addFeature(self,category,classe,feature):
-        self.trait[category+"-"+classe]=feature
+        if not category in self.trait:
+            self.trait[category]=[]
+        if not {classe:feature} in self.trait[category]:
+            self.trait[category].append({classe:feature})
         
     def getFeature(self,category,classe):
-        cle=category+"-"+classe
-        if cle in self.trait:
-            return self.trait[category+"-"+classe]
+        if category in self.trait:
+            return [x for x in self.trait[category] if classe in x.keys()][0][classe]
         else:
-            return "CF"
+            return "ClassFLex"
         
     def categoryLookup(self,categorie):
         if categorie in gloses:
@@ -246,11 +267,13 @@ class Tableau:
     liste de sigmas
     '''
     def __init__(self,classe,stem,nom):
+#        print "initTableau",classe, stem, nom
         self.cases=[]
         self.stem=stem
         self.nom=nom
-        categorie=hierarchieCF.getCategory(classe)
-        for case in paradigmes.getSigmas(classe):
+        classes=classe.split(".")
+        categorie=hierarchieCF.getCategory(classes[0])
+        for case in paradigmes.getSigmas(classes):
             forme=self.stem
             cuts=self.nom.split(".")
             if len(cuts)>1:
@@ -303,13 +326,19 @@ class Lexique:
     def __repr__(self):
         return "\n".join(["%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
     
-    def addLexeme(self,classe,stem,*formes):
+    def addLexeme(self,head,classe,stem,*formes):
+#        print "addLex",head,classe,stem
+        cfs=head.split(",")
+        if len(cfs)>2:
+            classesFlex=".".join(cfs[2:])+"."+classe
+        else:
+            classesFlex=classe
         categorie=hierarchieCF.getCategory(classe)
         if classe!=categorie:
-            nom=formes[0]+"."+classe
+            nom=formes[0]+"."+classesFlex
         else:
             nom=formes[0]
-        self.lexemes[nom]=Lexeme(stem,classe,nom)
+        self.lexemes[nom]=Lexeme(stem,classesFlex,nom)
         self.lexemes[nom].addForme(*formes)
         for forme in formes:
             if not forme in self.formeLexeme:
@@ -362,30 +391,37 @@ regles=Regles()
 
 def analyserGloses(gloses):
     for category in gloses:
-        print category
+#        print category
         if gloses[category]:
             features=gloses[category].keys()
             for feature in features:
-                print feature
+#                print feature
                 hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
 
-def analyserStems(niveau):
+def analyserStems(niveau,head="stems"):
+    '''
+    alimentation du lexique et analyse de la flexion inhérente
+    '''
+#    print "head",head
     for element in niveau:
         if depthDict(niveau[element])==1:
+            if verbose: print "niveau1",element,niveau[element]
             for forme in niveau[element]:
                 if isinstance(niveau[element][forme],str):
-                    lexique.addLexeme(element,forme,niveau[element][forme])
+                    lexique.addLexeme(head,element,forme,niveau[element][forme])
                 elif isinstance(niveau[element][forme],unicode):
-                    lexique.addLexeme(element,forme,niveau[element][forme].encode('utf8'))
+                    lexique.addLexeme(head,element,forme,niveau[element][forme].encode('utf8'))
                 elif isinstance(niveau[element][forme],list):
                     liste=[]
                     for f in niveau[element][forme]:
                         liste.append(f.encode("utf8"))
-                    lexique.addLexeme(element,forme,*liste)
+                    lexique.addLexeme(head,element,forme,*liste)
                 else:
                     print "PB",element,forme,niveau[element][forme]
         else:
+            if verbose: print "autres niveaux",element,niveau[element]
             for cle in niveau[element]:
+                if verbose: print "addCat", element,cle
                 hierarchieCF.addCategory(element,cle)
-            analyserStems(niveau[element])
+            analyserStems(niveau[element],head+","+element)
     return

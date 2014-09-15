@@ -11,7 +11,6 @@ DET:
     Nombre: [Sg, Du, Pl]
     Cas:   [Erg,Abs,Obl,Dat]
 ADJ:
-    CF: [A1,A2,A3]
     Genre:  [A,B,C,D]
     Nombre: [Sg, Du, Pl]
 PREP:

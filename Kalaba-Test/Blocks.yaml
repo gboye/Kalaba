@@ -1,11 +1,11 @@
 N:
  1: #accord du nombre:
     Nombre=Sg :  X+a
-    Nombre=Du :  o+X
+    CF=N2,Nombre=Du :  o+X
     Nombre=Pl :  o+X+a
  2: #accord du cas:
     Cas=Erg : re+X
-    Genre=C,Cas=Erg : X+re
+    CF=N1,Genre=C,Cas=Erg : X+re
     Genre=D,Cas=Erg : a+X+f
     Cas=Abs : X+ab
     Cas=Obl : X+ol
@@ -21,8 +21,8 @@ V:
     Genre-Abs=C : X+i
     Genre-Abs=D : X+u
  3: #accord en nombre
-    Nombre-Abs=Sg :    X+p
-    Nombre-Abs=Du :    X+s
+    CF=V2,Type=VI,Nombre-Abs=Sg :    X+p
+    CF=V1,Type=VI,Nombre-Abs=Du :    X+s
     Nombre-Abs=Pl :    X+d
 #
 ADJ:
@@ -30,6 +30,7 @@ ADJ:
     CF=A1,Nombre=Sg : X+e
     CF=A2,Nombre=Sg : X+u
     Nombre=Du : X+a
+    CF=A1,Nombre=Du: 1a22A3V
     CF=A1,Nombre=Pl : X+o
     CF=A2,Nombre=Pl : X+e
  2:

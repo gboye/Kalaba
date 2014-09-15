@@ -1,7 +1,7 @@
 V:
     FormesBase: [INF,PRS,PRS,PST,PST]
 Attributs:
-    N: [Genre,Nombre,Cas]
+    N: [CF,Genre,Nombre,Cas]
     V: [Type,Temps,Genre-Abs,Nombre-Abs]
     ADJ: [CF,Genre,Nombre]
     DET: [Nombre,Cas]

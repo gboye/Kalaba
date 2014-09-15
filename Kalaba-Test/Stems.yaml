@@ -65,17 +65,21 @@ ADJ:
 #####################
 V:
     VI:
+     V1:
         rror: [dormir,dort,dorment,dormait,dormaient]
         ptik: [tomber,tombe,tombent,tombait,tombaient]
+     V2:
         pwon: [arriver,arrive,arrivent,arrivait,arrivaient]
         brek: [entrer,entre,entrent,entrait,entraient]
     VT:
+     V1:
         gwob: [manger,mange,mangent,mangeait,mangeaient]
         btur: [boire,boit,boivent,buvait,buvaient]
         tSur: [acheter,achète,achètent,achetait,achetaient]
         blem: [supporter,supporte,supportent,supportait,supportaient]
         trap: [chasser,chasse,chassent,chassait,chassaient]
     VD:
+     V2:
         lgat: [donner,donne,donnent,donnait,donnaient]
         frir: [offrir,offre,offrent,offrait,offraient]
         ZteZ: [lancer,lance,lancent,lançait,lançaient]

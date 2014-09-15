@@ -209,6 +209,18 @@
       & \\, \tomberViPstCSg & \tomberViPstCSgP & \\, \tomberViPstCDu & \tomberViPstCDuP
       & \\, \tomberViPstCPl & \tomberViPstCPlP & \\, \tomberViPstDSg & \tomberViPstDSgP
       & \\, \tomberViPstDDu & \tomberViPstDDuP & \\, \tomberViPstDPl & \tomberViPstDPlP
+      & \\, \dormirViPrsASg & \dormirViPrsASgP & \\, \dormirViPrsADu & \dormirViPrsADuP
+      & \\, \dormirViPrsAPl & \dormirViPrsAPlP & \\, \dormirViPrsBSg & \dormirViPrsBSgP
+      & \\, \dormirViPrsBDu & \dormirViPrsBDuP & \\, \dormirViPrsBPl & \dormirViPrsBPlP
+      & \\, \dormirViPrsCSg & \dormirViPrsCSgP & \\, \dormirViPrsCDu & \dormirViPrsCDuP
+      & \\, \dormirViPrsCPl & \dormirViPrsCPlP & \\, \dormirViPrsDSg & \dormirViPrsDSgP
+      & \\, \dormirViPrsDDu & \dormirViPrsDDuP & \\, \dormirViPrsDPl & \dormirViPrsDPlP
+      & \\, \dormirViPstASg & \dormirViPstASgP & \\, \dormirViPstADu & \dormirViPstADuP
+      & \\, \dormirViPstAPl & \dormirViPstAPlP & \\, \dormirViPstBSg & \dormirViPstBSgP
+      & \\, \dormirViPstBDu & \dormirViPstBDuP & \\, \dormirViPstBPl & \dormirViPstBPlP
+      & \\, \dormirViPstCSg & \dormirViPstCSgP & \\, \dormirViPstCDu & \dormirViPstCDuP
+      & \\, \dormirViPstCPl & \dormirViPstCPlP & \\, \dormirViPstDSg & \dormirViPstDSgP
+      & \\, \dormirViPstDDu & \dormirViPstDDuP & \\, \dormirViPstDPl & \dormirViPstDPlP
       & \\, \arriverViPrsASg & \arriverViPrsASgP & \\, \arriverViPrsADu & \arriverViPrsADuP
       & \\, \arriverViPrsAPl & \arriverViPrsAPlP & \\, \arriverViPrsBSg & \arriverViPrsBSgP
       & \\, \arriverViPrsBDu & \arriverViPrsBDuP & \\, \arriverViPrsBPl & \arriverViPrsBPlP
@@ -233,18 +245,6 @@
       & \\, \entrerViPstCSg & \entrerViPstCSgP & \\, \entrerViPstCDu & \entrerViPstCDuP
       & \\, \entrerViPstCPl & \entrerViPstCPlP & \\, \entrerViPstDSg & \entrerViPstDSgP
       & \\, \entrerViPstDDu & \entrerViPstDDuP & \\, \entrerViPstDPl & \entrerViPstDPlP
-      & \\, \dormirViPrsASg & \dormirViPrsASgP & \\, \dormirViPrsADu & \dormirViPrsADuP
-      & \\, \dormirViPrsAPl & \dormirViPrsAPlP & \\, \dormirViPrsBSg & \dormirViPrsBSgP
-      & \\, \dormirViPrsBDu & \dormirViPrsBDuP & \\, \dormirViPrsBPl & \dormirViPrsBPlP
-      & \\, \dormirViPrsCSg & \dormirViPrsCSgP & \\, \dormirViPrsCDu & \dormirViPrsCDuP
-      & \\, \dormirViPrsCPl & \dormirViPrsCPlP & \\, \dormirViPrsDSg & \dormirViPrsDSgP
-      & \\, \dormirViPrsDDu & \dormirViPrsDDuP & \\, \dormirViPrsDPl & \dormirViPrsDPlP
-      & \\, \dormirViPstASg & \dormirViPstASgP & \\, \dormirViPstADu & \dormirViPstADuP
-      & \\, \dormirViPstAPl & \dormirViPstAPlP & \\, \dormirViPstBSg & \dormirViPstBSgP
-      & \\, \dormirViPstBDu & \dormirViPstBDuP & \\, \dormirViPstBPl & \dormirViPstBPlP
-      & \\, \dormirViPstCSg & \dormirViPstCSgP & \\, \dormirViPstCDu & \dormirViPstCDuP
-      & \\, \dormirViPstCPl & \dormirViPstCPlP & \\, \dormirViPstDSg & \dormirViPstDSgP
-      & \\, \dormirViPstDDu & \dormirViPstDDuP & \\, \dormirViPstDPl & \dormirViPstDPlP
       & \\, \supporterVtPrsASg & \supporterVtPrsASgP & \\, \supporterVtPrsADu & \supporterVtPrsADuP
       & \\, \supporterVtPrsAPl & \supporterVtPrsAPlP & \\, \supporterVtPrsBSg & \supporterVtPrsBSgP
       & \\, \supporterVtPrsBDu & \supporterVtPrsBDuP & \\, \supporterVtPrsBPl & \supporterVtPrsBPlP
