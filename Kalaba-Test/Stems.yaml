@@ -1,44 +1,47 @@
 N:
  N1:
+  TOTO:
     A:
         katiSa: [Katisha,Katishas]
         pokes: [viande,viandes]
     B:
         kiwiN: [fruit,fruits]
         bulit: [infirmière,infirmières]
+  TITI:
     C:
         sosir: [balai,balais]
         gazon: [plaine,plaines]
     D:
         nikol: [Nicole,Nicoles]
         wazot: [autruche,autruches]
- N2:
-    A:
-        SiZib: [souris,souriS]
-        pusad: [coussin,coussins]
-    B:
-        domir: [chambre,chambres]
-        buwar: [thé,thés]
-    C:
-        panap: [chasseur,chasseurs]
-        makij: [fille,filles]
-    D:
-        melet: [oeuf,oeufs]
-        Soset: [café,cafés]
- N3:
-    A:
-        kojot: [coyote,coyotes]
-        biled: [village,villages]
-    B:
-        nabil: [Nabil,Nabils]
-        Sijer: [garçon,garçons]
-    C:
-        kanoS: [cuisine,cuisines]
-        mesaZ: [table,tables]
-    D:
-        mijaw: [chat,chatte,chats,chattes]
-        padok: [lit,lits]
-        gitun: [maison,maisons]
+ TATA:
+     N2:
+        A:
+            SiZib: [souris,souriS]
+            pusad: [coussin,coussins]
+        B:
+            domir: [chambre,chambres]
+            buwar: [thé,thés]
+        C:
+            panap: [chasseur,chasseurs]
+            makij: [fille,filles]
+        D:
+            melet: [oeuf,oeufs]
+            Soset: [café,cafés]
+     N3:
+        A:
+            kojot: [coyote,coyotes]
+            biled: [village,villages]
+        B:
+            nabil: [Nabil,Nabils]
+            Sijer: [garçon,garçons]
+        C:
+            kanoS: [cuisine,cuisines]
+            mesaZ: [table,tables]
+        D:
+            mijaw: [chat,chatte,chats,chattes]
+            padok: [lit,lits]
+            gitun: [maison,maisons]
 #####################
 ##
 ## ADJECTIFS

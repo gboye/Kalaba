@@ -6,10 +6,19 @@ N:
  2: #accord du cas:
     Cas=Erg : re+X
     CF=N1,Genre=C,Cas=Erg : X+re
+    CF=TITI,Genre=C,Cas=Erg : X+ti
     Genre=D,Cas=Erg : a+X+f
-    Cas=Abs : X+ab
-    Cas=Obl : X+ol
-    Cas=Dat : da+X
+    CF=TOTO,Cas=Abs : X+to
+    CF=TITI,Cas=Abs : X+ti
+    CF=N2,Cas=Abs : X+nde
+    CF=N3,Cas=Abs : X+ntr
+    CF=N1,Cas=Obl : X+un
+    CF=N2,Cas=Obl : X+dos
+    CF=N3,Cas=Obl : X+tres
+    CF=TATA,Cas=Dat : da+X
+    CF=TATA,Genre=A,Cas=Dat : ga+X+ta
+    CF=TITI,Cas=Dat : ti+X
+    CF=TOTO,Cas=Dat : no+X
 #
 V:
  1: #type

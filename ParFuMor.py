@@ -154,7 +154,7 @@ class Paradigmes:
                 feature=hierarchieCF.getFeature(cat,classe)
     #            filtre="%s=%s"%(feature,classe)
                 if feature=="CF":
-                    CF=classe
+                    CF+="CF="+classe+", "
                 else:
                     filtre+="%s=%s"%(feature,classe)
             else:
@@ -166,7 +166,7 @@ class Paradigmes:
                     if filtre in cle:
                         if CF!="":
                             morceaux=cle.split(",")
-                            cle=morceaux[0]+", CF="+CF+","+",".join(morceaux[1:])
+                            cle=morceaux[0]+", "+CF+",".join(morceaux[1:])
                         sigmas.append(cle)
 #            print sigmas
             return sigmas
