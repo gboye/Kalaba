@@ -22,7 +22,7 @@ def depthDict(element):
 def cacherGloses(chaine):
     return "\\cacherGloses{"+chaine+"}"
 
-def modifierForme(forme,transformation):
+def modifierForme(forme,formeDecoupe,transformation):
     def extraireRacine(simple):
         if verbose: print "simple : ", simple
         c=1
@@ -71,6 +71,7 @@ def modifierForme(forme,transformation):
         racine=extraireRacine(forme)
         result=appliquerGabarit(transformation,racine)
         typeTrans="gabarit"
+        decoupe="racine(%s)x%s"% (formeDecoupe,transformation)
         if verbose: print "f,r,t",forme,racine,result
     else:
         affixe=re.match("^([^+]*)\+([^+]*)$",transformation)
@@ -79,10 +80,12 @@ def modifierForme(forme,transformation):
                 suffixe=affixe.group(2)
                 result=forme+suffixe
                 typeTrans="suffixe"
+                decoupe="%s-%s"%(formeDecoupe,suffixe)
             elif affixe.group(2)=="X":
                 prefixe=affixe.group(1)
                 result=prefixe+forme
                 typeTrans="préfixe"
+                decoupe="%s-%s"%(prefixe,formeDecoupe)
         else:
             circonfixe=re.match("^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
             if circonfixe:
@@ -91,7 +94,8 @@ def modifierForme(forme,transformation):
                     suffixe=circonfixe.group(3)
                     result=prefixe+forme+suffixe
                     typeTrans="circonfixe"
-    return (result,typeTrans)
+                    decoupe="%s+%s+%s"%(prefixe,formeDecoupe,suffixe)
+    return (result,decoupe,typeTrans)
 
 def modifierGlose(glose,sigma,typeTrans):
     '''
@@ -254,13 +258,14 @@ class Forme:
     '''
     sigma et forme fléchie
     '''
-    def __init__(self,sigma,forme,glose):
+    def __init__(self,sigma,forme,glose,decoupe):
         self.sigma=sigma
         self.forme=forme
         self.glose=glose
+        self.decoupe=decoupe
         
     def __repr__(self):
-        return "%s:\t%s\t%s"%(self.sigma,self.forme, self.glose)
+        return "%s:\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe)
     
 class Tableau:
     '''
@@ -281,11 +286,12 @@ class Tableau:
             else:
                 glose=self.nom
             derivations=regles.getRules(categorie,case)
+            decoupe=forme
             if derivations:
                 for derivation in derivations:
-                    (forme,affixe)=modifierForme(forme,derivation[0])
-                    glose=modifierGlose(glose,derivation[1],affixe)
-            flexion=Forme(case,forme,glose)
+                    (forme,decoupe,operation)=modifierForme(forme,decoupe,derivation[0])
+                    glose=modifierGlose(glose,derivation[1],operation)
+            flexion=Forme(case,forme,glose,decoupe)
             self.cases.append(flexion)
             
     def __repr__(self):
