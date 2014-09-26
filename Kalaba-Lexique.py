@@ -1,10 +1,13 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[18]:
 
 
-
+from os.path import expanduser
+home = expanduser("~")
+repertoire=home+"/Copy/Cours/Bordeaux/L1-UE1/Kalaba-14"
+serie=repertoire+"/"
 #########################IMPORTS############################################
 import codecs, optparse
 import re, random
@@ -16,29 +19,30 @@ from ParFuMor import *
 import pickle
 
 
-# In[2]:
+# In[19]:
 
-print_glose=True
-numeros={'1':'Un','2':'Deux','3':'Trois','4':'Quatre','5':'Cinq'}
+print_glose=False
+print_cloze=True
+#numeros={'1':'Un','2':'Deux','3':'Trois','4':'Quatre','5':'Cinq'}
 
 
-# In[3]:
+# In[20]:
 
-with open("Kalaba-Phonology.yaml", 'r') as stream:
+with open(serie+"Phonology.yaml", 'r') as stream:
     phonology=yaml.load(stream)
-with open("Kalaba-MorphoSyntax.yaml", 'r') as stream:
+with open(serie+"MorphoSyntax.yaml", 'r') as stream:
     morphosyntax=yaml.load(stream)
-with open('PFM-Hierarchie.pkl', 'rb') as input:
+with open(serie+"Hierarchie.pkl", 'rb') as input:
    PFM.hierarchieCF = pickle.load(input)
-with open('PFM-Lexique.pkl', 'rb') as input:
+with open(serie+"Lexique.pkl", 'rb') as input:
    PFM.lexique = pickle.load(input)
-with open('PFM-Regles.pkl', 'rb') as input:
+with open(serie+"Regles.pkl", 'rb') as input:
    PFM.regles = pickle.load(input)
 
 
 # ####Définition des segments
 
-# In[4]:
+# In[21]:
 
 consonnes=phonology["consonnes"]
 voyelles=phonology["voyelles"]
@@ -50,12 +54,17 @@ nom_mut=phonology["mutations"]
 syllabes=phonology["syllabes"]
 
 
-# In[5]:
+# ####Attention aux correspondances pour les syllabes
+# YAML interprète la clé no comme False
+
+# In[22]:
 
 def parse_grapho(graphie):
-    chunks=re.findall(r"([djkmnpqrstwz][aeiou]?)|[aeiou]|[.…,;!?:—–()\[\]\/# ""«»<>]", graphie)
+#    chunks=re.findall(r"([ptkbdgmnNfsSvzjrlyv]?[aeiou]?)|[aeiou]|[ptkbdgmnNfsSvzjrlyv]|[.…,;!?:—–()\[\]\/# ""«»<>]", graphie)
+    chunks=re.findall(r"([ptkbdgmnNfsSvzjrlyv]?[aeiou]?)|[.…,;!?:—–()\[\]\/# ""«»<>]", graphie)
     result=[]
     for chunk in chunks:
+#        print [chunk],syllabes.keys()
         if chunk in syllabes.keys():
             result.append(syllabes[chunk])
         else:
@@ -63,7 +72,23 @@ def parse_grapho(graphie):
     return "".join(result)
 
 
-# In[6]:
+# In[23]:
+
+def parse_cloze(glose):
+    chunks=re.findall(r"\\cacherGloses{([^}]*)?}|(\w+)", glose.decode('utf8'),re.UNICODE)
+    result=[]
+    for chunk in chunks:
+        result.extend([x.encode('utf8') for x in chunk if x!=""])
+    return "%s;"%len(result)+";".join(result)
+
+
+# In[24]:
+
+#grapho=recoder("SviNaNeNNoNN",translit)
+#grapho,parse_grapho(grapho)
+
+
+# In[25]:
 
 try:
     __IPYTHON__ 
@@ -77,8 +102,9 @@ print "%% version : "+version
 print "%% traitement : "+time_stamp
 
 if ipython or True:
-    lexeme_nom="lexemes.txt"
-    phrase_nom="phrases.txt"
+#    lexeme_nom="lexemes.txt"
+#    phrase_nom="phrases.txt"
+    pass
 else:
     parser=optparse.OptionParser()
     parser.add_option("-o", "--out", dest="outfile", action="store_true", help="write to FILE")
@@ -91,7 +117,7 @@ else:
     phrase_nom=args[1]
 
 
-# In[7]:
+# In[26]:
 
 def recoder(chaine,table):
     if type(chaine)==str:
@@ -107,7 +133,7 @@ graphoOut = unicode(phonology["translations"]["grapho"]["out"])
 translit = dict(zip(graphoIn, graphoOut))
 
 
-# In[8]:
+# In[27]:
 
 accentedIn = unicode(phonology["translations"]["deaccent"]["in"])
 deaccentIn = [ord(char) for char in accentedIn]
@@ -115,7 +141,7 @@ deaccentOut = unicode(phonology["translations"]["deaccent"]["out"])
 deaccent = dict(zip(deaccentIn, deaccentOut))
 
 
-# In[9]:
+# In[28]:
 
 tipaIn = unicode(phonology["translations"]["ipa"]["in"])
 ipaIn = [ord(char) for char in tipaIn]
@@ -123,12 +149,15 @@ ipaOut = unicode(phonology["translations"]["ipa"]["out"])
 toipa = dict(zip(ipaIn, ipaOut))
 
 
-# In[10]:
+# In[29]:
 
 tableaux={}
+gloseClozes={}
+declarations=[]
 for categorie in PFM.lexique.catLexeme:
     if not categorie in tableaux:
         tableaux[categorie]=[]
+        gloseClozes[categorie]=[]
     if verbose: print categorie
     for lexeme in PFM.lexique.catLexeme[categorie]:
         if verbose: print PFM.lexique.lexemes[lexeme]
@@ -139,21 +168,62 @@ for categorie in PFM.lexique.catLexeme:
                 nom=PFM.lexique.lexemes[lexeme].nom.upper()
             ref=PFM.modifierGlose(nom,case.sigma,"ref")
             ref=recoder(ref,deaccent)
-            for num in numeros:
-                ref=ref.replace(num,numeros[num])
+#            for num in numeros:
+#                ref=ref.replace(num,numeros[num])
             phono=case.forme
             grapho=parse_grapho(recoder(phono,translit))
-            print "\\newcommand{\\"+ref+"}{\\strutgb{0pt}\\grapho{"+grapho+"}}"
-            print "\\newcommand{\\"+ref+"P}{\\textipa{"+case.forme+"}}"
-            print "\\newcommand{\\"+ref+"G}{"+case.glose+"}"
+            declarations.append("\\newcommand{\\"+ref+"}{\\strutgb{0pt}\\grapho{"+grapho+"}}")
+            declarations.append("\\newcommand{\\"+ref+"P}{\\textipa{"+case.forme+"}}")
+            declarations.append("\\newcommand{\\"+ref+"G}{"+case.glose+"}")
             if print_glose:
                 tableaux[categorie].append("\\"+ref+" & \\"+ref+"P & \\"+ref+"G \\\\")
             else:
                 tableaux[categorie].append("\\"+ref+" & \\"+ref+"P & \\\\")
+            if print_cloze:
+                vedette=nom.split(".")[0]
+                gloses=parse_cloze(case.glose)
+                try:
+                    cloze=";".join([vedette,categorie,phono,case.decoupe,case.sigma,gloses])
+                except NameError:
+                    cloze=";".join([vedette,categorie,phono,gloses])
+                gloseClozes[categorie].append(cloze)
     
 
 
-# In[10]:
+# In[30]:
+
+with open(serie+"Declarations.tex", 'wb') as output:
+    for declaration in declarations:
+        output.write(declaration+"\n")
+
+
+# In[31]:
+
+with open(serie+"Clozes.txt", 'wb') as output:
+    for categorie in gloseClozes:
+        output.write("#\t"+categorie+"\n#\n#\n")
+        for cloze in gloseClozes[categorie]:
+            output.write(cloze+"\n")
+        output.write("#\n#\n#\n")
+
+
+# In[32]:
+
+with open(serie+"Tableaux.yaml", 'w') as outfile:
+    outfile.write(yaml.dump(tableaux, default_flow_style=True))
+
+
+# In[33]:
+
+gloseClozes
+
+
+# In[34]:
+
+parse_cloze("\cacherGloses{PST-}donner\cacherGloses{.VD.V2}\cacherGloses{-D}")
+
+
+# In[34]:
 
 
 
