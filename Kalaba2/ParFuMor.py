@@ -8,6 +8,14 @@ categoriesMajeures=["V","N","ADJ"]
 categoriesMineures=["PREP"]
 verbose=False
 
+def chaine2utf8(chaine):
+    if type(chaine)==str:
+        result=unicode(chaine.decode('utf8'))
+    elif type(chaine)==unicode:
+        result=chaine
+    return result
+
+
 def depthDict(element):
     max=0
     if type(element)==type({}):
@@ -20,7 +28,7 @@ def depthDict(element):
         return 0
 
 def cacherGloses(chaine):
-    return "\\cacherGloses{"+chaine+"}"
+    return u"\\cacherGloses{"+chaine+"}"
 
 def modifierForme(forme,formeDecoupe,transformation):
     def extraireRacine(simple):
@@ -66,35 +74,35 @@ def modifierForme(forme,formeDecoupe,transformation):
 #        result=forme
 
     typeTrans=""
-    gabarit=re.match("^(\D*)(\d)(\D*)(\d)(\D*)(\d)(.*)$",transformation)
+    gabarit=re.match(u"^(\D*)(\d)(\D*)(\d)(\D*)(\d)(.*)$",transformation)
     if gabarit:
         racine=extraireRacine(forme)
         result=appliquerGabarit(transformation,racine)
         typeTrans="gabarit"
-        decoupe="racine(%s)x%s"% (formeDecoupe,transformation)
+        decoupe=u"racine(%s)x%s"% (formeDecoupe,transformation)
         if verbose: print "f,r,t",forme,racine,result
     else:
-        affixe=re.match("^([^+]*)\+([^+]*)$",transformation)
+        affixe=re.match(u"^([^+]*)\+([^+]*)$",transformation)
         if affixe:
             if affixe.group(1)=="X":
                 suffixe=affixe.group(2)
                 result=forme+suffixe
                 typeTrans="suffixe"
-                decoupe="%s-%s"%(formeDecoupe,suffixe)
+                decoupe=u"%s-%s"%(formeDecoupe,suffixe)
             elif affixe.group(2)=="X":
                 prefixe=affixe.group(1)
                 result=prefixe+forme
                 typeTrans="préfixe"
-                decoupe="%s-%s"%(prefixe,formeDecoupe)
+                decoupe=u"%s-%s"%(prefixe,formeDecoupe)
         else:
-            circonfixe=re.match("^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
+            circonfixe=re.match(u"^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
             if circonfixe:
                 if circonfixe.group(2)=="X":
                     prefixe=circonfixe.group(1)
                     suffixe=circonfixe.group(3)
                     result=prefixe+forme+suffixe
                     typeTrans="circonfixe"
-                    decoupe="%s+%s+%s"%(prefixe,formeDecoupe,suffixe)
+                    decoupe=u"%s+%s+%s"%(prefixe,formeDecoupe,suffixe)
             else:
 #                print forme
                 result=forme
@@ -270,7 +278,7 @@ class Forme:
         self.decoupe=decoupe
         
     def __repr__(self):
-        return "%s:\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe)
+        return u"%s:\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe)
     
 class Tableau:
     '''
@@ -302,8 +310,8 @@ class Tableau:
     def __repr__(self):
         listCases=[]
         for case in self.cases:
-            listCases.append(str(case))
-        return self.stem+" :\n\t\t\t"+"\n\t\t\t".join(listCases)
+            listCases.append(unicode(case))
+        return self.stem+u" :\n\t\t\t"+"\n\t\t\t".join(listCases)
 
 class Lexeme:
     '''
@@ -314,12 +322,13 @@ class Lexeme:
         self.classe=classe
         self.nom=nom
         if classe in categoriesMineures:
-            self.nom=self.nom.decode('utf8').upper().encode('utf8')
+#            self.nom=self.nom.decode('utf8').upper().encode('utf8')
+            self.nom=chaine2utf8(self.nom).upper()
         self.paradigme=Tableau(classe,stem,nom)
         self.formes=[]
 
     def __repr__(self):
-        return "%s, %s, %s\n\t\t%s\n"%(self.stem,self.classe,self.nom,self.paradigme)
+        return u"%s, %s, %s\n\t\t%s\n"%(self.stem,self.classe,self.nom,self.paradigme)
     
     def addForme(self,*formes):
         for forme in formes:
@@ -335,7 +344,7 @@ class Lexique:
         self.formeLexeme={}
         
     def __repr__(self):
-        return "\n".join(["%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
+        return "\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
     
     def addLexeme(self,head,classe,stem,*formes):
 #        print "addLex",head,classe,stem
@@ -418,14 +427,25 @@ def analyserStems(niveau,head="stems"):
         if depthDict(niveau[element])==1:
             if verbose: print "niveau1",element,niveau[element]
             for forme in niveau[element]:
+#                 if isinstance(niveau[element][forme],str):
+#                     lexique.addLexeme(head,element,forme,niveau[element][forme])
+#                 elif isinstance(niveau[element][forme],unicode):
+#                     lexique.addLexeme(head,element,forme,niveau[element][forme].encode('utf8'))
+#                 elif isinstance(niveau[element][forme],list):
+#                     liste=[]
+#                     for f in niveau[element][forme]:
+#                         liste.append(f.encode("utf8"))
+#                     lexique.addLexeme(head,element,forme,*liste)
+#                 else:
+#                     print "PB",element,forme,niveau[element][forme]
                 if isinstance(niveau[element][forme],str):
-                    lexique.addLexeme(head,element,forme,niveau[element][forme])
+                    lexique.addLexeme(head,element,forme,chaine2utf8(niveau[element][forme]))
                 elif isinstance(niveau[element][forme],unicode):
-                    lexique.addLexeme(head,element,forme,niveau[element][forme].encode('utf8'))
+                    lexique.addLexeme(head,element,forme,chaine2utf8(niveau[element][forme]))
                 elif isinstance(niveau[element][forme],list):
                     liste=[]
                     for f in niveau[element][forme]:
-                        liste.append(f.encode("utf8"))
+                        liste.append(chaine2utf8(f))
                     lexique.addLexeme(head,element,forme,*liste)
                 else:
                     print "PB",element,forme,niveau[element][forme]
