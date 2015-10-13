@@ -4,7 +4,7 @@ import re
 gloses={}
 phonology={}
 morphosyntax={}
-categoriesMajeures=["V","N","ADJ"]
+categoriesMajeures=["VER","NOM","ADJ"]
 categoriesMineures=["PREP"]
 verbose=False
 
@@ -271,14 +271,15 @@ class Forme:
     '''
     sigma et forme fléchie
     '''
-    def __init__(self,sigma,forme,glose,decoupe):
+    def __init__(self,sigma,forme,glose,decoupe,detoure):
         self.sigma=sigma
         self.forme=forme
         self.glose=glose
         self.decoupe=decoupe
+        self.detoure=detoure
         
     def __repr__(self):
-        return u"%s:\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe)
+        return u"%s:\t%s\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe, self.detoure)
     
 class Tableau:
     '''
@@ -300,11 +301,14 @@ class Tableau:
                 glose=self.nom
             derivations=regles.getRules(categorie,case)
             decoupe=forme
+            radical=u"\\textradical{%s}"%forme
+            detoure=forme
             if derivations:
                 for derivation in derivations:
+                    (radical,detoure,operation)=modifierForme(radical,detoure,derivation[0])
                     (forme,decoupe,operation)=modifierForme(forme,decoupe,derivation[0])
                     glose=modifierGlose(glose,derivation[1],operation)
-            flexion=Forme(case,forme,glose,decoupe)
+            flexion=Forme(case,forme,glose,decoupe,radical)
             self.cases.append(flexion)
             
     def __repr__(self):
@@ -344,7 +348,7 @@ class Lexique:
         self.formeLexeme={}
         
     def __repr__(self):
-        return "\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
+        return u"\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
     
     def addLexeme(self,head,classe,stem,*formes):
 #        print "addLex",head,classe,stem
@@ -422,7 +426,7 @@ def analyserStems(niveau,head="stems"):
     '''
     alimentation du lexique et analyse de la flexion inhérente
     '''
-#    print "head",head
+    print "head",head
     for element in niveau:
         if depthDict(niveau[element])==1:
             if verbose: print "niveau1",element,niveau[element]
