@@ -2,7 +2,11 @@
  "cells": [
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 45,
+=======
    "execution_count": 1557,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -11,7 +15,11 @@
     "# -*- coding: utf8 -*-\n",
     "from os.path import expanduser\n",
     "home = expanduser(\"~\")\n",
+<<<<<<< HEAD
+    "repertoire=home+\"/Copy/Cours/Bordeaux/L1-UE1/Kalaba-15/01-PseudoEspagnol\"\n",
+=======
     "repertoire=home+\"/Copy/Cours/Bordeaux/L1-UE1/Kalaba-15/05-Classes\"\n",
+>>>>>>> iMacGB-151017-TMP
     "serie=repertoire+\"/\"\n",
     "variante=\"-Corr\"\n",
     "#variante=\"\"\n",
@@ -29,7 +37,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 46,
+=======
    "execution_count": 1558,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -81,7 +93,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 47,
+=======
    "execution_count": 1559,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -89,10 +105,17 @@
     {
      "data": {
       "text/plain": [
+<<<<<<< HEAD
+       "3"
+      ]
+     },
+     "execution_count": 47,
+=======
        "2"
       ]
      },
      "execution_count": 1559,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -103,7 +126,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 48,
+=======
    "execution_count": 1560,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -125,7 +152,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 49,
+=======
    "execution_count": 1561,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -176,7 +207,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 50,
+=======
    "execution_count": 1562,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -187,7 +222,11 @@
        "[[u'\\xe0', 'les'], ['de', 'le'], ['de', 'les'], [u'\\xe0', 'le'], ['de']]"
       ]
      },
+<<<<<<< HEAD
+     "execution_count": 50,
+=======
      "execution_count": 1562,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -205,7 +244,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 51,
+=======
    "execution_count": 1563,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -234,7 +277,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 52,
+=======
    "execution_count": 1564,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -255,7 +302,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 53,
+=======
    "execution_count": 1565,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -286,7 +337,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 54,
+=======
    "execution_count": 1566,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -311,7 +366,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 55,
+=======
    "execution_count": 1567,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -327,7 +386,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 56,
+=======
    "execution_count": 1568,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -338,7 +401,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 57,
+=======
    "execution_count": 1569,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": true
    },
@@ -360,7 +427,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 58,
+=======
    "execution_count": 1570,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -368,10 +439,17 @@
     {
      "data": {
       "text/plain": [
+<<<<<<< HEAD
+       "{'Genre', 'Nombre', 'Pers', 'Temps'}"
+      ]
+     },
+     "execution_count": 58,
+=======
        "{'Cas', 'Genre', 'Nombre', 'Pers', 'Temps', 'Trans'}"
       ]
      },
      "execution_count": 1570,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -382,7 +460,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 59,
+=======
    "execution_count": 1571,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -393,7 +475,11 @@
        "['VER', 'NOM', 'DET', 'ADJ']"
       ]
      },
+<<<<<<< HEAD
+     "execution_count": 59,
+=======
      "execution_count": 1571,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -408,7 +494,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 60,
+=======
    "execution_count": 1572,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -416,6 +506,15 @@
     {
      "data": {
       "text/plain": [
+<<<<<<< HEAD
+       "{'ADJ': {'Genre': True, 'Nombre': True, 'Pers': False, 'Temps': False},\n",
+       " 'DET': {'Genre': True, 'Nombre': True, 'Pers': False, 'Temps': False},\n",
+       " 'NOM': {'Genre': True, 'Nombre': True, 'Pers': False, 'Temps': False},\n",
+       " 'VER': {'Genre': False, 'Nombre': False, 'Pers': True, 'Temps': True}}"
+      ]
+     },
+     "execution_count": 60,
+=======
        "{'ADJ': {'Cas': True,\n",
        "  'Genre': True,\n",
        "  'Nombre': True,\n",
@@ -443,6 +542,7 @@
       ]
      },
      "execution_count": 1572,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -473,7 +573,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 61,
+=======
    "execution_count": 1573,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -504,7 +608,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 62,
+=======
    "execution_count": 1574,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -522,7 +630,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 63,
+=======
    "execution_count": 1575,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": true
    },
@@ -535,7 +647,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 64,
+=======
    "execution_count": 1576,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -546,7 +662,11 @@
        "'1'"
       ]
      },
+<<<<<<< HEAD
+     "execution_count": 64,
+=======
      "execution_count": 1576,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -557,7 +677,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 65,
+=======
    "execution_count": 1577,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -581,7 +705,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 66,
+=======
    "execution_count": 1578,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -592,7 +720,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 67,
+=======
    "execution_count": 1579,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -611,7 +743,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 68,
+=======
    "execution_count": 1580,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -622,7 +758,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 69,
+=======
    "execution_count": 1581,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -633,7 +773,11 @@
        "['PRS', 'PST', '3Sg', '3Du', '3Pl', 'VI', 'VT', 'VD', 'A', 'B', 'C', 'D']"
       ]
      },
+<<<<<<< HEAD
+     "execution_count": 69,
+=======
      "execution_count": 1581,
+>>>>>>> iMacGB-151017-TMP
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -645,7 +789,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 70,
+=======
    "execution_count": 1582,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -679,7 +827,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 71,
+=======
    "execution_count": 1583,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -698,7 +850,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 72,
+=======
    "execution_count": 1584,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -732,7 +888,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 73,
+=======
    "execution_count": 1585,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -764,7 +924,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 74,
+=======
    "execution_count": 1586,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -784,7 +948,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 75,
+=======
    "execution_count": 1587,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -952,7 +1120,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 76,
+=======
    "execution_count": 1588,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1023,7 +1195,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 77,
+=======
    "execution_count": 1589,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1042,7 +1218,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 78,
+=======
    "execution_count": 1590,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1061,7 +1241,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 79,
+=======
    "execution_count": 1591,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1082,7 +1266,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 80,
+=======
    "execution_count": 1592,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1092,7 +1280,11 @@
      "output_type": "stream",
      "text": [
       "%% version : __file__\n",
+<<<<<<< HEAD
+      "%% traitement : 151017-1339\n"
+=======
       "%% traitement : 151017-1938\n"
+>>>>>>> iMacGB-151017-TMP
      ]
     }
    ],
@@ -1138,7 +1330,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 81,
+=======
    "execution_count": 1593,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1155,7 +1351,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 82,
+=======
    "execution_count": 1594,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1169,7 +1369,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 83,
+=======
    "execution_count": 1595,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1183,7 +1387,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 84,
+=======
    "execution_count": 1596,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1216,7 +1424,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 85,
+=======
    "execution_count": 1597,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false
    },
@@ -1459,7 +1671,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 86,
+=======
    "execution_count": 1598,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false,
     "scrolled": true
@@ -1482,7 +1698,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 87,
+=======
    "execution_count": 1599,
+>>>>>>> iMacGB-151017-TMP
    "metadata": {
     "collapsed": false,
     "scrolled": true
@@ -1542,11 +1762,30 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
+   "execution_count": 88,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'NOM': ['M', 'F'], 'VER': ['I', 'A', 'E']}"
+      ]
+     },
+     "execution_count": 88,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+=======
    "execution_count": null,
    "metadata": {
     "collapsed": false
    },
    "outputs": [],
+>>>>>>> iMacGB-151017-TMP
    "source": [
     "PFM.hierarchieCF.classes"
    ]
