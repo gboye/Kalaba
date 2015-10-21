@@ -47,7 +47,7 @@ def modifierForme(forme,formeDecoupe,transformation):
                 if verbose: print "erreur sur racine", simple
         return result
         
-    def appliquerGabarit(forme,racine):					
+    def appliquerGabarit(forme,racine,sansRacine=True):
         '''
         met la racine dans le gabarit forme
         '''
@@ -55,13 +55,19 @@ def modifierForme(forme,formeDecoupe,transformation):
         result=""
         for signe in forme:
             if signe in "123":				#place les consonnes en 1, 2, 3
-                result=result+racine[signe]
+                if sansRacine:
+                    result=result+racine[signe]
+                else:
+                    result=result+u"\\textRacineC{%s}"%racine[signe]
             elif signe in "456":
                 result=result+phonology["mutations"][racine[str(int(signe)-3)]]
             elif signe in "789":
                 result=result+phonology["mutations"][phonology["mutations"][racine[str(int(signe)-6)]]]
             elif signe in "V":				#place la voyelle radicale V et la voyelle de classe C
-                result=result+racine[signe]
+                if sansRacine:
+                    result=result+racine[signe]
+                else:
+                    result=result+u"\\textRacineV{%s}"%racine[signe]
             elif signe in "A":
                 result=result+phonology["apophonies"][racine[phonology["derives"][signe]]]#place les apophones de V et C (resp. A et D)
             elif signe in "U":
@@ -76,8 +82,14 @@ def modifierForme(forme,formeDecoupe,transformation):
     typeTrans=""
     gabarit=re.match(u"^(\D*)(\d)(\D*)(\d)(\D*)(\d)(.*)$",transformation)
     if gabarit:
-        racine=extraireRacine(forme)
-        result=appliquerGabarit(transformation,racine)
+        if forme.startswith(u"\\textRadical{"):
+            radical=forme.split("{")[1].strip("}")
+            racine=extraireRacine(radical)
+            sansRacine=False
+        else:
+            racine=extraireRacine(forme)
+            sansRacine=True
+        result=appliquerGabarit(transformation,racine,sansRacine)
         typeTrans="gabarit"
         decoupe=u"racine(%s)x%s"% (formeDecoupe,transformation)
         if verbose: print "f,r,t",forme,racine,result
@@ -301,7 +313,7 @@ class Tableau:
                 glose=self.nom
             derivations=regles.getRules(categorie,case)
             decoupe=forme
-            radical=u"\\textradical{%s}"%forme
+            radical=u"\\textRadical{%s}"%forme
             detoure=forme
             if derivations:
                 for derivation in derivations:
