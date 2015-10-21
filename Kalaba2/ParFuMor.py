@@ -130,6 +130,7 @@ def modifierGlose(glose,sigma,typeTrans):
     typeRef=(typeTrans=="ref")        
     attributValeurs=sigma.split(",")
     for attributValeur in attributValeurs:
+            if verbose: print attributValeur,
             paire=[x.strip() for x in attributValeur.split("=")]
             if len(paire)==2:
                 valeur=paire[1]
@@ -138,6 +139,7 @@ def modifierGlose(glose,sigma,typeTrans):
                 elif paire[0]!="CF":
                     valeur=valeur.capitalize()
                     mods.append(valeur)
+    if verbose: print
     if typeRef:
         mod="".join(mods)
     else:
@@ -430,9 +432,14 @@ def analyserGloses(gloses):
 #        print category
         if gloses[category]:
             features=gloses[category].keys()
-            for feature in features:
-#                print feature
+            featuresOrdre=morphosyntax["Attributs"][category]
+            if set(features)|set(featuresOrdre)!=set(features):
+                print "Incohérence entre Gloses.yaml et Morphosyntax.yaml"
+            print category,":",
+            for feature in featuresOrdre:
+                print feature,
                 hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
+            print
 
 def analyserStems(niveau,head="stems"):
     '''
