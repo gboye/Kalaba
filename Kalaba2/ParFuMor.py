@@ -46,7 +46,7 @@ def modifierForme(forme,formeDecoupe,transformation):
             else:
                 if verbose: print "erreur sur racine", simple
         return result
-        
+
     def appliquerGabarit(forme,racine,sansRacine=True):
         '''
         met la racine dans le gabarit forme
@@ -76,7 +76,7 @@ def modifierForme(forme,formeDecoupe,transformation):
                 result=result+signe
             if verbose: print signe, result
         if verbose: print result
-        return result    
+        return result
 #        result=forme
 
     typeTrans=""
@@ -127,7 +127,7 @@ def modifierGlose(glose,sigma,typeTrans):
     Calcule la glose à partir de sigma
     '''
     mods=[]
-    typeRef=(typeTrans=="ref")        
+    typeRef=(typeTrans=="ref")
     attributValeurs=sigma.split(",")
     for attributValeur in attributValeurs:
             if verbose: print attributValeur,
@@ -155,7 +155,7 @@ def modifierGlose(glose,sigma,typeTrans):
     elif typeRef:
         glose="".join(glose.split(".")[0])+mod
     return glose
-    
+
 class Paradigmes:
     '''
     information sur les cases flexionnelles par catégorie
@@ -163,7 +163,7 @@ class Paradigmes:
     def __init__(self):
         self.cases={}
         self.categories=[]
-        
+
     def addForme(self,cat,proprietes):
         sigma=", ".join(proprietes)
         cle={sigma:proprietes}
@@ -173,7 +173,7 @@ class Paradigmes:
             self.cases[cat]=[]
         if not cle in self.cases[cat]:
             self.cases[cat].append(cle)
-    
+
     def getSigmas(self,classes):
 #        print "getSig", classe
         sigmas=[]
@@ -217,7 +217,7 @@ class HierarchieCF:
         self.trait={}
         self.sets={}
         self.inherents={}
-        
+
     def addCategory(self,superclasse,classe):
         if not superclasse in self.classes:
             self.classes[superclasse]=[]
@@ -244,30 +244,30 @@ class HierarchieCF:
                         noFeature=False
         if noFeature:
             hierarchieCF.addFeature(category,classe,"CF")
-    
+
     def addFeatureSet(self,category,attribute,values):
         if not category in self.sets:
             self.sets[category]=[]
         self.sets[category].append({values:attribute})
-                
+
     def addFeature(self,category,classe,feature):
         if not category in self.trait:
             self.trait[category]=[]
         if not {classe:feature} in self.trait[category]:
             self.trait[category].append({classe:feature})
-        
+
     def getFeature(self,category,classe):
         if category in self.trait:
             return [x for x in self.trait[category] if classe in x.keys()][0][classe]
         else:
             return "ClassFLex"
-        
+
     def categoryLookup(self,categorie):
         if categorie in gloses:
             return categorie
         else:
             return self.categoryLookup(self.categorie[categorie])
-    	    	   
+
     def getCategory(self,classe):
         '''
         donne la catégorie correspondant à une classe ou à une catégorie
@@ -291,10 +291,10 @@ class Forme:
         self.glose=glose
         self.decoupe=decoupe
         self.detoure=detoure
-        
+
     def __repr__(self):
         return u"%s:\t%s\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe, self.detoure)
-    
+
 class Tableau:
     '''
     liste de sigmas
@@ -324,7 +324,7 @@ class Tableau:
                     glose=modifierGlose(glose,derivation[1],operation)
             flexion=Forme(case,forme,glose,decoupe,radical)
             self.cases.append(flexion)
-            
+
     def __repr__(self):
         listCases=[]
         for case in self.cases:
@@ -347,11 +347,11 @@ class Lexeme:
 
     def __repr__(self):
         return u"%s, %s, %s\n\t\t%s\n"%(self.stem,self.classe,self.nom,self.paradigme)
-    
+
     def addForme(self,*formes):
         for forme in formes:
             self.formes.append(forme)
-        
+
 class Lexique:
     '''
     Lexique de Lexèmes
@@ -360,10 +360,10 @@ class Lexique:
         self.lexemes={}
         self.catLexeme={}
         self.formeLexeme={}
-        
+
     def __repr__(self):
         return u"\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
-    
+
     def addLexeme(self,head,classe,stem,*formes):
 #        print "addLex",head,classe,stem
         cfs=head.split(",")
@@ -385,13 +385,13 @@ class Lexique:
         if not categorie in self.catLexeme:
             self.catLexeme[categorie]=[]
         self.catLexeme[categorie].append(nom)
-    
+
     def getLexemes(self,nom):
         if nom in self.lexemes:
             return [self.lexemes[nom]]
         else:
             return [lexeme for (vedette, lexeme) in self.lexemes.iteritems() if nom in vedette]
-    
+
 
 lexique=Lexique()
 
@@ -401,11 +401,11 @@ class Regles:
     '''
     def __init__(self):
         self.blocs={}
-        
+
     def addBlocs(self,category,blocs):
         if not category in self.blocs:
             self.blocs[category]=blocs
-            
+
     def getRules(self,category,case):
         if category in self.blocs:
             rules=[]
@@ -433,12 +433,13 @@ def analyserGloses(gloses):
         if gloses[category]:
             features=gloses[category].keys()
             featuresOrdre=morphosyntax["Attributs"][category]
-            if set(features)|set(featuresOrdre)!=set(features):
+            if set(features)|set(featuresOrdre)!=set(featuresOrdre):
                 print "Incohérence entre Gloses.yaml et Morphosyntax.yaml"
             print category,":",
             for feature in featuresOrdre:
-                print feature,
-                hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
+                if feature in features:
+                    print feature,
+                    hierarchieCF.addFeatureSet(category,feature,",".join(gloses[category][feature]))
             print
 
 def analyserStems(niveau,head="stems"):
