@@ -364,8 +364,12 @@ class Lexique:
     def __repr__(self):
         return u"\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
 
-    def addLexeme(self,head,classe,stem,*formes):
+    def addLexeme(self,head,classe,stem,*tupleFormes):
 #        print "addLex",head,classe,stem
+#Mise en minuscules des formes de citations sauf initiale
+        formes=list(tupleFormes)
+        if formes[0]!=formes[0].upper() and formes[0]!=formes[0].lower():
+            formes[0]=formes[0][0]+formes[0][1:].lower()
         cfs=head.split(",")
         if len(cfs)>2:
             classesFlex=".".join(cfs[2:])+"."+classe
