@@ -1,0 +1,6 @@
+1. Forme => Radical, Forme => Traduction, Traduction => Radical (avec déterminants)
+1. Forme => Propriétés, Propriétés => Forme
+1. Découpage en morphes, avec choix des propriétés/morphes LLCE
+1. RadicalxGabarit => Racine/Forme, Forme/Gabarit => Racine
+1. Syntagmes à ordonner, Kalaba => syntagmes/ordre
+1. Version, Thème
