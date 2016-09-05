@@ -38,13 +38,20 @@ def modifierForme(forme,formeDecoupe,transformation):
         for lettre in simple:
             if verbose: print "lettre : ",lettre
             if lettre in phonology["consonnes"]:
-                result[str(c)]=lettre
+                if c<=3:
+                    result[str(c)]=lettre
                 c=c+1
             elif lettre in phonology["voyelles"]:
                 if result['V']=='':
                     result['V']=lettre
             else:
                 if verbose: print "erreur sur racine", simple
+        if result["2"]=="":
+            result["2"]=result["1"]
+        if result["3"]=="":
+            result["3"]=result["2"]
+        if result["V"]=="":
+            result["V"]="a"
         return result
 
     def appliquerGabarit(forme,racine,sansRacine=True):
@@ -80,7 +87,7 @@ def modifierForme(forme,formeDecoupe,transformation):
 #        result=forme
 
     typeTrans=""
-    gabarit=re.match(u"^(\D*)(\d)(\D*)(\d)(\D*)(\d)(.*)$",transformation)
+    gabarit=re.match(u"^(\D*)(\d)(\D*)(\d)(\D*)(\d)?(.*)$",transformation)
     if gabarit:
         if forme.startswith(u"\\textRadical{"):
             radical=forme.split("{")[1].strip("}")
