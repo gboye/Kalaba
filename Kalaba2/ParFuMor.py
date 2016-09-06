@@ -87,6 +87,7 @@ def modifierForme(forme,formeDecoupe,transformation):
 #        result=forme
 
     typeTrans=""
+    lexRacine=""
     gabarit=re.match(u"^(\D*)(\d)(\D*)(\d)(\D*)(\d)?(.*)$",transformation)
     if gabarit:
         if forme.startswith(u"\\textRadical{"):
@@ -99,6 +100,7 @@ def modifierForme(forme,formeDecoupe,transformation):
         result=appliquerGabarit(transformation,racine,sansRacine)
         typeTrans="gabarit"
         decoupe=u"racine(%s)x%s"% (formeDecoupe,transformation)
+        lexRacine=racine["1"]+racine["2"]+racine["3"]+racine["V"]
         if verbose: print "f,r,t",forme,racine,result
     else:
         affixe=re.match(u"^([^+]*)\+([^+]*)$",transformation)
@@ -127,7 +129,7 @@ def modifierForme(forme,formeDecoupe,transformation):
                 result=forme
                 typeTrans="identite"
                 decoupe=forme
-    return (result,decoupe,typeTrans)
+    return (result,decoupe,typeTrans,lexRacine)
 
 def modifierGlose(glose,sigma,typeTrans):
     '''
@@ -292,15 +294,17 @@ class Forme:
     '''
     sigma et forme fléchie
     '''
-    def __init__(self,sigma,forme,glose,decoupe,detoure):
+    def __init__(self,sigma,forme,glose,decoupe,detoure,lexRadical,lexRacine):
         self.sigma=sigma
         self.forme=forme
         self.glose=glose
         self.decoupe=decoupe
         self.detoure=detoure
+        self.radical=lexRadical
+        self.racine=lexRacine
 
     def __repr__(self):
-        return u"%s:\t%s\t%s\t%s\t%s"%(self.sigma,self.forme, self.glose, self.decoupe, self.detoure)
+        return u"%s:\t%s\t%s\t%s\t%s\tradical: %s\tracine: %s"%(self.sigma,self.forme, self.glose, self.decoupe, self.detoure,self.radical,self.racine)
 
 class Tableau:
     '''
@@ -324,17 +328,21 @@ class Tableau:
             decoupe=forme
             radical=u"\\textRadical{%s}"%forme
             detoure=forme
+            lexRacine=""
             if derivations:
                 for derivation in derivations:
-                    (radical,detoure,operation)=modifierForme(radical,detoure,derivation[0])
-                    (forme,decoupe,operation)=modifierForme(forme,decoupe,derivation[0])
+                    (radical,detoure,operation,tmpRacine)=modifierForme(radical,detoure,derivation[0])
+                    (forme,decoupe,operation,tmpRacine)=modifierForme(forme,decoupe,derivation[0])
+                    if lexRacine=="":
+                        lexRacine=tmpRacine
                     glose=modifierGlose(glose,derivation[1],operation)
-            flexion=Forme(case,forme,glose,decoupe,radical)
+            flexion=Forme(case,forme,glose,decoupe,radical,self.stem,lexRacine)
             self.cases.append(flexion)
 
     def __repr__(self):
         listCases=[]
         for case in self.cases:
+            print "case", case, case.racine
             listCases.append(unicode(case))
         return self.stem+u" :\n\t\t\t"+"\n\t\t\t".join(listCases)
 
