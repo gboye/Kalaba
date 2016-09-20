@@ -1,5 +1,5 @@
 # coding: utf-8
-import re
+import re, warnings
 
 gloses={}
 phonology={}
@@ -164,6 +164,9 @@ def modifierGlose(glose,sigma,typeTrans):
     elif typeRef:
         glose="".join(glose.split(".")[0])+mod
     return glose
+
+class DuplicateForm(Exception):
+    pass
 
 class Paradigmes:
     '''
@@ -342,9 +345,9 @@ class Tableau:
     def __repr__(self):
         listCases=[]
         for case in self.cases:
-            print "case", case, case.racine
+            print u"case", case, case.racine
             listCases.append(unicode(case))
-        return self.stem+u" :\n\t\t\t"+"\n\t\t\t".join(listCases)
+        return self.stem+u" :\n\t\t\t"+u"\n\t\t\t".join(listCases)
 
 class Lexeme:
     '''
@@ -367,6 +370,7 @@ class Lexeme:
         for forme in formes:
             self.formes.append(forme)
 
+duplicateErrors=[]
 class Lexique:
     '''
     Lexique de Lexèmes
@@ -375,6 +379,8 @@ class Lexique:
         self.lexemes={}
         self.catLexeme={}
         self.formeLexeme={}
+        self.formesFr={}
+        self.vedettes={}
 
     def __repr__(self):
         return u"\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
@@ -383,6 +389,12 @@ class Lexique:
 #        print "addLex",head,classe,stem
 #Mise en minuscules des formes de citations sauf initiale
         formes=list(tupleFormes)
+        for forme in formes:
+            if forme in self.formesFr:
+                warnings.warn('Formes homographes "%s" pour "%s" et "%s"'%(forme,formes[0],self.formesFr[forme]),stacklevel=0)
+                duplicateErrors.append('Formes homographes "%s" pour "%s" et "%s"'%(forme,formes[0],self.formesFr[forme]))
+            else:
+                self.formesFr[forme]=formes[0]
         if formes[0]!=formes[0].upper() and formes[0]!=formes[0].lower():
             formes[0]=formes[0][0]+formes[0][1:].lower()
         cfs=head.split(",")
@@ -395,6 +407,11 @@ class Lexique:
             nom=formes[0]+"."+classesFlex
         else:
             nom=formes[0]
+        if formes[0] in self.vedettes:
+            if self.vedettes[formes[0]]!=nom:
+                warnings.warn('Vedettes homographes "%s" pour "%s" et "%s"'%(formes[0],self.vedettes[formes[0]],nom))
+        else:
+            self.vedettes[formes[0]]=nom
         self.lexemes[nom]=Lexeme(stem,classesFlex,nom)
         self.lexemes[nom].addForme(*formes)
         for forme in formes:
