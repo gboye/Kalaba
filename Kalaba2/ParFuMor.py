@@ -125,10 +125,10 @@ def modifierForme(forme,formeDecoupe,transformation):
                     typeTrans="circonfixe"
                     decoupe=u"%s+%s+%s"%(prefixe,formeDecoupe,suffixe)
             else:
-#                print forme
+#                print "affixe nul", forme, formeDecoupe
                 result=forme
                 typeTrans="identite"
-                decoupe=forme
+                decoupe=formeDecoupe
     return (result,decoupe,typeTrans,lexRacine)
 
 def modifierGlose(glose,sigma,typeTrans):
