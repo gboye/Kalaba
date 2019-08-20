@@ -1,11 +1,12 @@
 # coding: utf-8
 import re, warnings
+import pandas as pd
 
 gloses={}
 phonology={}
 morphosyntax={}
 categoriesMajeures=["VER","NOM","ADJ"]
-categoriesMineures=["PREP"]
+categoriesMineures=["PREP","DET"]
 verbose=False
 
 def chaine2utf8(chaine):
@@ -370,6 +371,29 @@ class Lexeme:
         for forme in formes:
             self.formes.append(forme)
 
+    def getParadigm(self,lignes=[],colonne=[]):
+        formeLignes=self.paradigme.cases
+        #print "======Paradigme======="
+        unTraits=[t.strip() for t in formeLignes[0].sigma.split(",")[1:]]
+        onTraits=[unTraits[i].split("=")[0].strip() for i in range(len(unTraits)) if not unTraits[i].strip().startswith("CF=")]
+        formesFlechies=pd.DataFrame(columns=onTraits+["forme"])
+        for n,l in enumerate(formeLignes):
+            ulTraits=l.sigma.split(",")[1:]
+            olTraits=[ulTraits[i].split("=")[1] for i in range(len(ulTraits)) if not ulTraits[i].strip().startswith("CF=")]
+            formesFlechies.loc[n]=olTraits+[l.decoupe]
+        if not lignes:
+            lignes=onTraits[:-1]
+        if not colonne:
+            colonne=onTraits[-1:]
+        for trait in onTraits:
+           if not trait in lignes+colonne:
+               print "del",trait
+               formesFlechies.drop(trait, axis=1, inplace=True)
+        formesFlechies.drop_duplicates(inplace=True)
+        #print formesFlechies.columns, lignes, colonne
+        tableParadigme=pd.pivot_table(formesFlechies,index=lignes,columns=colonne,values="forme",aggfunc=lambda x: ",".join(list(set(x))))
+        return tableParadigme
+
 duplicateErrors=[]
 class Lexique:
     '''
@@ -391,8 +415,9 @@ class Lexique:
         formes=list(tupleFormes)
         for forme in formes:
             if forme in self.formesFr:
-                warnings.warn('Formes homographes "%s" pour "%s" et "%s"'%(forme,formes[0],self.formesFr[forme]),stacklevel=0)
-                duplicateErrors.append('Formes homographes "%s" pour "%s" et "%s"'%(forme,formes[0],self.formesFr[forme]))
+                print forme,formes[0],self.formesFr[forme]
+                warnings.warn(u'Formes homographes "%s" pour "%s" et "%s"'%(forme,formes[0],self.formesFr[forme]),stacklevel=0)
+                duplicateErrors.append(u'Formes homographes "%s" pour "%s" et "%s"'%(forme,formes[0],self.formesFr[forme]))
             else:
                 self.formesFr[forme]=formes[0]
         if formes[0]!=formes[0].upper() and formes[0]!=formes[0].lower():
@@ -409,7 +434,7 @@ class Lexique:
             nom=formes[0]
         if formes[0] in self.vedettes:
             if self.vedettes[formes[0]]!=nom:
-                warnings.warn('Vedettes homographes "%s" pour "%s" et "%s"'%(formes[0],self.vedettes[formes[0]],nom))
+                warnings.warn(u'Vedettes homographes "%s" pour "%s" et "%s"'%(formes[0],self.vedettes[formes[0]],nom))
         else:
             self.vedettes[formes[0]]=nom
         self.lexemes[nom]=Lexeme(stem,classesFlex,nom)
@@ -452,7 +477,26 @@ class Regles:
                     traits=sigma.split(",")
                     sigmaCase=True
                     for trait in traits:
-                        sigmaCase=sigmaCase and trait in case
+                        # modification pour les disjonctions
+                        # 03/09/18
+                        m=re.match(ur"(.*=)(.*)",trait)
+                        if m:
+                            altTrait=m.group(1)
+                            altValeurs=m.group(2).split("|")
+                            if verbose: print altTrait
+                            altTraits=[altTrait+v for v in altValeurs]
+                            if verbose: print altTraits
+                            if any(t in case for t in altTraits):
+                                if verbose: print "applies",case
+                                caseMatch=True
+                            else:
+                                if verbose: print "does not apply",case
+                                caseMatch=False
+                        sigmaCase=sigmaCase and caseMatch
+                        # fin de modification
+                        # ancienne ligne
+                        #
+                        # sigmaCase=sigmaCase and trait in case
                     if sigmaCase:
                         rules.append((self.blocs[category][num][sigma],sigma))
                         break
