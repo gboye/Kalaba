@@ -1,19 +1,19 @@
 # Kalaba
-====
+=
 
 Outil de fabrication de Kalaba basé sur un lexique et un corpus de phrases préanalysées.
 
-##Généralités
+## Généralités
 Dans l'ensemble des fichiers, les lignes commençant par un dièse sont considérées comme des commentaires. Elles ne sont pas prise en compte par l'outil.
 
-##Phrases
+## Phrases
 Les phrases sont toutes construites sur le modèle Sujet Verbe COD COI Complément Circonstants. Les groupes sont séparés manuellement par des tabulations. Par exemple, pour la phrase simple Sujet-Verbe-COD comme "Le chasseur mange une autruche." :
 
 le chasseur TAB mange TAB une autruche
 
 Tous les mots qui sont utilisés dans les phrases doivent apparaître dans le lexique. Pour les mots français qui s'écrivent avec un -s final au singulier, il faut les écrire avec un -S majuscule pour que le système reconnaisse le mot comme singulier (pas de contrôle du nombre autre que graphique).
 
-##Lexique
+## Lexique
 Le lexique est un fichier YAML qui utilise 4 catégories principales:
 - nom : N
 - verbe : V
@@ -46,14 +46,14 @@ N:
   tabl:   [table, tables]
   tikus:  [souris]
 
-##Gloses
+## Gloses
 Les gloses donnent la structure du paradigme flexionnel. Les attributs et leurs valeurs possibles sont définis pour chaque catégorie sujette à la flexion. Par exemple, pour un système simple avec du genre et du nombre pour les noms comme en français :
 
 N:
   Genre: [M,F]
   Nombre: [SG, PL]
 
-##Blocks
+## Blocks
 Ce fichier contient la description des blocs PFM pour les catégories du kalaba qui sont sujettes à la flexion. Aucun contrôle de cohérence n'est réalisé entre ce fichier et gloses.
 
 Le fichier blocks donne pour chaque catégorie des blocs numérotés qui seront évalués dans l'ordre croissant des numéros. Au sein de chaque bloc, on trouve des règles de réalisation qui permettent de faire correspondre un ensemble de traits à une modification phonologique (préfixe, suffixe, circonfixe, gabarit). Une règle est applicable si elle concerne un lexème et une case du paradigme qui contiennent les traits mentionnés par la règle. Par exemple, pour un pluriel par suffixation en -s :
@@ -72,5 +72,5 @@ V:
   1:
     Type=Factitif, Pers=3, Genre=M: 1a22V3a
 
-##Phonology
+## Phonology
 Ce fichier contient la description des éléments phonologiques et graphiques du kalaba.
