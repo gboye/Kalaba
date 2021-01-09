@@ -164,6 +164,12 @@ def modifierGlose(glose,sigma,typeTrans):
         glose=cacherGloses(mod+"+")+glose+cacherGloses("+"+mod)
     elif typeRef:
         glose="".join(glose.split(".")[0])+mod
+        # modification à faire pour HYPER pour les noms de mêmes genres
+        # abandonnée pour l'instant
+        # if "hyper" in glose.lower():
+        #     glose="".join(glose.split(".")[0])+"HYPER"+mod
+        # else:
+        #     glose="".join(glose.split(".")[0])+mod
     return glose
 
 class DuplicateForm(Exception):
