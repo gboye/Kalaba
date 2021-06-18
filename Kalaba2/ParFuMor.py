@@ -10,10 +10,13 @@ categoriesMineures=["PREP","DET"]
 verbose=False
 
 def chaine2utf8(chaine):
+    if 0: print chaine
     if type(chaine)==str:
         result=unicode(chaine.decode('utf8'))
     elif type(chaine)==unicode:
         result=chaine
+    else:
+        result=None
     return result
 
 
@@ -555,6 +558,7 @@ def analyserStems(niveau,head="stems"):
                 elif isinstance(niveau[element][forme],list):
                     liste=[]
                     for f in niveau[element][forme]:
+                        if 0: print "element, forme, f",element,forme,f
                         liste.append(chaine2utf8(f))
                     lexique.addLexeme(head,element,forme,*liste)
                 else:
