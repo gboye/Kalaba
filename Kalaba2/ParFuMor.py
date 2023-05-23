@@ -92,6 +92,7 @@ def modifierForme(forme,formeDecoupe,transformation):
 
     typeTrans=""
     lexRacine=""
+    # 
     gabarit=re.match(u"^(\D*)(\d)(\D*)(\d)(\D*)(\d)?(.*)$",transformation)
     if gabarit:
         if forme.startswith(u"\\textRadical{"):
@@ -107,7 +108,7 @@ def modifierForme(forme,formeDecoupe,transformation):
         lexRacine=racine["1"]+racine["2"]+racine["3"]+racine["V"]
         if verbose: print "f,r,t",forme,racine,result
     else:
-        affixe=re.match(u"^([^+]*)\+([^+]*)$",transformation)
+        affixe=re.match(u"^([^+]*?)\s*\+\s*([^+]*?)$",transformation)
         if affixe:
             if affixe.group(1)=="X":
                 suffixe=affixe.group(2)
@@ -120,7 +121,7 @@ def modifierForme(forme,formeDecoupe,transformation):
                 typeTrans="préfixe"
                 decoupe=u"%s-%s"%(prefixe,formeDecoupe)
         else:
-            circonfixe=re.match(u"^([^+]*)\+([^+]*)\+([^+]*)$",transformation)
+            circonfixe=re.match(u"^([^+]*?)\s*\+\s*([^+]*?)\s*\+\s*([^+]*?)$",transformation)
             if circonfixe:
                 if circonfixe.group(2)=="X":
                     prefixe=circonfixe.group(1)
@@ -419,7 +420,7 @@ class Lexique:
         return u"\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
 
     def addLexeme(self,head,classe,stem,*tupleFormes):
-#        print "addLex",head,classe,stem
+        # print "addLex",head,classe,stem
 #Mise en minuscules des formes de citations sauf initiale
         formes=list(tupleFormes)
         for forme in formes:
@@ -430,7 +431,14 @@ class Lexique:
             else:
                 self.formesFr[forme]=formes[0]
         if formes[0]!=formes[0].upper() and formes[0]!=formes[0].lower():
-            formes[0]=formes[0][0]+formes[0][1:].lower()
+            if "-" in formes[0]:
+                formChunks=[]
+                formParts=formes[0].split("-")
+                for formPart in formParts:
+                    formChunks.append(formPart[0]+formPart[1:].lower())
+                formes[0]="-".join(formChunks)
+            else:
+                formes[0]=formes[0][0]+formes[0][1:].lower()
         cfs=head.split(",")
         if len(cfs)>2:
             classesFlex=".".join(cfs[2:])+"."+classe
