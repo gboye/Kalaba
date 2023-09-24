@@ -7,7 +7,7 @@ for numero in $numeros
 do
 for tex in $texFiles
     do
-        cd /Users/gilles/ownCloud/Cours/Bordeaux/L1-LinguistiqueGenerale/00-ProjetKalaba/20-K$numero
-        xelatex K$numero$tex
+        cd /Users/gilles/ownCloud/Cours/Bordeaux/L1-LinguistiqueGenerale/00-ProjetKalaba/23-K$numero
+        xelatex K0$numero$tex
     done
 done
