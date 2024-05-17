@@ -489,6 +489,7 @@ class Regles:
             rules=[]
             sortBlocs=sorted(self.blocs[category],key=int)
             for num in sortBlocs:
+                # print category,num,self.blocs[category][num]
                 sortSigmas=sorted(self.blocs[category][num],key=lambda x: len(x.split("=")),reverse=True)
                 for sigma in sortSigmas:
                     traits=sigma.split(",")
