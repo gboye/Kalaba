@@ -309,13 +309,13 @@ class Forme:
     sigma et forme fléchie
     '''
     def __init__(self,sigma,forme,glose,decoupe,detoure,lexRadical,lexRacine):
-        self.sigma=sigma
-        self.forme=forme
-        self.glose=glose
-        self.decoupe=decoupe
-        self.detoure=detoure
-        self.radical=lexRadical
-        self.racine=lexRacine
+        self.sigma=unicode(sigma)
+        self.forme=unicode(forme)
+        self.glose=unicode(glose)
+        self.decoupe=unicode(decoupe)
+        self.detoure=unicode(detoure)
+        self.radical=unicode(lexRadical)
+        self.racine=unicode(lexRacine)
 
     def __repr__(self):
         return u"%s:\t%s\t%s\t%s\t%s\tradical: %s\tracine: %s"%(self.sigma,self.forme, self.glose, self.decoupe, self.detoure,self.radical,self.racine)
@@ -327,8 +327,8 @@ class Tableau:
     def __init__(self,classe,stem,nom):
 #        print "initTableau",classe, stem, nom
         self.cases=[]
-        self.stem=stem
-        self.nom=nom
+        self.stem=unicode(stem)
+        self.nom=unicode(nom)
         classes=classe.split(".")
         categorie=hierarchieCF.getCategory(classes[0])
         for case in paradigmes.getSigmas(classes):
@@ -356,18 +356,18 @@ class Tableau:
     def __repr__(self):
         listCases=[]
         for case in self.cases:
-            print u"case", case, case.racine
+            print u"case", unicode(case), unicode(case.racine)
             listCases.append(unicode(case))
-        return self.stem+u" :\n\t\t\t"+u"\n\t\t\t".join(listCases)
+        return unicode(self.stem)+u" :\n\t\t\t"+u"\n\t\t\t".join(listCases)
 
 class Lexeme:
     '''
     Formes fléchies d'un lexème suivant sa classe flexionnelle
     '''
     def __init__(self,stem,classe,nom):
-        self.stem=stem
-        self.classe=classe
-        self.nom=nom
+        self.stem=unicode(stem)
+        self.classe=unicode(classe)
+        self.nom=unicode(nom)
         if classe in categoriesMineures:
 #            self.nom=self.nom.decode('utf8').upper().encode('utf8')
             self.nom=chaine2utf8(self.nom).upper()
@@ -417,12 +417,12 @@ class Lexique:
         self.vedettes={}
 
     def __repr__(self):
-        return u"\n".join([u"%s :\n\t%s"%(cle,lexeme) for (cle,lexeme) in self.lexemes.iteritems()])
+        return u"\n".join([u"%s :\n\t%s"%(unicode(cle),unicode(lexeme)) for (cle,lexeme) in self.lexemes.iteritems()])
 
     def addLexeme(self,head,classe,stem,*tupleFormes):
         # print "addLex",head,classe,stem
 #Mise en minuscules des formes de citations sauf initiale
-        formes=list(tupleFormes)
+        formes=[unicode(f) for f in list(tupleFormes)]
         for forme in formes:
             if forme in self.formesFr:
                 print forme,formes[0],self.formesFr[forme]
