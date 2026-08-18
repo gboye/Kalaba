@@ -7,7 +7,7 @@ phonology={}
 morphosyntax={}
 categoriesMajeures=["VER","NOM","ADJ"]
 categoriesMineures=["PREP","DET"]
-verbose=False
+verbose=True
 
 def chaine2utf8(chaine):
     if 0: print chaine
